@@ -1,0 +1,25 @@
+\begin{exercise}
+Pruebe que la serie de potencias
+$$\zeta(z) = \sum_{n=1}^\infty n^{-z}$$
+converge en la región $\Re(z) > 1$.
+\end{exercise}
+
+\begin{solution}
+Sea $x = \Re(z)$. Entonces,
+$$
+|\zeta(z)|
+    = \left| \sum_{n=1}^\infty n^{-z} \right|
+    \le \sum_{n=1}^\infty \left| n^{-z} \right|
+    = \sum_{n=1}^\infty n^{-x}
+    = \zeta(x)
+$$
+Para $n = \lceil t \rceil$ y $x > 1$, tenemos $t^{-x} \ge n^{-x}$, así que
+$$
+\zeta(x) - 1
+    = \sum_{n=2}^\infty n^{-x}
+    \le \int_1^\infty t^{-x} \, dt
+    = \frac 1 {x-1}
+    < \infty
+$$
+Por ende, $\zeta(z)$ es absolutamente convergente en el semiplano $\Re(z) > 1$. De hecho, para $x \ge 1 + \varepsilon$, tenemos la cota uniforme $1/\varepsilon$, así que $\zeta(z)$ es absoluta y uniformemente convergente en el semiplano $\Re(z) \ge 1 + \varepsilon$.
+\end{solution}

@@ -1,0 +1,11 @@
+\begin{exercise}
+Pruebe que $z, w \in \C$ corresponden a puntos diametralmente opuestos en la esfera $S^2$ si y sólo si $\bar zw = -1$.
+\end{exercise}
+
+\begin{solution}
+Sea $z = u + iv$ distinto de cero. El valor especificado de $w$ es
+$$w = -\frac 1 {\bar z} = -\frac z {\bar zz} = -\frac {u + iv} {r^2}$$
+El valor de la variable auxiliar $t$ (ver el problema anterior) en el punto $w$ es
+$$t' = \frac 2 {1 + 1/r^2} = \frac {2r^2} {1 + r^2} = tr^2 = t(1 + r^2) - t = 2 - t$$
+Entonces $\varphi^{-1}(w) = (t'u', t'v', 1 - t') = (-tu, -tv, -1+t)$ es la antípoda de $\varphi^{-1}(z) = (tu, tv, t-1)$.
+\end{solution}

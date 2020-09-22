@@ -1,0 +1,21 @@
+\begin{exercise}
+Sea $P(z) = a_0 + a_1 z + a_2 z^2 + \dots + a_n z^n$, $a_n \ne 0$, un polinomio con coeficientes complejos y sea $H \subset \C$ un semiplano que contiene a todas las raíces de $P$. Pruebe que $H$ también contiene a todas las raíces de su derivada $P'(z)$.
+\end{exercise}
+
+\begin{solution}
+Por el teorema fundamental del álgebra, podemos escribir $P(z) = a_n (z - c_1) \dots (z - c_n)$, donde $c_1, \dots, c_n$ son las raíces de $P$, contadas con multiplicidad. La derivada de logarítmica de $P$ es
+$$\frac {P'(z)} {P(z)} = \frac 1 {z - c_1} + \dots + \frac 1 {z - c_n}$$
+Identifiquemos $\C$ con el plano tangente a sí mismo en cualquier punto de la frontera de $H$. Sea $w = e^{i\theta}$ el vector normal saliente de $H$. Dado un vector no nulo $z \in \C^\star$, el cociente $w/z$ es un reescalamiento real y positivo del producto interno hermitiano $\langle w, z \rangle = \bar zw$. Por ende,
+\begin{itemize}
+    \item $z$ es un vector saliente de $H$ si y sólo si $\Re(w/z) > 0$.
+    \item $z$ es un vector entrante a $H$ si y sólo si $\Re(w/z) < 0$.
+    \item $z$ es un vector tangente a la frontera de $H$ si y sólo si $\Re(w/z) = 0$.
+\end{itemize}
+Para todo $z \in \C$, la condición $z \notin H$ implica que las diferencias $z - c_i$ son vectores salientes de $H$. Luego, todos los sumandos en la expresión
+$$\frac {wP'(z)} {P(z)} = \frac w {z - c_1} + \dots + \frac w {z - c_1}$$
+tienen parte real positiva. Por ende, la derivada logarítmica de $P$ no se anula en $z$. Por ende, la derivada ordinaria de $P$ tampoco sea anula en $z$. Por ende, los ceros de $P'$ están en $H$.
+\end{solution}
+
+\begin{remark}
+El corolario inmediato es que los ceros de $P'$ están en la cápsula convexa de los ceros de $P$.
+\end{remark}

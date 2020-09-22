@@ -1,0 +1,18 @@
+\begin{exercise}
+Dado un parámetro real $0 < |a| < 1$, calcule la integral
+$$S_a = \int_0^{2\pi} \frac {d\theta} {1 + a \cos \theta}$$
+\end{exercise}
+
+\begin{solution}
+Sea $\gamma \subset \C$ el círculo unitario, parametrizado como $z = e^{i\theta}$. Entonces,
+$$
+S_a
+    = \int_0^{2\pi} \frac {d\theta} {1 + a \cos \theta}
+    = \int_\gamma \frac 2 {az^2 + 2z + a} \cdot \frac {dz} i
+    = \int_\gamma f(z) \, \frac {dz} i
+$$
+El integrando tiene un polo encerrado por $\gamma$ situado en
+$$z = \frac {-1 + \sqrt {1 - a^2}} a$$
+Por ende, el valor de la integral pedida es
+$$S_a = 2\pi \cdot \Res(f, z) = \frac {2\pi} {az + 1} = \frac {2\pi} {\sqrt {1 - a^2}}$$
+\end{solution}

@@ -1,0 +1,41 @@
+\begin{exercise}
+Pruebe que la función definida por la serie de potencias
+$$w = f(z) = \sum_{n=0}^\infty \frac {z^{2n+1}} {2n+1}$$
+es analítica e inyectiva en el disco unitario $|z| < 1$ y su imagen es la franja $-\pi/4 < \Im(z) < \pi/4$.
+\end{exercise}
+
+\begin{solution}
+Consideremos las siguientes integrales indefinidas
+\begin{align*}
+\log (1+z)
+    &= \int \frac 1 {1+z} \, dz &
+-\log (1-z)
+    &= \int \frac 1 {1-z} \, dz \\
+    &= \int \sum_{n=0}^\infty (-z)^n \, dz &
+    &= \int \sum_{n=0}^\infty z^n \, dz \\
+    &= \sum_{n=0}^\infty \int (-z)^n \, dz &
+    &= \sum_{n=0}^\infty \int z^n \, dz \\
+    &= \sum_{n=0}^\infty \frac {(-1)^n z^{n+1}} {n+1} &
+    &= \sum_{n=0}^\infty \frac {z^{n+1}} {n+1}
+\end{align*}
+Promediando término a término, se cancelan los términos de índice impar y nos queda
+$$f(z) = \frac 12 \log \frac {1+z} {1-z} = \sum_{n=0}^\infty \frac {z^{2n+1}} {2n+1} = \sum_{n=0}^\infty a_n$$
+Por construcción, esta función es analítica y su derivada es
+$$f'(z) = \frac 1 {1+z} + \frac 1 {1-z} = \frac 2 {1 - z^2}$$
+La serie de potencias de $f$ converge absolutamente dentro del disco unitario $|z| < 1$, porque
+$$
+\lim_{n \to \infty} \left| \frac {a_{n+1}} {a_n} \right|
+    = \lim_{n \to \infty} \frac {2n+3} {2n+1} \cdot |z|^2
+    = |z|^2
+    < 1
+$$
+La imagen de $|z| < 1$ bajo la transformación de Möbius
+$$\varphi(z) = \frac {1+z} {1-z}$$
+se determina tomando un punto en el interior del disco y tres en la frontera:
+\begin{itemize}
+    \item El punto $z = 0$ en el interior es enviado a $z = 1$.
+    \item El punto $z = -1$ en la frontera es enviado a $z = 0$.
+    \item Los puntos $z = \pm i$ en la frontera son puntos fijos.
+\end{itemize}
+Entonces $\varphi$ envía el disco $|z| < 1$ al semiplano $\Re(z) > 0$. Este semiplano está conformado por números de todas las magnitudes positivas, pero con argumentos principales restringidos a $(-\pi/2, \pi/2)$. Por ende, su imagen bajo el logaritmo principal es la franja $-\pi/2 < \Im(z) < \pi/2$, que es encogida por el factor $1/2$ a la franja $-\pi/4 < \Im(z) < \pi/4$.
+\end{solution}

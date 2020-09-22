@@ -1,0 +1,12 @@
+\begin{exercise}
+Sea $f(z)$ una función analítica definida sobre un abierto $U \subset \C$ tal que, para todo $z \in U$, la imagen $w = f(z)$ está en el disco $|w - 1| < 1$. Pruebe que
+$$\int_\gamma \frac {f'(z)} {f(z)} \, dz = 0$$
+para toda curva cerrada $\gamma \subset U$.
+\end{exercise}
+
+\begin{solution}
+Por hipótesis, $f \circ \gamma$ es una curva en el disco $|w - 1| < 1$, así que
+$$\int_\gamma \frac {f'(z)} {f(z)} \, dz = \int_{f \circ \gamma} \frac {dz} z = 2\pi i \cdot n(f \circ \gamma, 0) = 0$$
+\end{solution}
+
+\newpage

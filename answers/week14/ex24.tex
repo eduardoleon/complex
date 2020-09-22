@@ -1,0 +1,13 @@
+\begin{exercise}
+Sea $u(z)$ una función armónica en un disco $D \subset \C$ centrado en $z_0 \in D$. Pruebe que
+$$v(z_1) = \int_{\gamma} \p ux \, dy - \p uy \, dx$$
+es una armónica conjugada de $u(z)$ en $D$, donde $\gamma$ es el segmento orientado desde $z_0$ hasta $z_1$.
+\end{exercise}
+
+\begin{solution}
+Puesto que $u(z)$ es armónica, el integrando
+$$\p ux \, dy - \p uy \, dx$$
+es una forma cerrada. Puesto que $D$ es simplemente conexo, el integrando es exacto. Así pues, la integral que define a $v(z_1)$ puede calcularse a lo largo de cualquier trayectoria desde $z_0$ hasta $z_1$, sin alteración del resultado. Tomando $\gamma$ cuyo último tramo es horizontal o vertical, tenemos, respectivamente,
+$$\p vx = -\p uy, \qquad \qquad \qquad \p vy = \p ux$$
+Por ende, $v(z)$ es una armónica conjugada de $u(z)$.
+\end{solution}

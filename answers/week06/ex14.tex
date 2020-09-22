@@ -1,0 +1,53 @@
+\begin{exercise}
+Sea $\gamma : [a,b] \to U$ una curva rectificable en un abierto $U \subset \C$ y sea $f : U \to \C$ una función continua. Pruebe las siguientes afirmaciones:
+\begin{enumerate}[label=(\alph*)]
+    \item Para todo $\varepsilon > 0$, existe una curva poligonal $\sigma : [a,b] \to U$ tal que $\gamma(a) = \sigma(a)$, $\gamma(b) = \sigma(b)$ y
+    $$\left| \int_\gamma f(z) \, dz - \int_\sigma f(z) \, dz \right| < \varepsilon$$
+    
+    \item Si $F : [a,b] \to \C$ es una antiderivada de $f$, entonces
+    $$\int_\gamma f(z) \, dz = F(b) - F(a)$$
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+Utilizaremos las mismas abreviaciones de los ejercicios anteriores.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Dividamos $\gamma$ en un número finito de tramos, cada uno de ellos encajado en una vecindad convexa y relativamente compacta en $U$. Repartamos el margen de error disponible $\varepsilon$ entre los tramos. Así, el problema original se reduce al caso en que $f$ es uniformemente continua y $U$ es convexo.
+    
+    Tomemos $\delta > 0$ y una partición $P \in \P(\gamma)$ tales que
+    \begin{itemize}
+        \item $|z-w| < \delta$ implica $|f(z) - f(w)| < \varepsilon$, para todo $z, w \in U$.
+        \item $|\gamma(s) - \gamma(t)| < \delta$, para todo $s, t \in [t_{k-1}, t_k]$.
+        \item $|S_f(\gamma) - S_f(P)| < \varepsilon$, para alguna elección de $\tau_k \in [t_{k-1}, t_k]$.
+    \end{itemize}
+    
+    Definamos $\sigma$ en cada tramo de $P$ por interpolación lineal:
+    $$\sigma(t) = \frac {t_k - t} {t_k - t_{k-1}} \cdot \gamma(t_{k-1}) + \frac {t - t_{k-1}} {t_k - t_{k-1}} \cdot \gamma(t_k)$$
+    
+    Integrando $f$ sobre $\sigma$, tenemos
+    $$S_f(\sigma) = \sum_{k=1}^n \frac {\gamma(t_k) - \gamma(t_{k-1})} {t_k - t_{k-1}} \int_{t_{k-1}}^{t_k} f \circ \sigma(t) \, dt$$
+    
+    Comparando esta estimación con $S_f(P)$, tenemos
+    $$
+    |S_f(\sigma) - S_f(P)|
+        \le \sum_{k=1}^n \left| \frac {\gamma(t_k) - \gamma(t_{k-1})} {t_k - t_{k-1}} \right|
+            \int_{t_{k-1}}^{t_k} |f \circ \sigma(t) - f \circ \gamma(\tau_k)| \, dt
+    $$
+    
+    Por construcción, $|\sigma(t) - \gamma(\tau_k)| < \delta$ para todo $t \in [t_{k-1}, t_k]$. Entonces,
+    $$
+    |S_f(\sigma) - S_f(P)|
+        \le \varepsilon \cdot \sum_{k=1}^n |\gamma(t_k) - \gamma(t_{k-1})|
+        \le \varepsilon \cdot V_\gamma([a,b])
+    $$
+    
+    Por ende, $S_f(\sigma)$ difiere de $S_f(\gamma)$ por un margen de error
+    $$|S_f(\gamma) - S_f(\sigma)| \le |S_f(\gamma) - S_f(P)| + |S_f(P) - S_f(\sigma)| \le \varepsilon \cdot (1 + V_\gamma([a,b]))$$
+    que puede hacerse arbitrariamente pequeño.
+    
+    \item Si $\gamma$ es una curva suave por tramos, entonces $S_f(\gamma) = F(b) - F(a)$ es el teorema fundamental de las integrales de línea.
+    
+    Si $\gamma$ no es suave por tramos, entonces aproximemos $\gamma$ usando una sucesión de curvas poligonales $\sigma_n$ entre los extremos de $\gamma$ tales que $S_f(\sigma_n)$ converge a $S_f(\gamma)$. Puesto que cada $\sigma_n$ es suave por tramos, tenemos $S_f(\sigma_n) = F(b) - F(a)$ para todo $n \in \N$. Por ende, $S_f(\gamma) = F(b) - F(a)$.
+\end{enumerate}
+\end{solution}

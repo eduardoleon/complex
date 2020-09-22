@@ -1,0 +1,9 @@
+\begin{exercise}
+Sea $f(z)$ una función entera y sea $n \in \N$ tal que $|f(z)| < |z|^n$ en la región $|z| > \rho$. Pruebe que $f(z)$ es una función polinomial.
+\end{exercise}
+
+\begin{solution}
+Tomemos un círculo $\gamma \subset \C$ centrado en el origen de radio $r > \rho$. Repitiendo el argumento dado en la solución del ejercicio 11.(c), para todo $|z| < r$, tenemos la cota
+$$|f^{(n+k)}(z)| \le rn! \cdot \Vert g_k \circ \gamma \Vert_\infty < n! r^{-k}$$
+donde $g_k(\zeta) = f(\zeta) / \zeta^{n+k+1}$. Puesto que $r$ es arbitrario, tenemos $f^{(n+k)} = 0$ para todo $k \ge 1$. Esto implica que $f(z)$ está definida por un polinomio de grado a lo más $n$.
+\end{solution}

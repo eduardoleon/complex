@@ -1,0 +1,12 @@
+\begin{exercise}
+Sea $\gamma$ el círculo unitario $\gamma(t) = e^{it}$, donde $t \in [0, 2\pi]$. Calcule
+$$\int_\gamma z^n \, dz$$
+para cada entero $n \in \Z$.
+\end{exercise}
+
+\begin{solution}
+En el ejercicio $1$ se demostró que, para $n = -1$, la integral es
+$$\int_\gamma \frac 1z \, dz = 2\pi i$$
+En los demás casos, $k = (n + 1) i$ es un entero imaginario no nulo. Entonces,
+$$\int_\gamma z^n \, dz = i \int_0^{2\pi} e^{kt} \, dt = \frac {e^{kt}} k \Bigg \vert_0^{2\pi} = \frac {1 - 1} k = 0$$
+\end{solution}

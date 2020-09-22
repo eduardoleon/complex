@@ -1,0 +1,15 @@
+\begin{exercise}
+Utilice la derivada de $(1-z)^{-1}$ para encontrar la serie de Laurent de
+$$f(z) = \frac 1 {(1-z)^3}$$
+en el anillo $|z| > 1$.
+\end{exercise}
+
+\begin{solution}
+Pongamos $w = 1/z$. Entonces
+$$\frac 1 {1-z} = \frac w {w-1} = 1 - \sum_{n=0}^\infty w^n = 1 - \sum_{n=0}^\infty z^{-n}$$
+Derivando término a término, tenemos
+$$\frac 1 {(1-z)^2} = \sum_{n=1}^\infty \binom n1 \, z^{-n-1}$$
+Derivando nuevamente término a término, tenemos
+$$\frac 1 {(1-z)^3} = -\sum_{n=2}^\infty \binom n2 \, z^{-n-2}$$
+Estas series convergen para todo $|w| < 1$, es decir, para todo $|z| > 1$.
+\end{solution}

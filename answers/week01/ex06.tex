@@ -1,0 +1,13 @@
+\begin{exercise}
+Pruebe que $|a + b| \le |a| + |b|$ para todo $a, b \in \C$.
+\end{exercise}
+
+\begin{solution}
+Consideremos la siguiente función polinomial de una variable real:
+$$f(t) = |a + tb|^2 = (a + tb) (\bar a + t \bar b) = \bar aa + t(\bar ab + \bar ba) + t^2 \bar bb$$
+Por construcción, $f(t) \ge 0$ para todo $t \in \R$. Entonces el discriminante de $f$ es no positivo:
+$$(\bar ab + \bar ba)^2 \le 4 \cdot \bar aa \cdot \bar bb \implies \bar ab + \bar ba \le 2|ab|$$
+Entonces tenemos la desigualdad
+$$|a + b|^2 = \bar aa + \bar ab + \bar ba + \bar bb \le |a|^2 + 2|ab| + |b|^2 = (|a| + |b|)^2$$
+Puesto que la norma es no negativa, tomando raíces cuadradas, tenemos $|a + b| \le |a| + |b|$.
+\end{solution}

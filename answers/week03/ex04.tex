@@ -1,0 +1,27 @@
+\begin{exercise}
+Analice la convergencia y la convergencia absoluta de la serie
+$$\sum_{n=1}^\infty \frac {(-1)^n} {n+i}$$
+\end{exercise}
+
+\begin{solution}
+Desdoblemos cada término de la serie en sus partes real e imaginaria:
+$$
+\frac {(-1)^n} {n+i} \cdot \frac {n-i} {n-i} =
+\frac {(-1)^n n} {n^2 + 1} + i \frac {(-1)^{n+1}} {n^2 + 1}
+$$
+Las series de partes reales e imaginarias
+$$
+\sum_{n=1}^\infty \frac {(-1)^n n} {n+i}, \qquad \qquad
+\sum_{n=1}^\infty \frac {(-1)^{n+1}} {n^2 + 1}
+$$
+son ambas convergentes, porque sus términos tienen signos alternantes y valores absolutos que convergen monótonamente a cero. Por ende, la serie del enunciado también es convergente. Sin embargo, la serie de módulos está acotada inferiormente por la serie armónica
+$$
+\sum_{n=1}^\infty \left| \frac {(-1)^n} {n+i} \right|
+    = \sum_{n=1}^\infty \frac 1 {|n+i|}
+    > \sum_{n=1}^\infty \frac 1 {n+1}
+    > \int_2^\infty \frac 1x \, dx
+    = \log x \Big \vert_2^\infty
+= +\infty
+$$
+que es famosamente divergente. Por ende, la serie del enunciado no es absolutamente convergente.
+\end{solution}

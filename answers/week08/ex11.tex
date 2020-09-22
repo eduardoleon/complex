@@ -1,0 +1,15 @@
+\begin{exercise}
+Pruebe que una singularidad aislada de $f(z)$ no puede ser un polo de $g(z) = \exp \circ \, f(z)$.
+\end{exercise}
+
+\begin{solution}
+Sea $D \subset \C$ un disco pequeño agujereado en $z = a$, una singularidad aislada de $f(z)$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Si la singularidad de $f$ en $z = a$ es removible, digamos, definiendo $f(a) = b$, entonces la singularidad de $g$ en $z = a$ también es removible definiendo $g(a) = e^b$.
+    
+    \item Si la singularidad de $f$ en $z = a$ es un polo, entonces $f(D)$ es una vecindad agujereada del infinito y, por ende, $g(D) = \C^\star$. Esto es incompatible con que $g$ tenga un polo en $z = a$.
+    
+    \item Si la singularidad de $f$ en $z = a$ es esencial, entonces $f(D)$ es denso en $\C$ y, por ende, $g(D)$ es denso en $\exp(\C) = \C^\star$. Esto también es incompatible con que $g$ tenga un polo en $z = a$.
+\end{enumerate}
+\end{solution}

@@ -1,0 +1,88 @@
+\documentclass[oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{CJKutf8}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{cancel}
+\usepackage{comment}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage{subfiles}
+\usepackage{xcolor}
+
+\title{Análisis Complejo}
+\author{Eduardo León (\begin{CJK*}{UTF8}{bkai}梁遠光\end{CJK*})}
+\date{Abril 2020}
+
+\theoremstyle{definition}
+\newtheorem*{preliminaries}{Preliminares}
+
+\theoremstyle{plain}
+\newtheorem{exercise}{Ejercicio}
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solución}
+\newtheorem*{remark}{Nota}
+
+\newcommand \ii {\texttt i}
+\newcommand \jj {\texttt j}
+\newcommand \kk {\texttt k}
+\newcommand \pp {\texttt p}
+\newcommand \qq {\texttt q}
+
+\newcommand \C {\mathbb C}
+\newcommand \D {\mathbb D}
+\newcommand \N {\mathbb N}
+\newcommand \Q {\mathbb Q}
+\newcommand \R {\mathbb R}
+\newcommand \Z {\mathbb Z}
+
+\newcommand \F {\mathcal F}
+\newcommand \G {\mathcal G}
+
+\renewcommand \P {\mathcal P}
+
+\newcommand \blue {\textcolor {blue}}
+\newcommand \red  {\textcolor {red}}
+
+\newcommand \mat [1] {\begin{bmatrix} #1 \end{bmatrix}}
+
+\newcommand \p [2] {\dfrac {\partial #1} {\partial #2}}
+\newcommand \s [2] {\p {^2 #1} {#2^2}}
+\newcommand \m [3] {\p {^2 #1} {#2 \partial #3}}
+
+\DeclareMathOperator \id  {id}
+\DeclareMathOperator \dom {dom}
+\DeclareMathOperator \sgn {sgn}
+\DeclareMathOperator \prv {pr.v.}
+
+\DeclareMathOperator \Log {Log}
+\DeclareMathOperator \Res {Res}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\subfile{week01/week01.tex}
+\subfile{week02/week02.tex}
+\subfile{week03/week03.tex}
+\subfile{week04/week04.tex}
+\subfile{week05/week05.tex}
+\subfile{week06/week06.tex}
+\subfile{week07/week07.tex}
+\subfile{week08/week08.tex}
+\subfile{week09/week09.tex}
+\subfile{week10/week10.tex}
+\subfile{week11/week11.tex}
+\subfile{week12/week12.tex}
+\subfile{week13/week13.tex}
+\subfile{week14/week14.tex}
+\subfile{week15/week15.tex}
+
+\end{document}

@@ -1,0 +1,13 @@
+\begin{exercise}
+Sea $\alpha + i \beta \in \C$ tal que $\beta \ne 0$. Encuentre las soluciones de la ecuación $(x + iy)^2 = \alpha + i \beta$.
+\end{exercise}
+
+\begin{solution}
+Por el resultado del ejercicio 1 (a), tenemos $x^2 - y^2 = \alpha$, $2xy = \beta$. Puesto que $\beta \ne 0$, entonces también $x, y \ne 0$. Sustituyendo $y = \beta / 2x$ en la expresión para $\alpha$, tenemos
+$$x^2 - \left( \frac \beta {2x} \right)^2 = \frac {4x^4 - \beta^2} {4x^2} = \alpha \implies 4x^4 - 4\alpha x^2 - \beta^2 = 0$$
+Puesto que $x \in \R$, necesitamos un valor positivo para $x^2$:
+$$x^2 = \frac {-(-4\alpha) + \sqrt{(-4\alpha)^2 - 4(4)(-\beta^2)}} {2(4)} = \frac {\alpha + \sqrt {\alpha^2 + \beta^2}} 2$$
+Sustituyendo en $x^2 - y^2 = \alpha$, tenemos
+$$y^2 = x^2 - \alpha = \frac {\alpha + \sqrt {\alpha^2 + \beta^2}} 2 - \alpha = \frac {-\alpha + \sqrt {\alpha^2 + \beta^2}} 2$$
+Por ende, los valores absolutos $|x|$, $|y|$ están totalmente determinados por la información dada. Los signos de $x, y$ se deben tomar de tal manera que $\sgn x \cdot \sgn y = \sgn \beta$.
+\end{solution}

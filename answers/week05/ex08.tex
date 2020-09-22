@@ -1,0 +1,19 @@
+\begin{exercise}
+Sean $z_2, z_3, z_4 \in \widehat \C$ distintos y $w_2, w_3, w_4 \in \widehat \C$ también distintos. Pruebe que
+\begin{enumerate}[label=(\alph*)]
+    \item Las transformaciones de Möbius preservan la razón anarmónica.
+    \item Existe una única transformación de Möbius $S$ tal que $S(z_j) = w_j$ para $j = 2,3,4$.
+    \item La razón anarmónica de cuatro puntos es real si y sólo si dichos puntos son cocirculares. (Recuerde que la unión de una recta en $\C$ con el punto $\infty$ es considerada un círculo en $\widehat \C$.)
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item La razón anarmónica $(z_1 : z_2 : z_3 : z_4)$ se define como $T(z_1)$, donde $T$ es la única transformación de Möbius que lleva $z_2, z_3, z_4$ a los puntos de referencia $1, 0, \infty$. Si ponemos $w_j = S(z_j)$, donde $S$ es una transformación de Möbius, entonces $(w_1 : w_2 : w_3 : w_4) = TS^{-1}(w_1) = T(z_1)$.
+    
+    \item Esto fue probado en el ejercicio 6.
+    
+    \item Sean $z_1, z_2, z_3, z_4 \in \widehat \C$. Mediante una transformación de Möbius, podemos suponer que $z_2, z_3, z_4$ son precisamente los puntos de referencia $1, 0, \infty$. Entonces $(z_1 : z_2 : z_3 : z_4) = z_1$. Obviamente $z_1$ es real si y sólo si es cocircular con $1, 0, \infty$ en el plano extendido.
+\end{enumerate}
+\end{solution}

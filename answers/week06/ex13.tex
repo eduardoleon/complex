@@ -1,0 +1,42 @@
+\begin{exercise}
+Sea $\gamma : [a,b] \to U$ una curva rectificable en un abierto $U \subset \C$ y sea $f : U \to \C$ una función continua. Pruebe las siguientes afirmaciones:
+\begin{enumerate}[label=(\alph*)]
+    \item $\displaystyle \int_{-\gamma} f(z) \, dz = -\int_\gamma f(z) \, dz$
+    \item $\displaystyle \int_{c+\gamma} f(z-c) \, dz = \int_\gamma f(z) \, dz$, para todo $z \in \C$.
+    \item $\displaystyle \left| \int_\gamma f(z) \, dz \right| \le \int_\gamma |f(z)| \, |dz| \le V_\gamma([a,b]) \cdot \Vert f \circ \gamma \Vert_\infty$, donde
+    \begin{itemize}
+        \item $V_\gamma([a,b])$ es la longitud de arco de $\gamma$.
+        \item $\Vert f \circ \gamma \Vert_\infty$ es el supremo en módulo de $f \circ \gamma$.
+    \end{itemize}
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+Utilizaremos las mismas abreviaciones del ejercicio anterior.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Dada una partición $P \in \P(\gamma)$, sea $-P \in \P(-\gamma)$ la partición cuyos tramos son las reversas $-T$ para cada tramo $T$ de $P$. Entonces las estimaciones de la integral sobre $-\gamma$ son
+    $$S_f(-P) = \sum_{k=1}^n f \circ \gamma(\tau_k) \cdot [\gamma(t_{k-1}) - \gamma(t_k)] = -S_f(P)$$
+    Puesto que $\left \Vert -P \right \Vert = \Vert P \Vert$, tenemos
+    $$S_f(-\gamma) = \lim_{\Vert P \Vert \to 0} S_f(-P) = -\lim_{\Vert P \Vert \to 0} S_f(P) = -S_f(\gamma)$$
+    
+    \item Dada una partición $P \in \P(\gamma)$, sea $c + P \in \P(c + \gamma)$ la partición cuyos tramos son $c + T$ para cada tramo $T$ de $P$. Poniendo $g(z) = f(z-c)$, las estimaciones de la integral desplazada son
+    $$S_g(c + P) = \sum_{k=1}^n f \circ \gamma(\tau_k) \cdot [\gamma(t_k) - \gamma(t_{k-1})] = S_f(P)$$
+    Puesto que $\Vert c + P \Vert = \Vert P \Vert$, tenemos
+    $$S_g(c + \gamma) = \lim_{\Vert P \Vert \to 0} S_g(c + P) = \lim_{\Vert P \Vert \to 0} S_f(P) = S_f(\gamma)$$
+    
+    \item Para toda partición $P \in \P(\gamma)$, abreviemos
+    $$S_f(|P|) = \sum_{k=1}^n f \circ \gamma(\tau_k) \cdot |\gamma(t_k) - \gamma(t_{k-1})|$$
+    Consecuentemente, abreviaremos también
+    $$S_f(|\gamma|) = \int_\gamma f(z) \, |dz|$$
+    Por desigualdad triangular, $|S_f(P)| \le S_{|f|}(|P|)$. Entonces,
+    $$|S_f(\gamma)| = \lim_{\Vert P \Vert \to 0} |S_f(P)| \le \lim_{\Vert P \Vert \to 0} S_{|f|}(|P|) = S_{|f|}(|\gamma|)$$
+    Por construcción, $|f(z)| \le \Vert f \circ \gamma \Vert_\infty$ sobre la curva $\gamma$. Entonces,
+    $$
+    S_{|f|}(|\gamma|)
+        = \lim_{\Vert P \Vert \to 0} S_{|f|}(|P|)
+        \le \lim_{\Vert P \Vert \to 0} S_1(|P|) \cdot \Vert f \circ \gamma \Vert_\infty
+        = V_\gamma([a,b]) \cdot \Vert f \circ \gamma \Vert_\infty
+    $$
+\end{enumerate}
+\end{solution}

@@ -1,0 +1,30 @@
+\begin{exercise}
+Dado un entero $k \ge 1$, calcule la integral
+$$S = \int_{-\infty}^\infty \frac {dx} {(1 + x^2)^{k+1}}$$
+\end{exercise}
+
+\begin{solution}
+Consideremos la curva $\gamma \subset \C$ definida por los siguientes tramos:
+\begin{itemize}
+    \item $\gamma_1$, el segmento de recta desde $z = -R$ hasta $z = R$.
+    \item $\gamma_2$, el semicírculo antihorario desde $z = R$ hasta $z = -R$.
+\end{itemize}
+Consideremos también la función auxiliar $g(z)$ y su $k$-ésima derivada definidas por
+$$
+g(z) = \frac 1 {(z+i)^{k+1}}, \qquad \qquad \qquad
+g^{(k)}(z) = \frac {(2k)!} {k!} \cdot \frac {(-1)^k} {(z+i)^{2k+1}}
+$$
+Tomando el límite cuando $R \to \infty$, tenemos la estimación
+$$
+S
+    \approx \int_{\gamma_1} \frac {g(z)} {(z-i)^{k+1}} \, dz
+    \approx \int_\gamma     \frac {g(z)} {(z-i)^{k+1}} \, dz
+    = \frac {2\pi i} {k!} \cdot g^{(k)}(i)
+$$
+Sustituyendo la expresión para $g^{(k)})(z)$ evaluada en $z = i$, tenemos
+$$
+S
+    = \frac {2\pi i} {k!} \cdot \frac {(2k)!} {k!} \cdot \frac {(-1)^k} {(2i)^{2k+1}}
+    = \frac \pi {2^{2k}} \cdot \binom {2k} k
+$$
+\end{solution}

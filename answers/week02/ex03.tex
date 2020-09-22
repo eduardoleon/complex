@@ -1,0 +1,36 @@
+\begin{exercise}
+Escriba las ecuaciones de Cauchy-Riemann en coordenadas polares.
+\end{exercise}
+
+\begin{solution}
+Sea $u + iv = f(x + iy)$ una función holomorfa. Las ecuaciones de Cauchy-Riemann son
+$$\p ux = \p vy, \qquad \qquad \p vx = -\p uy$$
+Consideremos la representación polar $x + iy = re^{i\theta}$ en el dominio. Entonces,
+\begin{align*}
+    \p xr &= \cos \theta, & \p x \theta &= -r \sin \theta, \\
+    \p yr &= \sin \theta, & \p y \theta &= r \cos \theta
+\end{align*}
+Por la regla de la cadena, tenemos
+$$\p ur = \p xr \p ux + \p yr \p uy = \cos \theta \p ux + \sin \theta \p uy$$
+Multiplicando y dividiendo por $1/r$, tenemos
+$$
+\p ur
+    = \frac 1r \left[ r \cos \theta \p vy - r \sin \theta \p vx \right]
+    = \frac 1r \left[ \p y \theta \p vy + \p x \theta \p vx \right]
+    = \frac 1r \p v \theta
+$$
+Por otro lado, también usando la regla de la cadena, tenemos
+$$\p vr = \p xr \p vx + \p yr \p vy = \cos \theta \p vx + \sin \theta \p vy$$
+Multiplicando y dividiendo por $1/r$, tenemos
+$$
+\p vr
+    = \frac 1r \left[ -r \cos \theta \p uy + r \sin \theta \p vx \right]
+    = \frac 1r \left[ -\p y \theta \p uy - \p x \theta \p ux \right]
+    = -\frac 1r \p u \theta
+$$
+Entonces hemos obtenido las ecuaciones de Cauchy-Riemann polares
+$$\p ur = \frac 1r \p v \theta, \qquad \qquad \p vr = -\frac 1r \p u \theta$$
+Una forma más geométrica de deducir este mismo resultado es observar que (a) los conjuntos
+$$\left \{ \p {} x, \p {} y \right \}, \qquad \qquad \left \{ \p {} r, \frac 1r \p {} \theta \right \}$$
+son bases ortonormales locales de $\C$ como $\R$-espacio vectorial, (b) la transformación lineal que relaciona a estas bases es una rotación, (c) las ecuaciones de Cauchy-Riemann son invariantes bajo rotaciones.
+\end{solution}

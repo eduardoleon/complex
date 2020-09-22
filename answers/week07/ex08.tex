@@ -1,0 +1,47 @@
+\begin{exercise}
+Sea $\gamma$ una curva simple y positivamente orientada.
+\begin{enumerate}[label=(\alph*)]
+    \item Pruebe que
+    $$\int_\gamma \bar z \, dz = 2iA$$
+    donde $A$ es el área de la región limitada por $\gamma$.
+    
+    \item Utilice el ítem anterior para calcular
+    $$\int_\gamma \Re(z) \, dz, \qquad \qquad \int_\gamma \Im(z) \, dz$$
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item Pongamos $z = x + iy$. En el ejercicio 16 de la semana anterior, probamos que
+    $$
+    \int_\gamma \bar z \, dz
+        = \int_\gamma (x - iy) \, (dx + i \, dy)
+        = \cancelto 0 {\int_\gamma (x \, dx + y \, dy)} + i \int_\gamma (x \, dy - y \, dx)
+    $$
+    
+    Por el teorema de Green, tenemos
+    $$
+    \int_\gamma \bar z \, dz
+        = i \int_\gamma (x \, dy - y \, dx)
+        = 2i \iint_D dx \, dy
+        = 2iA(D)
+    $$
+    donde $D$ es la región encerrada por $\gamma$.
+    
+    \item La integral de la parte real es
+    $$
+    \int_\gamma \Re(z) \, dz
+        = \cancelto 0 {\frac 12 \int_\gamma z \, dz}
+        + \frac 12 \int_\gamma \bar z \, dz
+        = iA(D)
+    $$
+    
+    La integral de la parte imaginaria es
+    $$
+    \int_\gamma \Im(z) \, dz
+        = \cancelto 0 {\frac 1 {2i} \int_\gamma z \, dz}
+        - \frac 1 {2i} \int_\gamma \bar z \, dz
+        = -A(D)$$
+\end{enumerate}
+\end{solution}

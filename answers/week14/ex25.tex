@@ -1,0 +1,13 @@
+\begin{exercise}
+Determine si $\log |z| = \frac 12 \log(x^2 + y^2)$ tiene una armónica conjugada en $\C^\star$.
+\end{exercise}
+
+\begin{solution}
+La función $u(z) = \log |z|$ es armónica:
+$$\triangle u = \s ux + \s uy = \frac {y^2 - x^2} {(x^2 + y^2)^2} + \frac {x^2 - y^2} {(x^2 + y^2)^2} = 0$$
+Si $v(z)$ fuese una armónica conjugada de $\log |z|$, entonces satisfaría
+$$v(z_1) = v(z_0) + \int_\gamma \frac {x \, dy - y \, dx} {x^2 + y^2}$$
+para cualquier camino $\gamma \subset \C^\star$ desde $z_0$ hasta $z_1$. En particular, tomemos $\gamma$ como el círculo de radio $r > 0$ centrado en el origen, recorrido desde $z_0 = r$ hasta $z_1 = r$. Entonces,
+$$0 = v(r) - v(r) = \int_\gamma \frac {x \, dy - y \, dx} {x^2 + y^2} = \int_0^{2\pi} d\theta = 2\pi$$
+lo cual es contradictorio. Por ende, $\log |z|$ no admite una armónica conjugada en $\C^\star$.
+\end{solution}

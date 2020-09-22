@@ -1,0 +1,30 @@
+\begin{exercise}
+Pruebe que las raíces de $p(z) = z^4 - z^3 - z + 5$ están en la región $1 < |z| < 2$ y cada una de ellas está en un cuadrante distinto.
+\end{exercise}
+
+\begin{solution}
+Las raíces de $p(z)$ están en la región $1 < |z| < 2$, porque
+\begin{itemize}
+    \item Si $|z| \le 1$, entonces $p(z) \approx 5$, por ende $p(z) \ne 0$.
+    \item Si $|z| \ge 2$, entonces $p(z) \approx z^4$, por ende $p(z) \ne 0$.
+\end{itemize}
+Las raíces de $p(z)$ no son ni reales ni imaginarios puros, porque
+\begin{itemize}
+    \item Si $\Im(z) = 0$, entonces $p(z) = (z - 1)^2 (z^2 + z + 1) + 4 > 0$.
+    \item Si $\Re(z) = 0$, entonces $\Re \circ p(z) = z^4 + 5 > 0$, por ende $p(z) \ne 0$.
+\end{itemize}
+Consideremos la curva $\gamma$ definida por los siguientes tramos:
+\begin{itemize}
+    \item $\gamma_1$, el segmento de recta orientado desde $z = 1$ hasta $z = 2$
+    \item $\gamma_2$, el segmento de recta orientado desde $z = 2i$ hasta $z = i$.
+    \item $\gamma_3$, el arco del círculo $|z| = 1$ en sentido horario desde $z = i$ hasta $z = 1$.
+    \item $\gamma_4$, el arco del círculo $|z| = 2$ en sentido antihorario desde $z = 2$ hasta $z = 2i$.
+\end{itemize}
+Puesto que $p(z)$ es una función entera, el número de ceros de $p(z)$ encerrados por $\gamma$ es
+$$
+\frac 1 {2\pi i} \int_\gamma \frac {p'(z)} {p(z)} \, dz
+    = \frac 1 {2\pi i} \int_{p \circ \gamma} \frac {dz} z
+    = n(p \circ \gamma, 0)
+$$
+Por construcción, los tramos $p \circ \gamma_1$, $p \circ \gamma_2$, $p \circ \gamma_3$ están en el semiplano derecho $\Re(w) > 0$ y el tramo final $p \circ \gamma_4$ es aproximadamente el círculo $|w| = 16$. Entonces $n(p \circ \gamma, 0) = 1$. Por ende, $p(z)$ tiene una sola raíz simple en el primer cuadrante. Finalmente, las raíces de $p(z)$ vienen en pares de complejos conjugados, así que las otras tres raíces están en el segundo, tercer y cuarto cuadrante.
+\end{solution}

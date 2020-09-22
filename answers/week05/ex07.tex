@@ -1,0 +1,21 @@
+\begin{exercise}
+Sean $z_2, z_3, z_4 \in \widehat \C$ tres puntos distintos y sea $S$ la transformación de Möbius que los envía a $1, 0, \infty$, respectivamente. Escriba una fórmula para $S$ en los siguientes casos: (a) $z_2, z_3, z_4 \in \C$ son finitos, (b) $z_2 = \infty$, (c) $z_3 = \infty$, (d) $z_4 = \infty$.
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item Asegurémonos de que $z_3, z_4$ sean enviados a $0, \infty$, respectivamente:
+    $$T(z) = \frac {z - z_3} {z - z_4}$$
+    Para que $z_2$ sea enviado a $1$, reescalamos:
+    $$S(z) = \frac {T(z)} {T(z_2)} = \frac {z - z_3} {z - z_4} \cdot \frac {z_2 - z_4} {z_2 - z_3}$$
+    
+    \item Para $z_2 = \infty$, tenemos $T(\infty) = 1$. Por ende, $S(z) = T(z)$.
+    
+    \item Para $z_3 = \infty$, usaremos $T(z) = (z - z_4)^{-1}$. Para que $z_2$ sea enviado a $1$, reescalamos:
+    $$S(z) = \frac {T(z)} {T(z_2)} = \frac {z_2 - z_4} {z - z_4}$$
+    
+    \item Para $z_4 = \infty$, usaremos $T(z) = z - z_3$. Para que $z_2$ sea enviado a $1$, reescalamos:
+    $$S(z) = \frac {T(z)} {T(z_2)} = \frac {z - z_3} {z_2 - z_3}$$
+\end{enumerate}
+\end{solution}

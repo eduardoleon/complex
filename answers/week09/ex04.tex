@@ -1,0 +1,52 @@
+\begin{exercise}
+Pruebe que la función $f(z) = e^z - z$ tiene un cero simple en cada franja abierta
+$$\Re(z) > 0, \qquad \qquad n < \frac {\Im(z)} {2\pi} < n+1$$
+y no tiene otros ceros.
+\end{exercise}
+
+\begin{solution}
+Descartemos que $f(z)$ tenga ceros de las siguientes formas:
+\begin{itemize}
+    \item Si $z = iy$ fuese un cero de $f(z)$, entonces $|e^z| = 1$, por ende $z = e^z = \pm i$. Pero, en este caso, $y$ no es múltiplo de $\pi/2$, así que $e^z$ no es imaginario puro. Contradicción.
+    
+    \item Si $z = x + 2\pi ni$, para cualquier $x \in \R$, entonces $e^z \in \R$, por ende $z = x$. Pero la ecuación $e^x = x$ no tiene solución en los números reales.
+\end{itemize}
+Entonces $f(z)$ no tiene ceros ni en la recta $\Re(z) = 0$ ni en las rectas $\Im(z) = 2\pi n$. Cortando al plano a lo largo de estas rectas, tenemos las franjas de parte real positiva definidas por
+$$\Re(z) > 0, \qquad \qquad n < \frac {\Im(z)} {2\pi} < n+1$$
+y las franjas de parte real negativa definidas por
+$$\Re(z) < 0, \qquad \qquad n < \frac {\Im(z)} {2\pi} < n+1$$
+
+\newpage
+
+\noindent Ahora consideremos los siguientes objetos:
+\begin{itemize}
+    \item Un número real $x \in \R$ de valor absoluto muy grande, sea positivo o negativo.
+    \item Los puntos $A_n = 2\pi ni$, $B_n = x + 2\pi ni$.
+    \item El rectángulo $\rho$ con vértices en los puntos $A_n, B_n, B_{n+1}, A_{n+1}$. Observemos que $\rho$ es un camino en sentido antihorario si $x > 0$, pero en sentido horario si $x < 0$.
+\end{itemize}
+En el límite, cuando $|x| \to \infty$, la región encerrada por $\rho$ es una de las franjas antes definidas. Puesto que $f(z)$ es una función entera, el número de ceros en esta franja se obtiene evaluando la integral
+$$
+\int_\rho \frac {f'(z)} {f(z)} \, dz
+    = \int_{f \circ \rho} \frac {dz} z
+    = 2\pi i \cdot n(f \circ \rho, 0)
+$$
+y tomando el límite del resultado cuando $x \to \pm \infty$. (Para ser precisos, en las franjas negativas, obtenemos el negativo del número de ceros de $f(z)$.) Entonces tenemos que construir la curva $f \circ \rho$. Tres tramos son relativamente sencillos:
+\begin{itemize}
+    \item Los tramos $f(A_n) \to f(B_n)$, $f(B_{n+1}) \to f(A_{n+1})$ son segmentos horizontales.
+    
+    \item El tramo $f(A_{n+1}) \to f(A_n)$ es un semicírculo totalmente contenido en el semiplano derecho, excepto por un punto de tangencia en el eje imaginario, que no es el origen.
+\end{itemize}
+Ninguno de estos tres tramos contiene lazos alrededor del origen. Por ende, la concatenación de estos tres tramos es homóloga al camino en línea recta $\sigma : f(B_{n+1}) \to f(B_n)$. El último tramo $\gamma : f(B_n) \to f(B_{n+1})$ no admite una descripción analítica sencilla, así que, para evaluar la integral
+$$\int_{f \circ \rho} \frac {dz} z = \int_{\gamma \star \sigma} \frac {dz} z$$
+apelaremos a las siguientes estimaciones:
+\begin{itemize}
+    \item Para $x \gg 0$, tenemos $f(z) \approx e^z$, así que $\gamma$ es aproximadamente el círculo $\kappa : |z| = e^x$. En particular, $\gamma \star \sigma$ es homóloga a $\kappa$ en $\C^\star$, porque $\sigma$ no contiene lazos alrededor del origen. Entonces,
+    $$\int_{\gamma \star \sigma} \frac {dz} z = \int_{\kappa} \frac {dz} z = 2\pi i$$
+    Por ende, $f(z)$ tiene un único cero en cada franja de parte real positiva.
+    
+    \item Para $x \ll 0$, tenemos $f(z) \approx -z$, así que $\gamma$ es aproximadamente el reverso de $\sigma$. En particular, $\gamma \star \sigma$ es homóloga a cero en $\C^\star$, porque es contractible en dicha región. Entonces,
+    $$\int_{\gamma \star \sigma} \frac {dz} z = \int_0 \frac {dz} z = 0$$
+    Por ende, $f(z)$ no tiene ceros de parte real negativa.
+\end{itemize}
+Esto demuestra que $f(z)$ tiene los ceros indicados y ningún otro más.
+\end{solution}

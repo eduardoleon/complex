@@ -1,0 +1,18 @@
+\begin{exercise}
+Calcule la transformación general que envía el círculo $|z| = R$ a sí mismo.
+\end{exercise}
+
+\begin{solution}
+Pongamos $w = z/R$. La transformación general que fija el círculo $|w| = 1$ es
+$$\tilde T(w) = \lambda \cdot \frac {w - \alpha} {1 - \bar \alpha w}$$
+donde $|\lambda| = 1$, $|\alpha| \ne 1$. Regresando a la coordenada $z$, tenemos
+$$\frac 1R \, T(z) = \lambda \cdot \frac {z/R - \alpha} {1 - \bar \alpha z/R}$$
+que tiene casi la misma forma que la ecuación original. Reescalando los parámetros,
+$$\lambda \mapsto \frac \lambda {R^2}, \qquad \qquad \alpha \mapsto \frac \alpha R$$
+obtenemos la expresión final
+$$
+\frac 1R \, T(z) = \frac \lambda {R^2} \cdot \frac {z/R - \alpha / R} {1 - \bar \alpha z / R^2}
+\implies
+T(z) = \lambda \cdot \frac {z - \alpha} {R^2 - \bar \alpha z}$$
+donde $|\lambda| = R^2$, $|\alpha| \ne R$. Ésta es la transformación general que fija el círculo $|z| = R$.
+\end{solution}

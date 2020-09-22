@@ -1,0 +1,15 @@
+\begin{exercise}
+Sea $\gamma \subset \C$ un ciclo que acota una región $\Omega \subset \C$ y sea $f(z)$ una función analítica definida en una región más grande $\Omega' \subset \C$ que contiene tanto a $\gamma$ como a $\Omega$. Pruebe que
+$$
+\int_\gamma f(z) \, dz = 0, \qquad \qquad
+f(z_0) = \frac 1 {2\pi i} \int_\gamma \frac {f(z)} {z - z_0} \, dz
+$$
+para todo punto $z_0 \in \Omega$.
+\end{exercise}
+
+\begin{solution}
+Tomemos un punto $z \notin \Omega'$. En particular, (a) $\gamma$ no pasa por $z$, así que $n(\gamma, z)$ es un entero bien definido, (b) $z \notin \Omega$, así que $n(\gamma, z) = 0$. Entonces $\gamma$ es homóloga a cero en $\Omega$. Por ende,
+$$\int_\gamma f(z) \, dz = 0$$
+Además, para todo $z_0 \in \Omega$, la curva $\gamma$ es homóloga en $\Omega' - \{ z_0 \}$ a un pequeño círculo alrededor de $z_0$, que podemos asumir contractible en $\Omega'$. Entonces, por la fórmula integral de Cauchy,
+$$f(z_0) = \frac 1 {2\pi i} \int_\gamma \frac {f(z)} {z - z_0} \, dz$$
+\end{solution}

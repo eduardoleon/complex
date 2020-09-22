@@ -1,0 +1,20 @@
+\begin{exercise}
+Pruebe el teorema de Casorati-Weierstrass: Si $f : U \to \C$ es una función analítica con una singularidad esencial en $z = a$, entonces su imagen $f(U)$ es densa en el plano complejo.
+\end{exercise}
+
+\begin{remark}
+Si $U' \subset U$ es una subvecindad agujereada de la singularidad esencial, entonces la restricción $f \mid U'$ sigue teniendo la misma singularidad esencial, por ende $f(U')$ es densa en el plano complejo.
+\end{remark}
+
+\begin{solution}
+Supongamos por contradicción que la imagen $f(U)$ no es densa en $\mathbb C$. Existe algún punto $b \in \C$ separado de $f(U)$ por una distancia positiva. Por construcción, la función $g : U \to \C$ definida por
+$$g(z) = \frac 1 {f(z) - b}$$
+tiene una singularidad aislada en $z = a$ al igual que $f(z)$. Sin embargo, esta singularidad es removible, ya que $g(z)$ es acotada por construcción. Entonces,
+$$f(z) = \frac 1 {g(z)} + b$$
+tiene un límite bien definido en la esfera de Riemann cuando $z \to a$. Tenemos dos posibles casos:
+\begin{itemize}
+    \item Si el límite es finito, entonces $f(z)$ tiene una singularidad removible en $z = a$.
+    \item Si el límite es infinito, entonces $f(z)$ tiene un polo en $z = a$.
+\end{itemize}
+Ninguno de estos casos es compatible con que $f(z)$ tenga una singularidad esencial en $z = a$.
+\end{solution}

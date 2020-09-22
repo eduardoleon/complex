@@ -1,0 +1,29 @@
+\begin{exercise}
+Decimos que un conjunto $E \subset \C$ es estrellado si existe un punto $z^\star \in E$ tal que todo $z \in E$ está unido a $z^\star$ por el segmento $[z^\star, z]$ totalmente contenido en $E$. Demuestre que, si $f(z)$ es una función analítica sobre un abierto estrellado $E \subset \C$, entonces
+$$\int_\gamma f(z) \, dz = 0$$
+\end{exercise}
+
+\begin{solution}
+Consideremos
+\begin{itemize}
+    \item El retracto de deformación $\varphi_s : E \to E$ definido por $\varphi_s(z) = (1-s)z + sz^\star$.
+    \item Una curva arbitraria $\gamma : [0,1] \to E$.
+    \item El camino constante $\alpha(t) = z_0$ en el extremo inicial $z_0 = \gamma(0)$.
+    \item El camino constante $\beta(t) = z_1$ en el extremo final $z_1 = \gamma(1)$
+\end{itemize}
+Entonces,
+\begin{itemize}
+    \item Encojamos $\gamma$ hacia $z_0$ mediante $\gamma_s = \varphi_s \circ \gamma$.
+    \item Estiremos $\alpha$ hacia $z_0$ mediante $\alpha_s(t) = \varphi_{ts}(z_0)$.
+    \item Estiremos $\beta$ hacia $z_0$ mediante $\beta_s(1-t) = \varphi_{ts}(z_0)$.
+\end{itemize}
+Por construcción,
+\begin{itemize}
+    \item $\gamma_1$ es el camino constante en $z^\star$.
+    \item $\gamma_s$ empieza donde termina $\alpha_s$ y termina donde empieza $\beta_s$.
+    \item $\sigma_s = \alpha_s \star \gamma_s \star \beta_s$ empeza en $z_0$ y termina en $z_1$, para todo $s \in [0,1]$.
+    \item $\tau = \alpha_1 \star \beta_1$ sólo depende de los extremos $z_0, z_1$.
+\end{itemize}
+Entonces tenemos las homotopías $\gamma \simeq \sigma_0 \simeq \sigma_1 \simeq \tau$. Puesto que toda curva $\gamma$ es homotópica a una curva $\tau$ de referencia, $E$ es simplemente conexo. Entonces, por el teorema de Cauchy-Goursat,
+$$\int_\gamma f(z) \, dz = 0$$
+\end{solution}

@@ -1,0 +1,14 @@
+\begin{exercise}
+Pruebe que, si $\F$ es normal, entonces $\F' = \{ f' : f \in \F \}$ también es normal.
+\end{exercise}
+
+\begin{solution}
+Diremos que un compacto $K \subset U$ es pequeño si está encerrado en un círculo $\gamma \subset U$ homólogo a cero. En este caso, sea $s = d(\gamma, K)$ y sea $r > 0$ el radio de $\gamma$. Por la fórmula integral de Cauchy,
+$$
+|f'(z_0)|
+    \le \frac 1 {2\pi} \int_\gamma \frac {|f(z)|} {|z - z_0|^2} \, |dz|
+    \le \frac 1 {2\pi} \cdot 2\pi r \cdot \frac {\Vert f \circ \gamma \Vert_\infty} {s^2}
+    < \frac {rM_\gamma} {s^2} =: M_K'
+$$
+para todo $z_0 \in K$. Todo punto $z_0 \in U$ esta en el interior de un compacto pequeño, así que todo compacto grande $K \subset U$ se puede cubrir con una cantidad finita de compactos pequeños $K_1, \dots, K_n \subset U$. Entonces $M_K' = \max(M_{K_1}', \dots, M_{K_n}')$ es una cota uniforme para $\Vert f'|_K \Vert_\infty$. Por ende, $\F'$ es una familia normal.
+\end{solution}

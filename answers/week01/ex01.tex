@@ -1,0 +1,36 @@
+\begin{exercise}
+Sea $z = x + iy$, donde $x, y$ son números reales. Encuentre las partes real e imaginaria de
+$$z^2, \quad \frac 1z, \quad \frac {z-1} {z+1}, \quad \frac 1 {z^2}, \quad \sqrt i, \quad \sqrt {-i}$$
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item Sustituyendo $z = x + iy$, tenemos $z^2 = (x + iy)^2 = (x^2 - y^2) + (2xy)i$, cuyas partes real e imaginaria son $x^2 - y^2$, $2xy$, respectivamente.
+    
+    \item Sustitiyendo $z = x + iy$ en $1/z$, tenemos
+    $$\frac 1z = \frac 1 {x + iy} \cdot \frac {x - iy} {x - iy} = \frac {x - iy} {x^2 + y^2}$$
+    cuyas partes real e imaginaria son, respectivamente,
+    $$\frac x {x^2 + y^2}, \qquad \qquad \frac {-y} {x^2 + y^2}$$
+    
+    \item Sustitiyendo $z = x + iy$ en $\dfrac {z-1} {z+1}$, tenemos
+    $$\frac {z-1} {z+1} = 1 - \frac 2 {z+1} = 1 - \frac 2 {(x+1) + iy} \cdot \frac {(x+1) - iy} {(x+1) - iy}$$
+    cuyas partes real e imaginaria son, respectivamente,
+    $$1 - \frac {2x + 2} {(x+1)^2 + y^2}, \qquad \qquad \frac {2y} {(x+1)^2 + y^2}$$
+    
+    \item Combinando los resultados de los ítems (a) y (b), tenemos
+    $$\frac 1 {z^2} = \left( \frac 1z \right)^2= \left( \frac {x - iy} {x^2 + y^2} \right)^2 = \frac {(x^2 - y^2) - (2xy)i} {(x^2 + y^2)^2}$$
+    cuyas partes real e imaginaria son, respectivamente,
+    $$\frac {x^2 - y^2} {(x^2 + y^2)^2}, \qquad \qquad \frac {-2xy} {(x^2 + y^2)^2}$$
+    
+    \item La raíz cuadrada de $i$ ubicada en el semiplano superior es
+    $$\sqrt i = \sqrt {e^{i\pi/2}} = e^{i\pi/4} = \cos \frac \pi4 + i \sin \frac \pi4$$
+    cuyas partes real e imaginaria son ambas iguales a
+    $$\cos \frac \pi4 = \sin \frac \pi4 = \frac {\sqrt 2} 2$$
+    
+    \item La raíz cuadrada de $-i$ ubicada en el semiplano superior es
+    $$\sqrt {-i} = \sqrt {e^{3i\pi/2}} = e^{3i\pi/4} = \cos \frac {3\pi} 4 + i \sin \frac {3\pi} 4$$
+    cuyas partes real e imaginaria son, respectivamente,
+    $$\cos \frac {3\pi} 4 = -\frac {\sqrt 2} 2, \qquad \qquad \sin \frac {3\pi} 4 = \frac {\sqrt 2} 2$$
+\end{enumerate}
+\end{solution}

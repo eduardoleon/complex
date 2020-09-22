@@ -1,0 +1,36 @@
+\begin{exercise}
+Halle el radio de convergencia de las siguientes series
+$$\sum_n n^p z^n, \qquad \qquad \sum_n \frac {z^n} {n!}, \qquad \qquad \sum_n z^{n!}$$
+\end{exercise}
+
+\begin{solution}
+En cada caso, sea $a_n$ el $n$-ésimo término de la serie. Entonces,
+\begin{itemize}
+    \item Para $a_n = n^p z^n$, consideremos la cantidad auxiliar
+    $$
+    \lim_{n \to \infty} \left| \frac {a_{n+1}} {a_n} \right|
+        = \lim_{n \to \infty} \left( \frac {n+1} n \right)^p \cdot |z|
+        = |z|
+    $$
+    
+    La serie converge absolutamente cuando $|z| < 1$ y no converge cuando $|z| > 1$. Por ende, el radio de convergencia de la serie es $1$.
+    
+    \item Para $a_n = z^n / n!$, consideremos la cantidad auxiliar
+    $$
+    \lim_{n \to \infty} \left| \frac {a_{n+1}} {a_n} \right|
+        = \lim_{n \to \infty} \frac {n!} {(n+1)!} \cdot |z|
+        = 0
+    $$
+    
+    La serie converge absolutamente cuando $0 < 1$, es decir, siempre. Por ende, el radio de convergencia de la serie es $\infty$.
+    
+    \item Para $a_n = z^{n!}$, consideremos la cantidad auxiliar
+    $$
+    A
+        = \lim_{n \to \infty} \left| \frac {a_{n+1}} {a_n} \right|
+        = \lim_{n \to \infty} \frac {|z|^{(n+1)!}} {|z|^{n!}}
+    $$
+    
+    Para $|z| < 1$, tenemos $A = 0$ y la serie converge absolutamente. Para $|z| > 1$, tenemos $A = \infty$ y la serie no converge. Por ende, el radio de convergencia de la serie es $1$.
+\end{itemize}
+\end{solution}

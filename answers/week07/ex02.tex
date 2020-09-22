@@ -1,0 +1,119 @@
+\begin{exercise}
+Calcule las siguientes integrales de contorno:
+
+\begin{enumerate}[label=(\alph*)]
+    \item $\displaystyle \int_\gamma \frac {e^z} {z + 1} \, dz$, donde $\gamma(t) = 2e^{it}$, $t \in [0, 2\pi]$
+    
+    \item $\displaystyle \int_\gamma \frac {z^2 + 3z - 1} {(z + 3) (z - 2)} \, dz$, donde $\gamma(t) = 1 + 2e^{it}$, $t \in [0, 2\pi]$
+    
+    \item $\displaystyle \int_\gamma \frac {e^{\pi z}} {z^2 + 1} \, dz$, donde $\gamma(t) = 2e^{it}$, $t \in [0, 2\pi]$
+    
+    \item $\displaystyle \int_\gamma z^m (1-z)^n \, dz$, donde $\gamma(t) = 2e^{it}$, $t \in [0, 2\pi]$.
+    
+    \item $\displaystyle \int_\gamma \frac {e^{iz}} {z^2} \, dz$, donde $\gamma(t) = e^{it}$, $t \in [0, 2\pi]$.
+    
+    \item $\displaystyle \int_\gamma \frac {dz} {z-a}$, donde $\gamma(t) = a + re^{it}$, $t \in [0, 2\pi]$.
+    
+    \item $\displaystyle \int_\gamma \frac {\sin(z)} {z^3} \, dz$, donde $\gamma(t) = e^{it}$, $t \in [0, 2\pi]$.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item La curva $\gamma$ da una vuelta antihoraria alrededor de $z = -1$. Entonces,
+    $$\int_\gamma \frac {e^z} {z + 1} \, dz = \frac {2\pi i} e$$
+    
+    \item La curva $\gamma$ da una vuelta alrededor de $z = 2$ y ninguna alrededor de $z = -3$. Pongamos
+    $$f(z) = \frac {z^2 + 3z - 1} {z + 3}$$
+    
+    Por la fórmula integral de Cauchy,
+    $$\int_\gamma \frac {f(z)} {z - 2} \, dz = 2\pi i \cdot f(2) = \frac {18 \pi i} 5$$
+    
+    \item La curva $\gamma$ da una vuelta alrededor de $z = \pm i$. Pongamos
+    \begin{itemize}
+        \item $\gamma_1(t) = 2e^{it}$, donde $t \in [0, \pi]$.
+        \item $\gamma_2(t) = 2e^{it}$, donde $t \in [\pi, 2\pi]$.
+        \item $\gamma_3(t) = 2t$, donde $t \in [-1, 1]$.
+    \end{itemize}
+    
+    Por construcción, $\gamma$ es la concatenación de $\gamma_1, \gamma_2$. Por la linealidad de la integral,
+    $$
+    \int_\gamma \omega
+        = \int_{\gamma_1 + \gamma_2} \omega
+        = \int_{\gamma_1 + \gamma_3} \omega + \int_{\gamma_2 - \gamma_3} \omega
+    $$
+    
+    Ahora sí, $\gamma_1 + \gamma_3$ encierra sólo a $z = i$, mientras que $\gamma_2 - \gamma_3$ encierra sólo a $z = -i$. Pongamos
+    $$f_1(z) = \frac {e^{\pi z}} {z + i}, \qquad \qquad f_2(z) = \frac {e^{\pi z}} {z - i}$$
+    
+    Por la fórmula integral de Cauchy, la integral sobre $\gamma_1 + \gamma_3$ es
+    $$
+    \int_{\gamma_1 + \gamma_3} \frac {f_1(z)} {z + i} \, dz
+        = 2\pi i \cdot f_1(i)
+        = 2\pi i \cdot \frac {e^{\pi i}} {2i}
+        = -\pi
+    $$
+    
+    Por la fórmula integral de Cauchy, la integral sobre $\gamma_2 - \gamma_3$ es
+    $$
+    \int_{\gamma_2 - \gamma_3} \frac {f_2(z)} {z - i} \, dz
+        = 2\pi i \cdot f_2(-i)
+        = 2\pi i \cdot \frac {e^{-\pi i}} {-2i}
+        = \pi
+    $$
+    
+    Sumando, nos queda
+    $$
+    \int_\gamma \omega
+        = \int_{\gamma_1 + \gamma_2} \omega + \int_{\gamma_3 + \gamma_4} \omega
+        = -\pi + \pi
+        = 0
+    $$
+    
+    \item La curva $\gamma$ da una vuelta alrededor de $z = 0$ y también alrededor de $z = 1$. Pongamos
+    \begin{itemize}
+        \item $\gamma_1(t) = 2e^{it}$, donde $t \in [-\omega, \omega]$, para cualquier elección de $\omega \in (\pi/3, \pi/2)$.
+        \item $\gamma_2(t) = 2e^{it}$, donde $t \in [\omega, 2\pi - \omega]$.
+        \item $\gamma_3(t) = \cos \omega + it \sin \omega$, donde $t \in [-1, 1]$.
+    \end{itemize}
+    
+    Estrictamente hablando, $\gamma$ no es la concatenación de $\gamma_1, \gamma_2$. Sin embargo, si cortamos el tramo final de $\gamma$, parametrizado por $t \in [2\pi - \omega, 2\pi]$, y lo pegamos al inicio, reparametrizándolo por $t \in [-\omega, 0]$, entonces sí obtenemos $\gamma_1 + \gamma_2$. Por la linealidad de la integral,
+    $$
+    \int_\gamma \omega
+        = \int_{\gamma_1 + \gamma_2} \omega
+        = \int_{\gamma_1 + \gamma_3} \omega + \int_{\gamma_2 - \gamma_3} \omega
+    $$
+    
+    Ahora sí, $\gamma_1 - \gamma_3$ encierra sólo a $z = 1$, mientras que $\gamma_2 + \gamma_3$ encierra sólo a $z = 0$. Pongamos
+    $$f_1(z) = (-1)^n z^m, \qquad \qquad \qquad f_2(z) = (1-z)^n$$
+    
+    Para $n \ge 0$, la integral sobre $\gamma_1 - \gamma_3$ se anula, por el teorema de Cauchy-Goursat. Para $n < 0$, será conveniente poner $s = -(n+1)$. Entonces, por la fórmula integral de Cauchy,
+    $$
+    \int_{\gamma_1 - \gamma_3} \frac {f_1(z)} {(z - 1)^{s+1}} \, dz
+        = 2\pi is! \cdot f_1^{(s)}(1)
+        = 2\pi is! \cdot (-1)^n \cdot \frac {m!} {(m-s)!}
+    $$
+    
+    Para $m \ge 0$, la integral sobre $\gamma_2 + \gamma_3$ se anula, por el teorema de Cauchy-Goursat. Para $m < 0$, será conveniente poner $r = -(m+1)$. Entonces, por la fórmula integral de Cauchy,
+    $$
+    \int_{\gamma_2 + \gamma_3} \frac {f_2(z)} {z^{r+1}} \, dz
+        = 2\pi ir! \cdot f_1^{(r)}(0)
+        = -2\pi ir! \cdot (-1)^m \cdot \frac {n!} {(n-r)!}
+    $$
+    
+    En ambos casos, el ``cociente de factoriales'' es sólo una abreviación formal del producto
+    $$\frac {m!} {(m-s)!} = m (m-1) (m-2) \dots (m-s+1)$$
+    
+    Salgan lo que salgan las integrales sobre $\gamma_1 - \gamma_3$ y $\gamma_2 + \gamma_3$, la suma de ellas es la integral sobre $\gamma$.
+    
+    \item Ls función $f(z) = e^{iz}$ es entera. Por la fórmula integral de Cauchy,
+    $$\int_\gamma \frac {f(z)} {z^2} \, dz = 2\pi i \cdot f'(0) \cdot n(\gamma, 0) = -2\pi$$
+    
+    \item La función $f(z) = 1$ es entera. Por la fórmula integral de Cauchy,
+    $$\int_\gamma \frac {f(z)} {z-a} \, dz = 2\pi i \cdot f(a) \cdot n(\gamma, a) = 2\pi i$$
+    
+    \item La función $f(z) = \sin(z)$ es entera. Por la fórmula integral de Cauchy,
+    $$\int_\gamma \frac {f(z)} {z^3} \, dz = \pi i \cdot f''(0) \cdot n(\gamma, 0) = 0$$
+\end{enumerate}
+\end{solution}

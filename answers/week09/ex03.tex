@@ -1,0 +1,11 @@
+\begin{exercise}
+Pruebe que el conjunto de ceros de la función
+$$f(z) = \sin \frac {1+z} {1-z}$$
+admite un punto de acumulación en $\C$.
+\end{exercise}
+
+\begin{solution}
+La sucesión $w_n = n\pi$, donde $n \in \N$, está conformada por ceros de $\sin(z)$ en el plano $\C$. Puesto que $w_n$ no tiene puntos de acumulación en $\C$, deducimos que $w_n$ se acumula en el infinito en la esfera de Riemann. Ahora consideremos la transformación de Möbius
+$$\varphi(z) = \frac {1+z} {1-z}$$
+Observemos que $\varphi(\infty) = -1$ no es un punto de la sucesión $w_n$. Entonces $z_n = \varphi^{-1}(\pi n)$ es una sucesión de ceros de $f(z) = \sin \circ \, \varphi(z)$ en el plano que se acumula en $\varphi^{-1}(\infty) = 1$.
+\end{solution}

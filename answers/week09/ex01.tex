@@ -1,0 +1,9 @@
+\begin{exercise}
+Determine el mayor disco abierto centrado en el origen donde $f(z) = z^2 + z$ es inyectiva.
+\end{exercise}
+
+\begin{solution}
+Observemos que, si $z_0, z_1$ son las raíces del polinomio $f(z) + c$, para cualquier $c \in \C$ arbitrario, entonces $z_0 + z_1 = -1$. En particular, $\Re(z_0) > -1/2$ si y sólo si $\Re(z_1) < -1/2$, así que $f(z)$ es inyectiva en el semiplano $\Re(z) > -1/2$ y, por ende, $f(z)$ es inyectiva en el disco $|z| < 1/2$.
+
+Por otro lado, todo disco de la forma $|z| < 1/2 + \varepsilon$, donde $\varepsilon > 0$, contiene algún segmento vertical (i.e., paralelo al eje imaginario) que pasa por el punto crítico $z = -1/2$. En este segmento, podemos tomar dos puntos $z_0 = -1/2 + i\delta$, $z_1 = -1/2 - i\delta$, para algún $\delta > 0$. Entonces $f(z_0) = f(z_1)$. Por ende, $f(z)$ no es inyectiva en ningún disco de la forma $|z| < 1/2 + \varepsilon$.
+\end{solution}

@@ -1,0 +1,52 @@
+\begin{exercise}
+Halle las series de Laurent de la función $f(z)$ definida por
+$$f(z) = \frac {z^2} {z-1} \, e^{1/z}$$
+en el anillo $0 < |z| < 1$ y en el anillo $1 < |z| < \infty$.
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{itemize}
+    \item Consideremos la función auxiliar
+    $$
+    g(z)
+        = \frac {e^{1/z}} {1-z}
+        = \sum_{n=0}^\infty z^n \cdot \sum_{n=0}^\infty \frac {z^{-n}} {n!}
+        = \sum_{n=-\infty}^\infty c_n z^n
+    $$
+    
+    Los coeficientes de las partes analítica y singular en el origen son
+    $$
+    c_n = \sum_{k=0}^\infty \frac 1 {k!} = e, \qquad \qquad \qquad
+    c_{-n} = \sum_{k=n}^\infty \frac 1 {k!}
+    $$
+    
+    Entonces la serie de Laurent de $g(z)$ se descompone en
+    $$g(z) = g_0(z) + g_\infty(z) = \sum_{n=0}^\infty ez^n + \sum_{n=1}^\infty c_{-n} z^{-n}$$
+    
+    El primer sumando es analítico en el origen y converge en el disco $|z| < 1$. Para estudiar el segundo sumando, comparémoslo con la serie geométrica
+    $$s(z) = \sum_{n=1}^\infty s_n z^{-n}, \qquad \qquad \qquad s_n = \sum_{k=n}^\infty Ar^k = \frac {Ar^n} {1-r}$$
+    donde $0 < r < 1$ es una constante fija. Siempre podemos escoger $A > 0$ de tal manera que $s_n > c_{-n}$ para todo $n \ge 1$. Esto implica que $g_\infty(z)$ converge para todo $|z| > r$ y, por extensión, converge para todo $|z| > 0$. Por ende, $g(z)$ converge para todo $0 < |z| < 1$. Finalmente,
+    $$f(z) = -z^2 \, g(z) = -\sum_{n=0}^\infty ez^{n+2} - \sum_{n=1}^\infty c_{-n} z^{2-n}$$
+    también converge para todo $0 < |z| < 1$.
+    
+    \item Consideremos la función auxiliar
+    $$h(w) = f(1/w) = \frac {e^w} {w (w+1)}$$
+    
+    Multiplicando por $w$, tenemos la expresión en series
+    $$
+    w \, h(w)
+        = \frac {e^w} {w+1}
+        = \sum_{m=0}^\infty (-w)^m \cdot \sum_{n=0}^\infty \frac {w^n} {n!}
+        = \sum_{k=0}^\infty c_k w^k
+    $$
+    
+    Entonces la serie de Laurent de la función original es
+    $$
+    f(z) = h(1/z) = \sum_{k=0}^\infty c_k w^{1-k}, \qquad \qquad
+    c_k = (-1)^k \cdot \sum_{n=0}^k \frac {(-1)^n} {n!}
+    $$
+    
+    Esta serie converge absolutamente para todo $0 < |w| < 1$, es decir, para todo $1 < |z| < \infty$.
+\end{itemize}
+\end{solution}

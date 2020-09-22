@@ -1,0 +1,34 @@
+\begin{exercise}
+Pruebe que el sistema $F$ de las matrices de la forma
+$$
+\mat {\alpha & \beta \\ {-\beta} & \alpha}
+    = \alpha \mat {1 & 0 \\ 0 & 1} + \beta \mat {0 & 1 \\ {-1} & 0}
+    = \alpha I + \beta J, \qquad \alpha, \beta \in \R
+$$
+satisface las siguientes propiedades:
+\begin{enumerate}
+    \item $F$ es un cuerpo.
+    \item $F$ contiene un subcuerpo isomorfo a $\R$.
+    \item La ecuación $x^2 + 1 = 0$ tiene solución en $F$.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item Verifiquemos que $F$ es cerrado bajo la adición:
+    $$(\alpha I + \beta J) + (\gamma I + \delta J) = (\alpha + \gamma) I + (\beta + \delta) J$$
+    
+    Verifiquemos que $F$ es cerrado bajo la multiplicación:
+    $$(\alpha I + \beta J) (\gamma I + \delta J) = (\alpha \gamma - \beta \delta) I + (\alpha \delta + \beta \gamma) J$$
+    
+    Verifiquemos que todo elemento no nulo de $F$ tiene inversa multiplicativa en $F$:
+    $$(\alpha I + \beta J)^{-1} = \frac \alpha {\alpha^2 + \beta^2} I - \frac \beta {\alpha^2 + \beta^2} J$$
+    
+    Por ende, $F$ es un cuerpo.
+    
+    \item Por simple inspección, la aplicación $\varphi : \R \to F$, $\varphi(x) = xI$ es un homomorfismo de anillos inyectivo. Por ende, la imagen de $\varphi$ es un subcuerpo de $F$ isomorfo a $\R$.
+    
+    \item Sustituyendo $x = J$, tenemos $x^2 + 1 = J^2 + I = -I + I = 0$.
+\end{enumerate}
+\end{solution}

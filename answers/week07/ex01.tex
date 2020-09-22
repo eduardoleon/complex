@@ -1,0 +1,44 @@
+\begin{exercise}
+Calcule la integral de contorno
+$$\int_\gamma \frac {dz} {(z-1) (z+i) (z-i)}$$
+en cada uno de los siguientes casos:
+\begin{itemize}
+    \item $\gamma$ es una curva simple antihoraria que encierra a $1$, pero no a $\pm i$.
+    \item $\gamma$ es una curva simple antihoraria que encierra a $1$ e $i$, pero no a $-i$.
+    \item $\gamma$ es una curva simple antihoraria que encierra a los tres puntos $1$, $i$, $-i$.
+\end{itemize}
+\end{exercise}
+
+\begin{solution}
+Separando el integrando en fracciones parciales, tenemos
+$$f(z) = \frac 1 {(z-1) (z+i) (z-i)} = \frac A {z-1} + \frac B {z+i} + \frac C {z-i}$$
+$$1 = A (z+i) (z-i) + B (z-1) (z-i) + C (z-1) (z+i)$$
+Abreviando $D = i(B - C)$, tenemos
+$$1 = (A + B + C) z^2 - (B + C + D) z + (A + D)$$
+$$A = D = \frac 12, \qquad B + C = -D = -\frac 12, \qquad C - B = iD = \frac i2$$
+$$B = -\frac 14 - \frac i4, \qquad C = -\frac 14 + \frac i4$$
+Puesto que la integral es lineal, tenemos
+$$
+\int_\gamma f(z) \, dz
+    = A \int_\gamma \frac {dz} {z-1}
+    + B \int_\gamma \frac {dz} {z+i}
+    + C \int_\gamma \frac {dz} {z-i}
+$$
+$$
+\int_\gamma f(z) \, dz = 2\pi i \, [
+    A \, n(\gamma, 1) +
+    B \, n(\gamma, -i) +
+    C \, n(\gamma, i)]
+$$
+Nos piden analizar los siguientes casos:
+\begin{enumerate}[label=(\alph*)]
+    \item Si $\gamma$ encierra a $1$, pero no a $\pi i$, entonces
+    $$\int_\gamma f(z) \, dz = 2\pi iA = i\pi$$
+    
+    \item Si $\gamma$ encierra a $1$ e $i$, pero no a $-i$, entonces
+    $$\int_\gamma f(z) \, dz = 2\pi i (A + C) = -2\pi iB = -\frac \pi 2 + \frac {i\pi} 2$$
+    
+    \item Si $\gamma$ encierra a los tres puntos $1$, $i$, $-i$, entonces
+    $$\int_\gamma f(z) \, dz = 2\pi i (A + B + C) = 0$$
+\end{enumerate}
+\end{solution}

@@ -1,0 +1,13 @@
+\begin{exercise}
+Determine los valores de $z \in \C$ para los cuales la serie
+$$\sum_{n=0}^\infty \left( \frac z {1+z} \right)^n$$
+es convergente.
+\end{exercise}
+
+\begin{solution}
+La serie dada es una serie geométrica. La condición necesaria y suficiente para que esta serie sea convergente es que la razón entre dos términos consecutivos tenga módulo menor que $1$. Esto es,
+$$\left| \frac z {1+z} \right| < 1 \iff |z| < |1+z| \iff |z|^2 < |1+z|^2$$
+Pongamos $z = x + iy$. Entonces $|z|^2 = x^2 + y^2$, $|1+z|^2 = (1+x)^2 + y^2$. Entonces,
+$$|z|^2 < |1+z|^2 \iff x^2 < (1+x)^2 \iff x > -1/2$$
+Por ende, la serie dada converge para $\Re(z) > -1/2$ y no converge para $\Re(z) \le -1/2$.
+\end{solution}

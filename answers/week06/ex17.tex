@@ -1,0 +1,15 @@
+\begin{exercise}
+Sea $f_n$ una sucesión de funciones analíticas que converge uniformemente a $f$ en el abierto conexo $U \subset \C$. Pruebe que, para toda curva rectificable $\gamma : [a,b] \to U$, se cumple
+$$\lim_n \int_\gamma f_n(z) \, dz = \int_\gamma f(z) \, dz$$
+\end{exercise}
+
+\begin{solution}
+Puesto que $f_n$ converge uniformemente a $f$ sobre $\gamma$, tenemos
+$$
+\lim_{n \to \infty} \left| \int_\gamma f_n(z) \, dz - \int_\gamma f(z) \, dz \right|
+    \le V_\gamma([a,b]) \cdot \lim_{n \to \infty} \Vert f_n \circ \gamma - f \circ \gamma \Vert_\infty
+    = 0
+$$
+La diferencia de integrales en el valor absoluto converge a cero. Equivalentemente,
+$$\lim_{n \to \infty} \int_\gamma f_n(z) \, dz = \int_\gamma f(z) \, dz$$
+\end{solution}

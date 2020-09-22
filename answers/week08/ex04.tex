@@ -1,0 +1,74 @@
+\begin{exercise}
+Sea $f(z)$ una función analítica definida en la región $|z| > R$. Observe que esta región es una vecindad agujereada de $z = \infty$ en la esfera de Riemann. Entonces es geométricamente razonable decir que $f(z)$ tiene una singularidad aislada en $z = \infty$.
+
+Para estudiar esta singularidad, usamos el cambio de carta $w = 1/z$ a fin de traer el punto $z = \infty$ a la parte finita de la esfera. En esta nueva carta, $f$ se representa como $g(w) = f(1/z)$. Entonces decimos que $f$ tiene una singularidad removible, un polo de orden $m$, o una singularidad esencial en $z = \infty$, si $g$ tiene una singularidad del tipo correspondiente en $w = 0$.
+\begin{enumerate}[label=(\alph*)]
+    \item Pruebe que toda función entera con una singularidad removible en $\infty$ es constante.
+    \item Pruebe que toda función entera con un polo de orden $m$ en $\infty$ es un polinomio de grado $m$.
+    \item Caracterice las funciones racionales con una singularidad removible en el infinito.
+    \item Caracterice las funciones racionales con un polo de orden $m$ en el infinito.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+Trataremos a las singularidades removibles como polos de orden cero.
+\begin{enumerate}[label=(\alph*)]
+    \item Sea $f(z)$ un función entera. Las siguientes proposiciones son equivalentes:
+    \begin{itemize}
+        \item $f(z)$ tiene una singularidad removible en el infinito.
+        \item $f(z)$ es acotada en una vecindad agujereada del infinito.
+        \item $f(z)$ es acotada globalmente, porque la esfera de Riemann es compacta.
+        \item $f(z)$ es constante, porque es entera y acotada.
+    \end{itemize}
+    
+    \item Sea $f(z)$ un función entera. Las siguientes proposiciones son equivalentes:
+    \begin{itemize}
+        \item $f(z)$ tiene un polo de orden $m \in \Z^+$ en el infinito.
+        \item $f(z) / z^m$ converge a algún $b \in \C^\star$ cuando $z \to \infty$.
+        \item $f(z) / z^m - b$ converge a cero cuando $z \to \infty$.
+        \item $f(z) - bz^m$ tiene un polo de orden menor que $m$ en el infinito.
+        \item $f(z) - bz^m$ es un polinomio de grado menor que $m$, inductivamente.
+        \item $f(z)$ es un polinomio de grado $m$.
+    \end{itemize}
+    
+    El caso base para la inducción es el ítem a).
+    
+    \item Sea $f(z) = p(z) / q(z)$ una función racional. Las siguientes proposiciones son equivalentes:
+    \begin{itemize}
+        \item $f(z)$ tiene una singularidad removible en el infinito.
+        \item $f(z)$ es acotada en una vecindad agujereada del infinito.
+        \item $p(z)$ no excede en grado a $q(z)$.
+    \end{itemize}
+    
+    \item Sea $f(z) = p(z) / q(z)$ una función racional. Las siguientes proposiciones son equivalentes:
+    \begin{itemize}
+        \item $f(z)$ tiene un polo de orden $m \in \Z^+$ en el infinito.
+        \item $f(z) / z^m$ converge a algún $b \in \C^\star$ cuando $z \to \infty$.
+        \item $f(z) / z^m - b$ converge a cero cuando $z \to \infty$.
+        \item $f(z) - bz^m$ tiene un polo de orden menor que $m$ en el infinito.
+        \item $p(z) - bz^m$ excede en grado a $q(z)$ por una cantidad menor que $m$, inductivamente.
+        \item $p(z)$ excede en grado a $q(z)$ por $m$.
+    \end{itemize}
+    
+    El caso base para la inducción es el ítem c).
+\end{enumerate}
+El procedimiento para estudiar la singularidad de una función racional en el infinito es
+\begin{itemize}
+    \item Utilizar la división de polinomios para expresar la función racional como
+    $$f(z) = p(z) + \frac {r(z)} {q(z)}$$
+    donde $r(z)$ tiene grado menor que $q(z)$.
+    
+    \item Por construcción, el segundo término tiene una singularidad removible en el infinito, porque
+    $$\lim_{z \to \infty} \frac {r(z)} {q(z)}$$
+    tiene un valor finito.
+    
+    \item Por construcción, $f(z)$ y $p(z)$ tienen el mismo tipo de singularidad en el infinito:
+    \begin{itemize}
+        \item La singularidad es removible si $p(z)$ es constante.
+        \item La singularidad es un polo de orden $m$ si $p(z)$ tiene grado $m \in \Z^+$.
+    \end{itemize}
+    
+    \item La singularidad nunca es esencial.
+\end{itemize}
+Las funciones racionales son precisamente los endomorfismos analíticos de la esfera de Riemann.
+\end{solution}

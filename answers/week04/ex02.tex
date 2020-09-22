@@ -1,0 +1,19 @@
+\begin{exercise}
+Decimos que dos métricas sobre un espacio $X$ son equivalentes si ambas generan la misma topología sobre $X$. Demuestre que $d, \rho$ son métricas equivalentes si, para cada $\varepsilon > 0$, existe $\delta > 0$ tal que $d(x, y) < \delta$ implica $\rho(x, y) < \varepsilon$, y viceversa. Verifique que las métricas $d, \rho$ del ejercicio anterior satisfacen esta condición.
+\end{exercise}
+
+\begin{solution}
+La condición del enunciado implica que las $d$-bolas están encajadas en las $\rho$-bolas y viceversa (e incluso relaciona los diámetros de la bolas encajadas, pero esto no es relevante). Esto obviamente implica que $d, \rho$ inducen la misma topología sobre $X$.
+
+Para las métricas del ejercicio anterior, consideremos las funciones obviamente continuas
+\begin{align*}
+    f      : [0, \infty) & \longrightarrow [0, \infty) &
+    f^{-1} : [0, \infty) & \longrightarrow [0, \infty) \\
+    x & \longmapsto \frac x {1+x} &
+    y & \longmapsto \frac y {1-y}
+\end{align*}
+
+Como los nombres lo sugieren, $f, f^{-1}$ son inversas. Además, $\rho = f \circ d$ y $d = f^{-1} \circ \rho$. Entonces no sólo las $d$-bolas están encajadas en las $\rho$-bolas (y viceversa), sino que las $d$-bolas son literalmente ellas mismas $\rho$-bolas (y viceversa). Por ende, $d, \rho$ generan la misma topología métrica.
+\end{solution}
+
+\newpage

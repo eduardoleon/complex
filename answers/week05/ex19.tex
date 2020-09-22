@@ -1,0 +1,20 @@
+\begin{exercise}
+Verifique que el lado interior del círculo $|z-a| = R$ es el disco $|z-a| < R$.
+\end{exercise}
+
+\begin{solution}
+Tomemos los siguientes puntos de referencia: $z_2 = a + R$, $z_3 = a + iR$, $z_4 = a - iR$. Es fácil ver que estos puntos recorren el círculo dado de manera antihoraria. Entonces la transformación
+$$T(z) = \frac {z - z_3} {z - z_4} \cdot \cancelto i {\frac {z_2 - z_4} {z_2 - z_3}}$$
+reproduce la orientación absoluta de dicho círculo. Poniendo $z = a + r$, tenemos
+$$T(z)
+    = i \cdot \frac {r - iR} {r + iR} \cdot \red {\frac {\bar r - iR} {\bar r - iR}}
+    = \frac {R (r + \bar r) + i (r \bar r - R^2)} {\text {positivo}}
+$$
+Por ende, las siguientes proposiciones son equivalentes:
+\begin{itemize}
+    \item $z$ está en el lado interior (i.e. izquierdo) del círculo $|z-a| = R$.
+    \item $T(z)$ tiene parte imaginaria negativa.
+    \item $r \bar r - R^2$ es negativo.
+    \item $r = z-a$ tiene módulo menor que $R$.
+\end{itemize}
+\end{solution}

@@ -1,0 +1,28 @@
+\begin{exercise}
+Decimos que un camino suave por tramos $\gamma : [a,b] \to \C$ es rectificable si tanto su parte real $\Re \circ \gamma$ como su parte imaginaria $\Im \circ \gamma$ son de variación acotada. Decimos que otro camino rectificable $\sigma$ es equivalente a $\gamma$ si se puede expresar como una reparametrización $\sigma = \gamma \circ \varphi$, donde $\varphi : [c,d] \to [a,b]$ es una función suave y estrictamente creciente.
+
+Una curva rectificable es una clase de equivalencia de caminos rectificables. Muestre que la integral de una función continua $f : U \to \C$ sobre una curva rectificable está bien definida. Esto es,
+$$\int_\gamma f(z) \, dz = \int_\sigma f(z) \, dz$$
+para todo par de caminos rectificables equivalentes $\gamma, \sigma$.
+\end{exercise}
+
+\begin{solution}
+Sea $\P(\gamma)$ el conjunto de particiones del dominio de $\gamma$. Para todo $P \in \P(\gamma)$, abreviemos
+$$S_f(P) = \sum_{k=1}^n f \circ \gamma(\tau_k) \cdot [\gamma(t_k) - \gamma(t_{k-1})]$$
+donde $\tau_k \in [t_{k-1}, t_k]$ es arbitrario. Abreviemos también
+$$S_f(\gamma) = \int_\gamma f(z) \, dz$$
+Dado un margen de error $\varepsilon > 0$, existe $\delta > 0$ tal que, para todo $P \in \P(\gamma)$, se cumple
+$$\Vert P \Vert < \delta \implies |S_f(\gamma) - S_f(P)| < \varepsilon/2$$
+Análogamente, existe $\delta' > 0$ tal que, para todo $Q \in \P(\sigma)$, se cumple
+$$\Vert Q \Vert < \delta' \implies |S_f(\sigma) - S_f(Q)| < \varepsilon/2$$
+Puesto que los caminos $\gamma, \sigma$ son parametrizadaos por intervalos compactos, el cambio de parámetro $\varphi$ que los relaciona es una función uniformemente continua. Reduciendo $\delta'$, podemos suponer que
+$$\Vert Q \Vert < \delta' \implies \Vert \varphi(Q) \Vert < \delta$$
+donde $\varphi(Q) \in \P(\gamma)$ es la partición cuyos tramos son las imágenes $\varphi(T)$ de cada tramo $T$ de $Q$. Entonces, por construcción, $S_f(Q) = S_f(\varphi(Q))$. Tomando cualquier $\Vert Q \Vert < \delta'$, obtenemos
+$$
+|S_f(\gamma) - S_f(\sigma)|
+    \le |S_f(\gamma) - S_f(\varphi(Q))| + |S_f(Q) - S_f(\sigma)|
+    \le \varepsilon/2 + \varepsilon/2
+    = \varepsilon
+$$
+Puesto que $\varepsilon$ es arbitrariamente pequeño, tenemos $S_f(\gamma) = S_f(\sigma)$.
+\end{solution}

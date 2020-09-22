@@ -1,0 +1,90 @@
+\begin{exercise}
+Sean $S^2 \subset \R^3$ la esfera unitaria y $\widehat \C = \C \cup \{ \infty \}$ la esfera de Riemann. Sea $\varphi : S^2 \to \widehat \C$ la correspondencia que identifica el polo norte con $\infty$ y en el resto de $S^2$ es la proyección estereográfica sobre el plano ecuatorial, identificado con $\C$. Pruebe las siguientes afirmaciones:
+\begin{enumerate}[label=(\alph*)]
+    \item Toda circunferencia sobre $S^2$ corresponde a una circunferencia o una recta distinta en $\C$.
+    
+    \item Equipemos a $S^2$ con la función distancia heredada de $\R^3$. Entonces,
+    \begin{itemize}
+        \item $\Vert p_1 - p_0 \Vert^2 = (x_1 - x_0)^2 + (y_1 - y_0)^2 + (z_1 - z_0)^2$, donde $p_i = (x_i, y_i, z_i)$.
+        \item $\Vert p_1 - p_0 \Vert^2 = 2 - 2 (x_0 x_1 + y_0 y_1 + z_0 z_1)$, donde $p_i = (x_i, y_i, z_i)$.
+        \item $\Vert p_1 - p_0 \Vert^2 = \dfrac {4 \cdot |w_1 - w_0|^2} {(1 + |w_0|^2) (1 + |w_1|^2)}$, donde $w_i = \varphi(p_i)$.
+    \end{itemize}
+    
+    \item Equipemos a $\widehat \C$ con la función distancia que hace que $\varphi$ sea una isometría. Entonces,
+    \begin{itemize}
+        \item $d(z, w) = \dfrac {2 \cdot |z - w|} {\sqrt {(1 + |z|^2) (1 + |w|^2)}}$, para todo $z, w \in \C$.
+        \item $d(z, \infty) = \dfrac 2 {\sqrt {1 + |z|^2}}$, para todo $z \in \C$.
+    \end{itemize}
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+La proyección estereográfica de un punto $p \in S^2$ distinto del polo norte $n = \varphi^{-1}(\infty)$ es el único número complejo $w = \varphi(p)$ colineal con $p, n$. En particular, existe $t \in \R$ tal que $p = tw + (1-t)n$.
+
+Por construcción, $w, n$ son perpendiculares. Poniendo $r = \Vert z \Vert$, tenemos
+$$1 = \Vert p \Vert^2 = t^2 \Vert w \Vert^2 + (1-t)^2 \Vert n \Vert = t^2 (r^2 + 1) - 2t + 1$$
+La solución $t = 0$ no es aceptable, porque $p \ne n$. Entonces $t (r^2 + 1) = 2$. Como $\varphi \mid U$ es una carta sobre la esfera $S^2$, la aplicación inversa $\varphi^{-1}(u + iv) = (tu, tv, 1-t)$ es una parametrización local de $S^2$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Toda circunferencia $C \subset S^2$ se construye intersecando $S^2$ con un plano, digamos, $ax + by + cz = d$. Los puntos $\varphi^{-1}(u + iv)$ que caen en $C$ satisfacen
+    \begin{align*}
+        a(tu) + b(tv) + c(1-t) & = d \\
+        t (au + bv - c) & = d - c \\
+        2 (au + bv - c) & = (1 + r^2) (d-c)
+    \end{align*}
+    
+    Tenemos dos posibles casos:
+    \begin{itemize}
+        \item Si $c = d$, entonces $\varphi(C)$ es la recta $au + bv = c$ más el punto en el infinito.
+        \item Si $c \ne d$, entonces $\varphi(C)$ es el círculo $2 (au + bv - c) = (1 + u^2 + v^2) (d-c)$.
+    \end{itemize}
+    
+    Esta correspondencia es inyectiva porque $\varphi$ es una aplicación inyectiva.
+    
+    \item Revisemos cada ecuación:
+    \begin{itemize}
+        \item La primera ecuación es verdadera por definición:
+        $$\Vert p_1 - p_0 \Vert^2 = (x_1 - x_0)^2 + (y_1 - y_0)^2 + (z_1 - z_0)^2$$
+        
+        \item La segunda ecuación se obtiene expandiendo los cuadrados y simplificando:
+        \begin{align*}
+            \Vert p_1 - p_0 \Vert^2
+                & = (x_0^2 - 2 x_0 x_1 + x_1^2) + (y_0^2 - 2 y_0 y_1 + y_1^2) + (z_0^2 - 2 z_0 z_1 + z_1^2) \\
+                & = (x_0^2 + y_0^2 + z_0^2) + (x_1^2 + y_1^2 + z_1^2) - 2 (x_0 x_1 + y_0 y_1 + z_0 z_1) \\
+                & = 2 - 2 (x_0 x_1 + y_0 y_1 + z_0 z_1)
+        \end{align*}
+        
+        \item La tercera ecuación se obtiene usando la parametrización:
+        \begin{align*}
+            \Vert p_1 - p_0 \Vert^2
+                & = 2 - 2 t_0 t_1 (u_0 u_1 + v_0 v_1) - 2 (1 - t_0) (1 - t_1) \\
+                & = 2 (t_0 + t_1) - 2 t_0 t_1 (u_0 u_1 + v_0 v_1 + 1)
+        \end{align*}
+        
+        Dividiendo todo entre $t_0 t_1$, tenemos
+        \begin{align*}
+            \frac {\Vert p_1 - p_0 \Vert^2} {t_0 t_1}
+                & = 2 / t_0 + 2 / t_1 - 2 (u_0 u_1 + v_0 v_1 + 1) \\
+                & = (1 + r_0^2) + (1 + r_1^2) - 2 (u_0 u_1 + v_0 v_1 + 1) \\
+                & = r_0^2 + r_1^2 - 2 (u_0 u_1 + v_0 v_1) \\
+                & = (u_1 - u_0)^2 + (v_1 - v_0)^2 \\
+                & = |w_1 - w_0|^2
+        \end{align*}
+        
+        Finalmente, despejando $\Vert p_1 - p_0 \Vert^2$, tenemos
+        $$\Vert p_1 - p_0 \Vert^2 = t_0 t_1 \, |w_1 - w_0|^2 = \frac {4 \cdot |w_1 - w_0|^2} {(1 + |w_0|^2) (1 + |w_1|^2)}$$
+    \end{itemize}
+    
+    \item Tomando la raíz cuadrada en el resultado anterior, tenemos
+    $$d(z, w) = \Vert \varphi^{-1}(z) - \varphi^{-1}(w) \Vert = \frac {2 \cdot |z - w|} {\sqrt {(1 + |z|^2) (1 + |w|^2)}}$$
+    
+    Tomando el límite cuando $w \to \infty$, tenemos
+    \begin{align*}
+        d(z, \infty)
+            & = \lim_{w \to \infty} \frac {2 \cdot |z - w|} {\sqrt {(1 + |z|^2) (1 + |w|^2)}} \\
+            & = \lim_{w \to \infty} \frac {2 \cdot |z/w - 1|} {\sqrt {(1 + |z|^2) (|1/w|^2 + 1)}} \\
+            & = \frac {2 \cdot |0 - 1|} {\sqrt {(1 + |z|^2) (0^2 + 1)}} \\
+            & = \frac 2 {\sqrt {1 + |z|^2}}
+    \end{align*}
+\end{enumerate}
+\end{solution}

@@ -1,0 +1,31 @@
+\begin{exercise}
+Halle todas las transformaciones de Möbius que fijan el disco unitario $|z| < 1$.
+\end{exercise}
+
+\begin{solution}
+Consideremos la transformación de Möbius
+$$T(z) = \frac {1 + iz} {1 - iz}$$
+que envía el semiplano superior $\Re(z) > 0$ al disco unitario $|z| < 1$. Las transformaciones que fijan el disco unitario son las conjugadas por $T$ de las transformaciones que fijan el semiplano superior. Estas últimas se pueden describir de manera sencilla:
+\begin{itemize}
+    \item Geométricamente, preservan el eje real con la orientación correcta.
+    \item Algebraicamente, se representan por una matriz real con determinante positivo.
+\end{itemize}
+Conjugando una matriz de este tipo por $T$, tenemos
+$$
+S
+    = \mat {i & 1 \\ -i & 1} \mat {a & b \\ c & d} \mat {-i & i \\ 1 & 1}
+    = \red {\mat {\alpha & \beta \\ \bar \alpha & \bar \beta}} \mat {-i & i \\ 1 & 1}
+    = \blue {\mat {\mu & \nu \\ \bar \nu & \bar \mu}}
+$$
+donde $\red {\alpha = ia + c}$, $\red {\beta = ib + d}$, $\blue {\mu = \beta - i\alpha}$, $\blue {\nu = \beta + i\alpha}$. Esto nos da la representación
+$$S(z) = \frac {\mu z + \nu} {\bar \nu z + \bar \mu}$$
+donde los parámetros $\mu, \nu$ satisfacen $|\mu| > |\nu|$. Reescalando, podemos suponer que $|\mu| = 1$, de modo que la inversa de $\mu$ es simplemente $\mu^{-1} = \bar \mu$. Entonces,
+$$
+S
+    = \mat {\mu^2 & \mu \nu \\ \mu \bar \nu & 1 }
+    = \mat {\lambda & -\lambda \alpha \\ -\bar \alpha & 1 }
+$$
+donde $\lambda = \mu^2$, $\alpha = -\bar \mu \nu$. Esto nos da la representación
+$$S(z) = \lambda \cdot \frac {z - \alpha} {1 - \bar \alpha z}$$
+donde los parámetros $\lambda, \alpha$ satisfacen $|\lambda| = 1$, $|\alpha| < 1$.
+\end{solution}

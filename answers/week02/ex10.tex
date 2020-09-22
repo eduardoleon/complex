@@ -1,0 +1,19 @@
+\begin{exercise}
+Sea $R(z) = P(z) / Q(z)$ una función racional de orden $p$, donde $P(z)$, $Q(z)$ son polinomios sin ceros es común. Pruebe que $R$ tiene $p$ ceros y $p$ polos, y cada ecuación $R(z) = a$ tiene exactamente $p$ raíces.
+\end{exercise}
+
+\begin{solution}
+Escribamos $R(z)$ explícitamente como
+$$R(z) = K \cdot \frac {(z - a_1) \dots (z - a_m)} {(z - b_1) \dots (z - b_n)}$$
+donde $a_i \ne b_j$ para todo $i, j$. Por inspección, $R$ tiene exactamente $m$ ceros y $n$ polos en el plano complejo, contados con multiplicidad. Alguno de $m, n$ es igual al orden $p = \max(m, n)$, pero no está garantizado que el otro también.
+
+En realidad, los ceros y polos de $R$ deben ser contados en toda la esfera de Riemann. Para estudiar el comportamiento de $R$ en el punto en el infinito, consideremos un punto $c \in \C$ distinto de todos los $a_i, b_j$ y apliquemos la sustitución $z = c + 1/w$. Las nuevas coordenadas de $z = a_i$, $z = b_j$ son
+$$w = \tilde a_i = \frac 1 {a_i - c}, \qquad \qquad w = \tilde b_j = \frac 1 {b_j - c}$$
+respectivamente. Entonces la nueva expresión de $R$ es
+$$
+\tilde R(w) = Kw^{n-m} \cdot \frac
+    {(1 - w / \tilde a_1) \dots (1 - w / \tilde a_m)}
+    {(1 - w / \tilde b_1) \dots (1 - w / \tilde b_n)}
+$$
+En esta nueva carta, el punto en el infinito $w = \infty$ es el punto $z = c$ de la carta original, que no es ni cero ni polo de $R$. Los ceros y polos de $R$ en $z = a_i$, $z = b_j$ aparecen ahora como ceros y polos de $\tilde R$ en $w = \tilde a_i$, $w = \tilde b_j$, respectivamente. Finalmente, el punto en el infinito de la carta antigua es $w = 0$ y aparece ahora con exponente $n-m$. Esto completa los $|n-m|$ ceros o polos faltantes en el conteo original.
+\end{solution}

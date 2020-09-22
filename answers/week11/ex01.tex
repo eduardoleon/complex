@@ -1,0 +1,50 @@
+\begin{exercise}
+Calcule los polos y los residuos de las siguientes funciones:
+\begin{enumerate}[label=(\alph*)]
+    \item $f(z) = \dfrac 1 {4z^2 + 10z + 4}$
+    \item $f(z) = \dfrac {z^4 + 1} {z^2 (4z^2 + 10z + 4)}$
+    \item $f(z) = \dfrac 1 {(z^2 + 1) (z^2 + 4)}$
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item La función $f(z)$ tiene dos polos simples en $z = -1/2$, $z = -2$ y sus residuos son
+    $$
+    \Res(f, -1/2) = \frac 1 {p(-1/2)} = \frac 16, \qquad \qquad
+    \Res(f, -2) = \frac 1 {p(-2)} = -\frac 16
+    $$
+    donde $p(z) = 8z + 10$ es la derivada del denominador de $f(z)$.
+    
+    \item Escribamos $f(z) = g(z) \, h(z)$, donde
+    $$g(z) = \frac 1 {4z^2 + 10z + 4z}, \qquad \qquad h(z) = z^2 + \frac 1 {z^2}$$
+    
+    El factor $g(z)$ tiene dos polos simples, con residuos conocidos. Los residuos de $f(z)$ en estos polos se obtienen reescalando los residuos de $g(z)$ por el valor del factor $h(z)$. Entonces,
+    $$
+    \Res(f, -1/2) = \Res(g, -1/2) \cdot h(-1/2) = \frac {17} {24}, \qquad \qquad
+    \Res(f, -2) = \Res(g, -2) \cdot h(-2) = -\frac {17} {24}
+    $$
+    
+    El factor $h(z)$ tiene un polo doble en el origen, sin residuo. El residuo de $f(z)$ en el origen se puede calcular ignorando el término de $h(z)$ que es analítico en el origen. Entonces,
+    $$
+    \Res(f, 0)
+        = \frac 1 {2\pi i} \int_\gamma \frac {g(z)} {z^2} \, dz
+        = g'(0)
+        = -\frac {p'(0)} {p(0)^2}
+        = -\frac 58
+    $$
+    donde $p(z) = 4z^2 + 10z + 4$ es el denominador de $g(z)$ y su derivada es $p'(z) = 8z + 10$.
+    
+    \item La función $f(z)$ tiene polos simples en $z = \pm i$, $z = \pm 2i$ y sus residuos son
+    $$
+    \Res(f, \pm i) = \frac 1 {p(\pm i)} = \mp \frac i6, \qquad \qquad
+    \Res(f, \pm 2i) = \frac 1 {p(\pm 2i)} = \pm \frac i {12}
+    $$
+    donde $p(z) = 2z (z^2 + 1) + 2z (z^2 + 4) = 4z^3 + 10z$ es la derivada del denominador de $f(z)$.
+    
+    \begin{remark}
+    El signo $\mp$ frente a $i/6$ significa que $\Res(f, i) = -i/6$, mientras que $\Res(f, -i) = i/6$.
+    \end{remark}
+\end{enumerate}
+\end{solution}

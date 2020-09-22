@@ -1,0 +1,31 @@
+\begin{exercise}
+Utilice el lema de Jordan para calcular la integral
+$$\int_{-\infty}^\infty \frac {x \sin x} {x^2 + a^2} \, dx$$
+donde $a > 0$.
+\end{exercise}
+
+\begin{solution}
+Sea $\gamma \subset \C$ la curva del ejercicio 6. Consideremos las funciones auxiliares
+$$q(z) = \frac z {z^2 + a^2}, \qquad \qquad f(z) = q(z) \, e^{iz}$$
+Por el lema de Jordan, tenemos la cota superior en módulo
+$$\left| \int_{\gamma_2} f(z) \, dz \right| \le \pi \cdot \Vert q \circ \gamma_2 \Vert_\infty$$
+que tiende a cero cuando $R \to \infty$. Entonces,
+$$
+S
+    = \int_{-\infty}^\infty \Im \circ f(x) \, dx
+    \approx \Im \left[ \int_{\gamma_1} f(z) \, dz \right]
+    \approx \Im \left[ \int_\gamma f(z) \, dz \right]$$
+Consideremos la función auxiliar $g(z)$ definida por
+$$
+g(z) = \frac {ze^{iz}} {z + ia}
+$$
+Por la fórmula integral de Cauchy, tenemos
+$$
+\int_\gamma f(z) \, dz
+    = \int_\gamma \frac {g(z)} {z - ia} \, dz
+    = 2\pi i \cdot g(ia)
+    = 2\pi i \cdot \frac {iae^{-a}} {2ia}
+    = \frac {i\pi} {e^a}
+$$
+Por ende, la integral pedida es $S = \Im(i\pi/e^a) = \pi/e^a$.
+\end{solution}

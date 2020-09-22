@@ -1,0 +1,15 @@
+\begin{exercise}
+Dé todas las soluciones de la ecuación $z^n = r (\cos \theta + i \sin \theta)$, con $n \ge 2$, $r > 0$. Pruebe que todas estas soluciones tienen el mismo módulo y sus argumentos están igualmente espaciados. Demuestre, en particular, que si
+$$\omega = \cos \frac {2\pi} n + i \sin \frac {2\pi} n$$
+entonces la suma $1 + \omega^k + \omega^{2k} + \dots + \omega^{(n-1)k}$ es cero para cualquier $k \in \Z$ que no sea múltiplo de $n$.
+\end{exercise}
+
+\begin{solution}
+Aplicando la norma a ambos miembros de la ecuación, tenemos $|z|^n = r$. Puesto que la norma es no negativa, tomando raíces $n$-ésimas, tenemos $|z| = r^{1/n}$. Entonces todas las soluciones de la ecuación original tienen norma $r^{1/n}$.
+
+Tomando el argumento en ambos miembros de la ecuación, tenemos $\angle z^n = n \angle z = \theta$. Recordemos que los ángulos son elementos del círculo $S^1 = \R / 2\pi\Z$. Entonces $n \angle z = \theta \pmod {2\pi}$. Por ende, $\angle z = \theta/n \pmod {2\pi/n}$. Por ende, las soluciones de la ecuación original tienen argumentos espaciados por $2\pi/n$.
+
+Sean $d = \gcd(n, k)$, $p = n/d$, $q = k/d$. Puesto que $\omega^q$ es una raíz $n$-ésima primitiva de la unidad, $\omega^k$ es una raíz $p$-ésima primitiva de la unidad. Reescribamos la suma del enunciado como
+$$\left[ 1 + \omega^k + \dots + \omega^{(p-1)k} \right] + \left[ \omega^{pk} + \dots + \omega^{(2p-1)k} \right] + \dots + \left[ \omega^{(n-p)k} + \dots + \omega^{(n-1)k} \right]$$
+Los sumandos de cada bloque son las raíces $p$-ésimas de la unidad. Como $n$ no divide a $k$, tenemos $p \ge 2$. Entonces el término de grado $p-1$ de $z^p - 1$ es nulo. Por ende, la suma de las soluciones dentro de cada bloque es cero. Por ende, la suma del enunciado es cero.
+\end{solution}

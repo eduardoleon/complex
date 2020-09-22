@@ -1,0 +1,43 @@
+\begin{exercise}
+Pruebe que la serie de Laurent de la función
+$$f(z) = \frac 1 {e^z - 1}$$
+en una vecindad del origen es de la forma
+$$\frac 1z - \frac 12 + \sum_{n=1}^\infty \frac {(-1)^{n+1} B_n} {(2n)!} z^{2n-1}$$
+donde los coeficientes $B_n$ satisfacen la recurrencia
+$$\frac 1 {2 \, (2n)!} - \frac 1 {(2n+1)!} = \sum_{k=1}^n \frac {(-1)^{k+1} B_n} {(2k)! \, (2n - 2k + 1)!}$$
+\end{exercise}
+
+\begin{solution}
+No trabajaremos con $f$ directamente. Pongamos
+$$
+1 + 2 \, f(z)
+    = \frac {e^z + 1} {e^z - 1}
+    = \coth(z/2)
+    = \sum_{n=0}^\infty \frac {c_n} {(2n)!} \, z^{2n-1}
+$$
+Para hallar los coeficientes $c_n$, usaremos la identidad
+$$\coth(z/2) \cdot \sinh(z) = 2 \cosh^2(z/2) = 1 + \cosh(z)$$
+Desarrollando en series esta identidad, tenemos
+$$
+1 + \sum_{n=0}^\infty \frac {z^{2n}} {(2n)!} =
+    \sum_{n=0}^\infty \frac {z^{2n+1}} {(2n+1)!} \cdot
+    \sum_{n=0}^\infty \frac {c_n} {(2n)!} \, z^{2n-1}
+$$
+Entonces los coeficientes $c_n$ satisfacen la recurrencia
+$$\delta_{0n} + \frac 1 {(2n)!} = \sum_{k=0}^n \frac {c_k} {(2k)! \, (2n - 2k + 1)!}$$
+En particular, $c_0 = 2$ y, para cada $n > 0$, se cumple
+$$\frac 1 {(2n)!} - \frac 2 {(2n+1)!} = \sum_{k=1}^n \frac {c_k} {(2k)! \, (2n - 2k + 1)!}$$
+Los coeficientes $c_n$ se relacionan con los coeficientes buscados $B_n$ mediante
+$$c_n = 2 \, (-1)^{n+1} B_n$$
+Sustituyendo en la recurrencia, para todo $n > 0$, tenemos
+$$\frac 1 {2 \, (2n)!} - \frac 1 {(2n+1)!} = \sum_{k=1}^n \frac {(-1)^{k+1} B_n} {(2k)! \, (2n - 2k + 1)!}$$
+Multiplicando todo por $(2n+1)!$, tenemos
+$$\frac {2n-1} 2 = \sum_{k=1}^n \binom {2n+1} {2k} (-1)^{k+1} B_n$$
+Finalmente, los tres primeros términos de la sucesión $B_n$ satisfacen
+$$
+\binom 32 B_1 = \frac 12, \qquad
+\binom 52 B_1 - \binom 54 B_2 = \frac 32, \qquad
+\binom 72 B_1 - \binom 74 B_2 + \binom 76 B_3
+$$
+Por ende, $B_1 = 1/6$, $B_2 = 1/30$, $B_3 = 1/42$.
+\end{solution}

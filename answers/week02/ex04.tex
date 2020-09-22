@@ -1,0 +1,11 @@
+\begin{exercise}
+Pruebe que la función $f(z) = \sqrt {|xy|}$, $z = x + iy$ satisface las ecuaciones de Cauchy-Riemann en el origen, pero no existe la derivada $f'(0,0)$.
+\end{exercise}
+
+\begin{solution}
+La función $f = u + iv$ es idénticamente nula a lo largo de los ejes real e imaginario. Entonces las derivadas parciales de $u, v$ con respecto a $x, y$ en el origen son
+$$\p ux = \p uy = \p vx = \p vy = 0$$
+y esto garantiza que las ecuaciones de Cauchy-Riemann se satisfacen trivialmente en el origen.
+
+Por otra parte, si $f$ fuese diferenciable en el origen, entonces la función de variable real $|t| = f(t+it)$ también sería diferenciable en $t = 0$, lo cual evidentemente no es cierto. Por ende, $f$ no es diferenciable en el origen, i.e., no existe la derivada $f'(0,0)$.
+\end{solution}

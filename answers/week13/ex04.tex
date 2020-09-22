@@ -1,0 +1,18 @@
+\begin{exercise}
+Utilice la representación en una serie de Taylor para probar que el conjunto de polos de una función definida en una región no tiene puntos de acumulación en dicha región.
+\end{exercise}
+
+\begin{solution}
+Sea $f(z)$ una función meromorfa en una región $U \subset \C$ y supongamos por el absurdo que $z_0 \in U$ es un punto de acumulación de los polos de $f(z)$. Entonces,
+\begin{itemize}
+    \item Si $f(z)$ es analítica en $z_0$, entonces la serie de Taylor
+    $$f(z_0) + f'(z_0) \, (z - z_0) + \frac {f''(z_0)} 2 \, (z - z_0)^2 + \dots$$
+    converge en un disco centrado en $z_0$. Esto es imposible, porque existe una sucesión de polos de $f(z)$ que converge a $z_0$.
+    
+    \item Si $f(z)$ tiene un polo en $z_0$, entonces $g(z) = 1/f(z)$ se anula en $z_0$ y su serie de Taylor
+    $$\frac {g^{(m)}(z_0)} {m!} \, (z - z_0)^m + \frac {g^{(m+1)}(z_0)} {(m+1)!} \, (z - z_0)^{m+1} + \dots$$
+    converge en un disco centrado en $z_0$. Dividiendo entre $(z - z_0)^m$, la serie
+    $$\frac {g^{(m)}(z_0)} {m!} + \frac {g^{(m+1)}(z_0)} {(m+1)!} \, (z - z_0) + \dots$$
+    converge a una función analítica que no se anula en una vecindad de $z_0$. Esto también es imposible, porque existe una sucesión de ceros de $g(z)$ que converge a $z_0$.
+\end{itemize}
+\end{solution}

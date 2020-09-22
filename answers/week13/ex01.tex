@@ -1,0 +1,13 @@
+\begin{exercise}
+Sea $f_n(z)$ una sucesión de funciones analíticas en una región $U \subset \C$. Suponga que $f_n(z)$ no se anula para ningún $z \in U$ y converge uniformemente en compactos a $f(z)$. Pruebe que, si $f(z_0) = 0$ para algún $z_0 \in U$, entonces $f(z)$ es idénticamente cero en $U$.
+\end{exercise}
+
+\begin{solution}
+Sea $\gamma \subset U$ un pequeño círculo alrededor de $z_0 \in U$. Por el ejercicio 17 de la semana 6,
+$$\int_\gamma f(z) \, dz = \lim_{n \to \infty} \int_\gamma f_n(z) \, dz = 0$$
+Por el teorema de Morera, $f(z)$ es analítica en una pequeña vecindad de $z_0$. Como $z_0$ es arbitrario, $f(z)$ es analítica en toda la región $U$. Además, $f_n'(z)$ converge uniformemente en compactos a $f'(z)$.
+
+Supongamos que $f(z)$ no es idénticamente cero. Entonces podemos suponer que $f(z)$ no se anula para ningún $z \in \gamma$. Por el ejercicio 17 de la semana 6,
+$$\int_\gamma \frac {f'(z)} {f(z)} \, dz = \lim_{n \to \infty} \int_\gamma \frac {f_n'(z)} {f_n(z)} \, dz = 0$$
+Puesto que $\gamma$ es homólogo a cero en $U$, deducimos que $\gamma$ no encierra ceros de $f(z)$. Como $\gamma$ es arbitrario, deducimos que $f(z)$ no tiene ceros en $U$.
+\end{solution}

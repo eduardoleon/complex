@@ -1,0 +1,15 @@
+\begin{exercise}
+Calcule la integral de contorno
+$$\int_\gamma \frac {z^2} {(z + 1) (z - 1)^2} \, dz$$
+donde $\gamma$ es el círculo $|z - 1| = 1$.
+\end{exercise}
+
+\begin{solution}
+La función auxiliar $f(z)$ y su derivada $f'(z)$ dadas por
+$$
+f(z) = \frac {z^2} {z + 1}, \qquad \qquad
+f'(z) = \frac {z (z + 2)} {(z + 1)^2}
+$$
+son analíticas en el semiplano $\Re(z) > -1$, que es simplemente conexo y contiene a $\gamma$. Entonces,
+$$\int_\gamma \frac {f(z)} {(z - 1)^2} \, dz = 2\pi i \cdot f'(1) = 2\pi i \cdot \frac 34 = \frac {3\pi i} 2$$
+\end{solution}

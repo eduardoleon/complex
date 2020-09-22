@@ -1,0 +1,9 @@
+\begin{exercise}
+Determine las regiones donde $f(z) = \csc(1/z)$ es analítica.
+\end{exercise}
+
+\begin{solution}
+La función cosecante es la inversa multiplicativa de la función seno, así que será útil reutilizar el análisis de la función seno realizado en los ejercicios 5 y 6. Puesto que $\sin(z)$ es una función entera, $\csc(z)$ es meromorfa en el plano con polos en $z = n\pi$, $n \in \Z$, precisamente donde están los ceros de $\sin(z)$.
+
+Observemos que $\csc(z)$ tiene una singularidad en el infinito, pero \textit{ésta no es aislada}, pues los polos se acumulan en ella. Esto se aprecia mejor en $f(z)$, cuyos polos están en los puntos $z = 1/n\pi$ (incluyendo el caso especial $z = \infty$ para $n = 0$) y se acumulan en $z = 0$. Reuniendo los polos y su punto de acumulación, obtenemos el compacto $K = \{ 0 \} \cup \{ n\pi : n \in \Z \}$, cuyo complemento $U = \C - K$ es la región más grande donde $f(z)$ es analítica.
+\end{solution}

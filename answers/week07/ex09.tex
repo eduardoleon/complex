@@ -1,0 +1,17 @@
+\begin{exercise}
+Sea $f(z)$ una función analítica en una vecindad abierta de $D = \{ z \in \C : |z| \le 1 \}$. Calcule
+$$\int_{\partial D} \frac {f(z)} {z - 1/a} \, dz$$
+para cada punto $a \in D$.
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{itemize}
+    \item Si $|a| < 1$, entonces el integrando es holomorfo en una vecindad abierta de $D$, que podemos suponer retraíble a $D$, por ende simplemente conexa. Entonces la curva $\partial D$ es automáticamente contractible en esta vecindad. Por el teorema de Cauchy-Goursat,
+    $$\int_{\partial D} \frac {f(z)} {z - 1/a} \, dz = 0$$
+    
+    \item Si $|a| = 1$, entonces la curva $\partial D$ pasa por el polo en $z = a$. Por ende, la integral
+    $$\int_{\partial D} \frac {f(z)} {z - 1/a} \, dz$$
+    no está bien definida.
+\end{itemize}
+\end{solution}

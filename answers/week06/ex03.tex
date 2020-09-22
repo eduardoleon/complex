@@ -1,0 +1,38 @@
+\begin{exercise}
+Considere los polígonos $\sigma = [1, i]$, $\gamma = [1, 1 + i, i]$. Calcule
+$$\int_\sigma |z|^2 \, dz, \qquad \qquad \int_\gamma |z|^2 \, dz$$
+Determine si existe una antiderivada para $f(z) = |z|^2$ a la luz del ejercicio 14.b).
+\end{exercise}
+
+\begin{solution}
+Puesto que $f$ no es una función holomorfa, la $1$-forma $\omega = f \, dz$ no es cerrada, mucho menos es exacta. Entonces, la integral de línea
+$$\int_\gamma \omega$$
+depende de la trayectoria $\gamma$, no sólo de sus extremos. Por ende, $f$ no admite una antiderivada.
+
+Para ilustrar esto con un ejemplo concreto, observemos que $\gamma - \sigma = [1, 1+i, i, 1]$ es la frontera de una región contenida en el dominio de $f$, que es el plano $\C$. Entonces, por el teorema de Green, la discrepancia entre las integrales pedidas es
+$$\Delta = \int_\gamma \omega - \int_\sigma \omega = \iint_D d\omega = i \left[ \p fx + i \p fy \right] dx \, dy$$
+En nuestro caso, tenemos $f(x + iy) = x^2 + y^2$. Por ende,
+$$
+\Delta
+    = i \int_0^1 \int_{1-x}^1 (2x + 2iy) \, dy \, dx
+    = i \int_0^1 \left[ 2xy + iy^2 \right]_{1-x}^1 dx
+$$
+$$
+\Delta
+    = \int_0^1 [-(2x - x^2) + 2ix^2] \, dx
+    = -\left[ x^2 - \frac {2x^3} 3 \right]_0^1 + i \left[ \frac {2x^3} 3 \right]_0^1
+    = -\frac 23 + \frac {2i} 3
+$$
+
+Finalmente, calcularemos las integrales pedidas. En coordendas reales, el integrando es
+$$\omega = f \, dz = (x^2 + y^2) (dx + i \, dy) = x^2 \, dx + y^2 \, dx + ix^2 \, dy + iy^2 \, dy$$
+Usando la parametrización de $\sigma$ segúnel enunciado, tenemos
+$$\frac \omega {-1+i} = [(1-t)^2 + t^2] \, dt = (1 - 2t + 2t^2) \, dt$$
+Entonces las integrales de línea sobre $\sigma, \gamma$ son
+$$
+\int_\sigma \omega
+    = (-1+i) \int_0^1 (1 - 2t + 2t^2) \, dt
+    = (-1+i) \left[ t - t^2 + \frac {2t^3} 3 \right]_0^1
+    = -\frac 23 + \frac {2i} 3$$
+$$\int_\gamma \omega = \int_\sigma \omega + \Delta = -\frac 43 + \frac {4i} 3$$
+\end{solution}

@@ -1,0 +1,10 @@
+\begin{exercise}
+Sea $f(z)$ una función analítica en una vecindad del origen. Suponga además que $f'(0) \ne 0$. Pruebe que existe una función analítica $g(z)$ tal que $f(z^n) = f(0) + g(z)^n$ en una vecindad del origen.
+\end{exercise}
+
+\begin{solution}
+Por construcción, la función $f(z^n) - f(0)$ tiene un cero de orden $n$ en el origen. Entonces existe una función holomorfa $h(z)$ que no se anula en el origen tal que $f(z^n) - f(0) = z^n \, h(z)$. Tomemos alguna rama de la raíz $n$-ésima definida en $h(0)$. Entonces,
+$$g(z) = z \sqrt [n] {h(z)}$$
+está definida y es analítica en una vecindad del origen. Por ende,
+$$f(z^n) = f(0) + z^n \, h(z) = f(0) + \left[ z \sqrt [n] {h(z)} \right]^n = f(0) + g(z)^n$$
+\end{solution}

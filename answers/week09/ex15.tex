@@ -1,0 +1,39 @@
+\begin{exercise}
+Sea $\gamma \subset D$ una curva cerrada contenida en un disco $D \subset U$, este último a su vez contenido en un abierto $U \subset \C$ que es el dominio de una función analítica $f(z)$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Asumiendo que $d(z_0, \partial U) < \frac 12 \, d(\gamma, \partial U)$, pruebe que $n(\gamma, z_0) = 0$.
+    
+    \item Para cada $w \in \C$, analice el número de elementos del conjunto
+    $$S(w) = \{ z \in D : f(z) = w, \, n(\gamma, z) \ne 0 \}$$
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item Si $z_0 \notin D$, entonces no hay nada que probar: $n(\gamma, z_0) = 0$, porque $D$ es simplemente conexo.
+    
+    Si $z_0 \in D$, entonces tomemos algún punto frontera $z_1 \in \partial U$ que minimice la distancia $|z_0 - z_1|$. Para hallar $z_1$, tomemos una sucesión $b_n \in \partial U$ tal que $|z_0 - b_n|$ converge a $R = d(z_0, \partial U)$. Puesto que $b_n$ está confinada al disco compacto $|z - z_0| \le R + 1$, podemos extraer una subsucesión convergente a algún punto $z_1 \in \C$. Finalmente, $z_1 \in \partial U$, porque $\partial U$ es cerrado en $\C$.
+    
+    Sea $\sigma$ el segmento de recta entre $z_0, z_1$. Todos los puntos interiores de $\sigma$ están contenidos en $U$, pues de otro modo habría puntos de $\partial U$ aún más cercanos a $z_0$, lo cual es contradictorio. Además, $\gamma$ está impedida de siquiera acercarse a $\sigma$, porque todos los puntos de $\sigma$ son demasiado cercanos a $\partial U$. Por ende, $\gamma$ da el mismo número de vueltas alrededor de todos los puntos de $\sigma$. Finalmente, $z_1 \notin U$, así que $z_1 \notin D$, así que $n(\gamma, z_0) = n(\gamma, z_1) = 0$, porque $D$ es simplemente conexo.
+    
+    \item No veo ningún resultado general que se pueda probar. Por ejemplo, nada impide que $f(z)$ tenga una singularidad esencial (o más) en $\partial D$. Para simplificar la situación, sin trivializarla totalmente, haré algunos supuestos adicionales:
+    \begin{itemize}
+        \item $f(z)$ es no constante.
+        \item $\partial D \subset U$, así que $f(z)$ es analítica en todo $z \in \partial D$.
+    \end{itemize}
+    
+    El último supuesto garantiza que
+    \begin{itemize}
+        \item Para todo $w_0 \in \C$, la ecuación $f(z) = w_0$ tiene un número finito de soluciones en $D$.
+        \item $f(z)$ tiene una cantidad finita de puntos críticos en $D$.
+    \end{itemize}
+    
+    Entonces sólo hay dos razones por la cuales $S(w)$ puede ser discontinua en $w = w_0$:
+    \begin{itemize}
+        \item Existe $z_0 \in D \setminus \gamma$ tal que $f(z_0) = w_0$, $f'(z_0) = 0$, $n(\gamma, z_0) \ne 0$.
+        \item Existe $z_0 \in \gamma$ tal que $f(z_0) = w_0$. Además, $\gamma$ divide al disco pequeño $|z - z_0| < \varepsilon$ en dos partes tales que, en una, $n(\gamma, z) = 0$, pero en la otra, $n(\gamma, z) \ne 0$.
+    \end{itemize}
+\end{enumerate}
+\end{solution}

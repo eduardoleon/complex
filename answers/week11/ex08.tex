@@ -1,0 +1,84 @@
+\begin{exercise}
+Calcule las siguientes integrales:
+\begin{enumerate}[label=(\alph*)]
+    \item $\displaystyle S = \int_{-\infty}^\infty \frac {\cos 4x} {x^2 + 1} \, dx$
+    \item $\displaystyle S = \int_{-\infty}^\infty \frac {x^2 \cos 2x} {(x^2 + 1)^2} \, dx$
+    \item $\displaystyle S = \int_{-\infty}^\infty \frac {\cos x} {(x^2 + 1)^2} \, dx$
+    \item $\displaystyle S = \int_{-\infty}^\infty \frac {dx} {x^6 + 1}$
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+Sea $\gamma \subset \C$ la curva del ejercicio 6. Observemos que, en los tres primeros ítems, el integrando es de la forma $q(x) \cos(nx)$, donde $q(x)$ es una función racional. Pongamos $f(z) = q(z) \, e^{inz}$. Por el lema de Jordan, tenemos la cota superior en módulo
+$$\left| \int_{\gamma_2} f(z) \, dz \right| \le \frac \pi n \cdot \Vert q \circ \gamma_2 \Vert_\infty$$
+que, para las funciones $q(z)$ dadas, tiende a cero cuando $R \to \infty$. Entonces,
+$$
+S
+    = \int_{-\infty}^\infty \Re \circ f(x) \, dx
+    \approx \Re \left[ \int_{\gamma_1} f(z) \, dz \right]
+    \approx \Re \left[ \int_\gamma f(z) \, dz \right]
+$$
+que se puede calcular usando la fórmula integral de Cauchy.
+\begin{enumerate}[label=(\alph*)]
+    \item Consideremos la función auxiliar $g(z)$ definida por
+    $$g(z) = \frac {e^{4iz}} {z + i}$$
+    
+    Por la fórmula integral de Cauchy, tenemos
+    $$
+    \int_\gamma \frac {g(z)} {z - i} \, dz
+        = 2\pi i \cdot g(i)
+        = 2\pi i \cdot \frac {e^{-4}} {2i}
+        = \frac \pi {e^4}
+    $$
+    
+    Por ende, la integral pedida es $S = \Re(\pi/e^4) = \pi/e^4$.
+    
+    \item Consideremos la función auxiliar $g(z)$ y su derivada $g'(z)$ definidas por
+    $$
+    g(z) = \frac {z^2 \, e^{2iz}} {(z + i)^2}, \qquad \qquad
+    g'(z) = g(z) \left[ \frac 2z + 2i - \frac 2 {z + i} \right]
+    $$
+    
+    Por la fórmula integral de Cauchy, tenemos
+    $$
+    \int_\gamma \frac {g(z)} {(z - i)^2} \, dz
+        = 2\pi i \cdot g'(i)
+        = 2\pi i \cdot \frac {i^2 e^{-2}} {(2i)^2} \left[ \frac 2i + 2i - \frac 2 {2i} \right]
+        = -\frac \pi {2e^2}
+    $$
+    
+    Por ende, la integral pedida es $S = \Re(-\pi/2e^2) = -\pi/2e^2$.
+    
+    \item Consideremos la función auxiliar $g(z)$ y su derivada $g'(z)$ definidas por
+    $$
+    g(z) = \frac {e^{iz}} {(z + i)^2}, \qquad \qquad
+    g'(z) = g(z) \left[ i - \frac 2 {z + i} \right]
+    $$
+    
+    Por la fórmula integral de Cauchy, tenemos
+    $$
+    \int_\gamma \frac {g(z)} {(z - i)^2} \, dz
+        = 2\pi i \cdot g'(i)
+        = 2\pi i \cdot \frac {e^{-1}} {(2i)^2} \left[ i - \frac 2 {2i} \right]
+        = \frac \pi e
+    $$
+    
+    Por ende, la integral pedida es $S = \Re(\pi/e) = \pi/e$.
+\end{enumerate}
+El cuarto ítem es una variación del ejercicio 7.(a):
+\begin{enumerate}[label=(\alph*)]
+    \setcounter {enumi} 3
+    
+    \item Los polos del integrando $f(z)$ son las potencias impares de $\alpha = e^{\pi i/6}$, i.e., las raíces sextas de $-1$, y los residuos correspondientes están dados por
+    $$\Res(f, z) = \frac 1 {6z^5} = -\frac z6$$
+    
+    Los polos encerrados por $\gamma$ son $\alpha, \alpha^3, \alpha^5$. Por ende, la integral pedida es
+    $$
+    S
+        = \int_\gamma \frac {dz} {z^6 + 1}
+        = -2\pi i \cdot \frac {\alpha + \alpha^3 + \alpha^5} 6
+        = -2\pi i \cdot \frac {2i} 6
+        = \frac {2\pi} 3
+    $$
+\end{enumerate}
+\end{solution}

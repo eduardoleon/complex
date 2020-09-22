@@ -1,0 +1,20 @@
+\begin{exercise}
+Sea $\gamma_r$ el semicírculo $z(t) = re^{it}$, donde $t \in [0, \pi]$. Muestre que
+$$\lim_{r \to \infty} \int_{\gamma_r} \frac {e^{iz}} z \, dz = 0$$
+\end{exercise}
+
+\begin{solution}
+Diferenciando la parametrización de $\gamma_r$, tenemos $dz = iz \, dt$. Entonces,
+$$
+\left| \int_{\gamma_r} \frac {e^{iz}} z \, dz \right|
+    \le \int_{\gamma_r} |e^{iz}| \, dt
+    = \int_0^\pi e^{-r \sin t} \, dt
+$$
+Para todo $r \ge 0$, el integrando está acotado por la constante $1$, que es integrable en $[0, \pi]$. Por el teorema de la convergencia dominada, tenemos
+$$
+\lim_{r \to \infty} \left| \int_{\gamma_r} \frac {e^{iz}} z \, dz \right|
+    \le \lim_{r \to \infty} \int_0^\pi e^{-r \sin t} \, dt
+    = \int_0^\pi \lim_{r \to \infty} e^{-r \sin t} \, dt
+    = \int_0^\pi 0 = 0
+$$
+\end{solution}

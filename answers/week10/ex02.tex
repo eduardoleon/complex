@@ -1,0 +1,13 @@
+\begin{exercise}
+Sean $\gamma, \Omega, \Omega' \subset \C$ como en el problema anterior y sea $f(z)$ una función analítica en $\Omega'$, con excepción de un número finito de singularidades en $a_1, \dots, a_n \in \Omega$. Pruebe que
+$$\frac 1 {2\pi i} \int_\gamma f(z) \, dz = \sum_{k=1}^n \Res(f,  a_k)$$
+\end{exercise}
+
+\begin{solution}
+Tomemos pequeños círculos $\gamma_k \subset \Omega$ alrededor de cada $a_k$, contractibles en $\Omega$. Por hipótesis, $\gamma$ es homóloga a $\gamma_1 + \dots + \gamma_n$ en $\Omega - \{ a_1, \dots, a_n \}$. Entonces,
+$$
+\frac 1 {2\pi i} \int_\gamma f(z) \, dz
+    = \sum_{k=1}^n \frac 1 {2\pi i} \int_{\gamma_k} f(z) \, dz
+    = \sum_{k=1}^n \Res(f,  a_k)
+$$
+\end{solution}

@@ -1,0 +1,19 @@
+\begin{exercise}
+Pruebe que la función $\cos(z)$ envía la franja $B = \{ z \in \C \mid 0 < \Re(z) < \pi \}$ sobre el dominio $U = \C - \{ x \in \R \mid |x| \ge 1 \}$ de manera inyectiva y conforme.
+\end{exercise}
+
+\begin{solution}
+Sean $z, w \in B$ tales que $\cos(z) = \cos(w)$. Multiplicando por $2$, tenemos
+$$e^{iz} + e^{-iz} = e^{iw} + e^{-iw}$$
+Sustituyendo $p = e^{iz}$, $q = e^{iw}$ en la ecuación anterior, tenemos
+$$p + \frac 1p = q + \frac 1q \implies p-q = \frac 1q - \frac 1p = \frac {p-q} {pq}$$
+Tenemos dos posibilidades: o bien $p = q$ o bien $pq = 1$. En el primer caso, $z = w \pmod {2\pi}$. Puesto que la franja es de ancho $\pi$, esto implica que $z = w$. En el segundo caso, $z + w = 0 \pmod {2\pi}$. Sin embargo, la definición de la franja exige que $0 < \Re(z) + \Re(w) < 2\pi$. Entonces el segundo caso es imposible. Por ende, no existen puntos distintos de $B$ que tengan el mismo coseno.
+
+Sea $z = x + iy$ un punto de $B$. Utilizando una conocida identidad trigonométrica, tenemos
+$$\cos(z) = \cos(x) \cos(iy) - \sin(x) \sin(iy) = \cos(x) \cosh(y) - i \sin(x) \sinh(y)$$
+Por construcción, $x$ no es múltiplo de $\pi$, así que $\sin(x) \ne 0$. Si $y = 0$, entonces $\cos(z) = \cos(x)$ está en el intervalo $(-1, 1)$. Si $y \ne 0$, entonces $\sinh(y) \ne 0$, por ende $\cos(z) \notin \R$. En ambos casos, $\cos(z) \in U$. Por lo tanto, $\cos(B) \subset U$.
+
+Utilizando otra conocida identidad trigonométrica, tenemos
+$$\sin(z) = \sin(x) \cos(iy) + \cos(x) \sin(iy) = \sin(x) \cosh(y) + i \cos(x) \sinh(y)$$
+Puesto que $\cosh(y) > 0$, tenemos $\Re \circ \sin(z) \ne 0$. Como $\cos'(z) = -\sin(z)$ no se anula en $B$, la restricción $\cos \mid B$ es una aplicación conforme.
+\end{solution}

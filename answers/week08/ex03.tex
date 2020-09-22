@@ -1,0 +1,15 @@
+\begin{exercise}
+Sea $f(z)$ una función analítica con una singularidad aislada en el punto $z = a$. Determine si las siguientes afirmaciones son equivalentes:
+\begin{enumerate}[label=(\alph*)]
+    \item $f$ tiene una singularidad removible en $z = a$.
+    \item $f$ es acotada en una vecindad agujereada de $z = a$.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+Si la singularidad es removible, entonces $f$ admite una extensión que es analítica en $z = a$. Ante todo, dicha extensión debe ser continua, por ende acotada en una vecindad de $z = a$. Entonces $f$ también es acotada en una vecindad agujereada de $z = a$.
+
+Recíprocamente, si $f$ está acotada en módulo en una vecindad de $z = a$, entonces la cota
+$$\lim_{z \to a} |f(z) \cdot (z - a)| \le \Vert f \Vert_\infty \cdot\lim_{z \to a} |z - a| = 0$$
+implica que la singularidad de $f$ en $z = a$ es removible. Por ende, las afirmaciones son equivalentes.
+\end{solution}

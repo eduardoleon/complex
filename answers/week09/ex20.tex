@@ -1,0 +1,23 @@
+\begin{exercise}
+Sea $U \subset \C$ un abierto simplemente conexo y sea $U^\star \subset \C$ este mismo abierto, pero con una cantidad finita de agujeros en $a_1, \dots, a_n \in U$. Considere una función $f(z)$ analítica en $U^\star$ y defina
+$$b_k = \int_{\gamma_k} f(z) \, dz$$
+donde $\gamma_k \subset U$ es un círculo pequeño centrado en $a_k$. Construya una función analítica $h(z)$ en $U$ tal que
+$$h'(z) = f(z) - \sum_k \frac {b_k} {z - a_k}$$
+\end{exercise}
+
+\begin{solution}
+Tomemos un ciclio arbitrario $\gamma \subset U^\star$ y pongamos $c_k = n(\gamma, a_k)$. Por hipótesis, $a_1, \dots, a_k$ son los únicos agujeros en $U^\star$, así que $\gamma$ es homólogo a $c_1 \gamma_1 + \dots + c_n \gamma_k$ en $U^\star$. Entonces,
+$$
+\int_\gamma f(z) \, dz
+    = \sum_k c_k \int_{\gamma_k} f(z) \, dz
+    = \sum_k b_k c_k
+    = \sum_k \int_\gamma \frac {b_k} {z - a_k} \, dz
+$$
+Por ende, las integrales de línea de la función
+$$g(z) = f(z) - \sum_k \frac {b_k} {z - a_k}$$
+son independientes de la trayectoria. Tomemos un punto $z_0 \in U^\star$ y definamos
+$$h(z) = \int_\sigma g(z) \, dz$$
+donde $\sigma \subset U^\star$ es un camino arbitrario desde $z_0$ hasta $z$. En particular, tomando algún $\sigma$ cuyo tramo final sea un segmento horizontal o vertical, tenemos
+$$\p hx = -i \p hy = g(z)$$
+donde $z = x + iy$. Por ende, $h(z)$ es analítica en $U$ y su derivada es $h'(z) = g(z)$.
+\end{solution}

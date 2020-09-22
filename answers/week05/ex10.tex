@@ -1,0 +1,16 @@
+\begin{exercise}
+Pruebe que toda colección de cuatro puntos distintos pueden ser enviados por una transformación de Möbius a $1, -1, k, -k$, donde $k$ depende de los puntos dados.
+\end{exercise}
+
+\begin{solution}
+Supongamos sin pérdida de generalidad que los tres primeros puntos son $1, -1, \infty$. Sea
+$$T(z) = \frac {az + b} {cz + d}$$
+la transformación de Möbius que buscamos. Puesto que $T$ fija $\pm 1$, tenemos $a = kb = kc = d$. Entonces,
+$$
+T(\infty) + T(z_0)
+    = k + \frac {k z_0 + 1} {z_0 + k}
+    = \frac {k^2 + 2kz_0 + 1} {z_0 + k}
+    = 0
+$$
+donde $z_0 \in \C$ es el cuarto punto bajo consideración. Entonces $k$ puede ser tomado como cualquiera de las raíces de la ecuación cuadrática $k^2 + 2kz_0 + 1 = 0$. El producto de estas raíces es $1$, lo cual es consistente con el hecho de que, si $T$ fija $\pm 1$, entonces $1/T$ también fija $\pm 1$.
+\end{solution}

@@ -1,0 +1,46 @@
+\begin{exercise}
+Considere las series absolutamente convergentes
+$$A = \sum_n a_n, \qquad \qquad B = \sum_n b_n$$
+Demuestre que el producto de Cauchy de estas series
+$$C = \sum_n c_n, \qquad \qquad c_n = \sum_{i+j=n} a_i b_j$$
+converge absolutamente al producto $AB$.
+\end{exercise}
+
+\begin{solution}
+Formalmente, el producto de $A$ y $B$ se puede expresar de dos maneras:
+$$AB = \sum_n \sum_{\max(i,j)=n} a_i b_j, \qquad \qquad C = \sum_n \sum_{i+j=n} a_i b_j$$
+Cada una de ellas induce una sucesión de sumas parciales:
+$$p_n = \sum_{i,j \le n} a_i b_j, \qquad \qquad q_n = \sum_{i+j \le n} a_i b_j$$
+
+Diremos que una linealización de $a_i b_j$ es una sucesión de la forma $t_m = a_{i_m} b_{j_m}$, donde $(i_m, j_m)$ es una enumeración de $\N \times \N$. Sea $t_m$ una linealización arbitraria. Para todo $m \in \N$, existe algún $n \in \N$ tal que todos los términos de la suma parcial $s_m = t_1 + \dots + t_m$ también aparecen en $p_n$. Entonces la serie
+$$T = \sum_m t_m$$
+es absolutamente convergente, en virtud de la cota superior
+$$
+\Vert s_m \Vert
+    \le \sum_{k \le m} \Vert t_k \Vert
+    \le \sum_{i,j \le n} \Vert a_i b_j \Vert
+    \le \sum_{i,j \le n} \Vert a_i \Vert \Vert b_j \Vert
+    = \sum_n \Vert a_n \Vert \cdot \sum_n \Vert b_n \Vert
+$$
+que es finita, porque $A, B$ son absolutamente convergentes.
+
+Por el resultado del ejercicio 3, el valor de $T$ no depende de la linealización $t_m$ escogida. En particular, si tomamos una linealización $t_m$ tal que $p_n$ es una subsucesión de $s_m$, deducimos que
+$$
+T
+    = \sum_m t_m
+    = \lim_{m \to \infty} s_m
+    = \lim_{n \to \infty} p_n
+    = \sum_n \sum_{i,j \le n} a_i b_j
+    = AB
+$$
+y si tomamos una linealización $t_m$ tal que $q_n$ es una subsucesión de $s_m$, deducimos que
+$$
+T
+    = \sum_m t_m
+    = \lim_{m \to \infty} s_m
+    = \lim_{n \to \infty} q_n
+    = \sum_n \sum_{i+j \le n} a_i b_j
+    = C
+$$
+Por ende, si las series $A, B$ convergen\footnote{Existen álgebras normadas en las cuales no toda serie absolutamente convergente es convergente.}, entonces $C$ converge absolutamente a $AB$.
+\end{solution}

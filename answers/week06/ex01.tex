@@ -1,0 +1,25 @@
+\begin{exercise}
+Considere $\gamma$ como el cuadrado de vértices en $1, i, -1, -i$. Calcule la integral
+$$\int_\gamma \frac 1z \, dz$$
+\end{exercise}
+
+\begin{solution}
+Tenemos un integrando de la forma $\omega = f \, dz$. Su diferencial es
+$$
+d\omega
+    = df \, dz + \cancelto 0 {f \, d^2z}
+    = \left[ \p fx \, dx + i \p fy \, dy \right] (dx + i \, dy)
+    = i \left[ \p fx + i \p fy \right] dx \, dy
+$$
+Sustituyendo $f = u + iv$, la última expresión entre corchetes se reduce a
+$$\p fx + i \p fy = \left( \p ux - \p vy \right) + i \left( \p vx + \p uy \right)$$
+Entonces, asumiendo que $f$ es de clase $C^1$, las siguientes proposiciones son equivalentes:
+\begin{itemize}
+    \item $f = u + iv$ es una función holomorfa.
+    \item $u, v$ satisfacen las ecuaciones de Cauchy-Riemann.
+    \item $\omega = f \, dz$ es una $1$-forma cerrada.
+    \item La integral de línea $\int_\gamma \omega$ sólo depende de la clase de homotopía con extremos fijos de $\gamma$.
+\end{itemize}
+En nuestro caso, $f = 1/z$ es una función holomorfa. Entonces podemos reemplazar $\gamma$ con cualquier curva homotópica a ella, por ejemplo, el círculo unitario recorrido de manera antihoraria. Parametricemos este círculo como $z(t) = e^{it}$, donde $t \in [0, 2\pi]$. Entonces,
+$$\int_\gamma \frac 1z \, dz = i \int_0^{2\pi} dt = 2\pi i$$
+\end{solution}

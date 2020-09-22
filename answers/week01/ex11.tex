@@ -1,0 +1,13 @@
+\begin{exercise}
+Sea $U \subset \C$ un abierto que no contiene al origen. Pruebe que, si hay una rama de $\sqrt z$ en $U$, entonces también hay una rama de $\angle z$ en $U$.
+\end{exercise}
+
+\begin{solution}
+Escribamos la coordenada compleja de $U$ en forma polar $z = re^{i\theta}$. En general, $r$ es un número real positivo bien definido, pero $\theta$ sólo puede ser escogido de manera continua módulo $2\pi$. Decimos que la forma $d\theta$ definida sobre el plano agujereado $W = \C - \{ 0 \}$ es cerrada pero no exacta.
+
+La existencia de una rama $\sqrt z = \sqrt re^{i\theta/2}$ en $U$ implica que $\theta/2$ puede ser escogido de manera continua módulo $2\pi$. Equivalentemente, $\theta$ puede ser escogido de manera continua módulo $4\pi$. Se nos pide mostrar que $\theta \in \R$ puede ser escogido de manera continua (módulo nada).
+
+Primero demostraremos que $U$ no contiene lazos que encierran al origen. Supongamos por el absurdo que $\gamma : [0,1] \to U$ es tal lazo, sin pérdida de generalidad simple. Integrando $d\theta$ sobre $\gamma$, obtenemos valores de $\theta$ que difieren por $2\pi$ en el punto de referencia $\gamma(0) = \gamma(1)$. Esto contradice el hecho de que $\theta$ está bien determinado módulo $4\pi$.
+
+Una consecuencia inmediata del párrafo anterior es que todo par de caminos $\gamma_0, \gamma_1 : [0,1] \to U$ entre los mismos extremos $\gamma_i(0) = a$, $\gamma_i(1) = b$ son homotópicos en $W$. De otro modo, la concatenación de $\gamma_0$ y la reversa de $\gamma_1$ sería un lazo cerrado que encierra al origen. Aplicando el teorema de Green a la homotopía entre $\gamma_0, \gamma_1$, deducimos que las integrales de línea de $d\theta$ no dependen de la trayectoria. Esto es, $d\theta$ es una forma exacta en $U$. Por ende, existe una rama, i.e., una elección continua del argumento $\theta = \angle z$ en $U$.
+\end{solution}

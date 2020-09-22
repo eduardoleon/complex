@@ -1,0 +1,35 @@
+\begin{exercise}
+Sea $z_n$ una sucesión en un espacio vectorial normado tal que $\lim z_n = A$. Determine si
+$$\lim_{n \to \infty} \frac {z_1 + \dots + z_n} n = A$$
+y justifique su respuesta.
+\end{exercise}
+
+\begin{solution}
+Sea $C \in \R^+$ una cota superior para las distancias $d_n = \Vert z_n - A \Vert$ y consideremos un margen de error arbitrario $\varepsilon > 0$. Existe un instante $p \in \N$ tal que $d_n \le \varepsilon/2$ para todo $n \ge p$. También existe otro instante $q \in \N$ tal que $Cp/q \le \varepsilon/2$.
+
+Consideremos un instante $n \in \N$ posterior a $k = \max(p, q)$. Entonces,
+$$
+n \cdot \left \Vert \frac {z_1 + \dots + z_n} n - A \right \Vert
+    \le \Vert z_1 - A \Vert + \dots + \Vert z_n - A \Vert
+$$
+Para los $p$ primeros términos, tenemos la cota
+$$
+\Vert z_1 - A \Vert + \dots + \Vert z_p - A \Vert
+    \le Cp
+    \le \frac {q\varepsilon} 2
+    \le \frac {n\varepsilon} 2
+$$
+Para los $n-p$ términos restantes, tenemos la cota
+$$
+\Vert z_{p+1} - A \Vert + \dots + \Vert z_n - A \Vert
+    \le (n-p) \frac \varepsilon 2
+    < \frac {n\varepsilon} 2
+$$
+Combinando estos resultados, tenemos la cota
+$$
+\left \Vert \frac {z_1 + \dots + z_n} n - A \right \Vert
+    < \frac 1n \cdot \left[ \frac {n\varepsilon} 2 + \frac {n\varepsilon} 2 \right]
+    = \varepsilon
+$$
+Por ende, la sucesión de promedios parciales de $z_n$ también converge a $A$.
+\end{solution}

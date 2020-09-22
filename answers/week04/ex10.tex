@@ -1,0 +1,11 @@
+\begin{exercise}
+Pruebe que la unión de dos regiones es una región si y sólo si tienen un punto en común.
+\end{exercise}
+
+\begin{solution}
+Una dirección es obvia: por definición, las regiones son conexas, i.e., no pueden expresarse como uniones disjuntas. Entonces sólo queda demostrar que la unión de dos regiones no disjuntas $\Omega_1, \Omega_2 \subset \C$ es nuevamente una región.
+
+Sean $V^1, V^2$ abiertos disjuntos de $\Omega = \Omega_1 \cup \Omega_2$ tales que $V^1 \cup V^2 = \Omega$. Cada $V_i^j = \Omega_i \cap V^j$ es un abierto del respectivo $\Omega_i$. Además, $V_i^1 \cup V_i^2 = \Omega_i$. Puesto que $\Omega_i$ es conexo, alguno de $V_i^1, V_i^2$ es vacío. El otro es necesariamente todo $\Omega_i$.
+
+Por construcción, cada $\Omega_i$ está encajado en algún $V^j$ y, por ende, es disjunto del otro $V^j$. Supongamos por el absurdo que cada $\Omega_i$ está encajado en un $V^j$ distinto. Entonces el punto común $\Omega_1, \Omega_2$ pertenece a ambos $V^j$. Esto contradice la hipótesis de que $V^1, V^2$ son disjuntos.
+\end{solution}

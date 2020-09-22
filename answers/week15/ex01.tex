@@ -1,0 +1,9 @@
+\begin{exercise}
+Pruebe que, si cada $f \in \F$ tiene parte real positiva, entonces $\F$ es normal.
+\end{exercise}
+
+\begin{solution}
+Consideremos la familia $\G = \{ \varphi \circ f : f \in \F \}$, donde $\varphi$ es la transformación de Möbius
+$$\varphi(z) = \frac {z-1} {z+1}$$
+Por construcción, todo $g \in \G$ toma valores en el disco unitario, así que $\Vert g|_K \Vert_\infty \le 1$ para todo subconjunto compacto $K \subset U$. Entonces $\G$ es una familia normal. Como la normalidad es una propiedad topológica, es invariante bajo homeomorfismos, así que $\F$ también es una familia normal.
+\end{solution}

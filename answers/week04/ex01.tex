@@ -1,0 +1,37 @@
+\begin{exercise}
+Sea $(X, d)$ un espacio métrico. Pruebe que
+$$\rho(x, y) = \frac {d(x, y)} {1 + d(x, y)}$$
+también es una distancia en $X$.
+\end{exercise}
+
+\begin{solution}
+Sean $x, y, z \in M$. Se verifica que
+\begin{itemize}
+    \item $\rho(x, y) \ge 0$, porque $d(x, y) \ge 0$.
+    \item $\rho(x, y) = 0$ si y sólo si $d(x, y) = 0$ si y sólo si $x = y$.
+    \item La desigualdad triangular para $\rho$ equivale a decir que
+    $$
+    \Delta(x, y, z)
+        = \rho(x, y) - \rho(y, z) - \rho(z, x)
+        = \frac {d(x, y)} {1 + d(x, y)} + \frac {d(y, z)} {1 + d(y, z)} - \frac {d(z, x)} {1 + d(z, x)}
+    $$
+    es no negativa. Multiplicando por el mínimo común denominador, tenemos
+    \begin{align*}
+    & \Delta \cdot [1 + d(x,y)] \cdot [1 + d(y,z)] \cdot [1 + d(z,x)] \\
+    & \qquad = d(x, y)
+        +          {d(x, y) \, d(y, z)}
+        + \cancel  {d(x, y) \, d(z, x)}
+        +          {d(x,y) \, d(y,z) \, d(z,x)} \\
+    & \qquad + d(y, z)
+        + \bcancel {d(y, z) \, d(z,x)}
+        +          {d(y, z) \, d(x,y)}
+        + \xcancel {d(y,z) \, d(z,x) \, d(x,y)} \\
+    & \qquad - d(z, x)
+        - \cancel  {d(z,x) \, d(x,y)}
+        - \bcancel {d(z,x) \, d(y,z)}
+        - \xcancel {d(z,x) \, d(x,y) \, d(y,z)}
+    \end{align*}
+    
+    Entonces $\Delta(x, y,z) \ge 0$. Por ende, $\rho(x, y) + \rho(y, z) \ge \rho(x, z)$.
+\end{itemize}
+\end{solution}

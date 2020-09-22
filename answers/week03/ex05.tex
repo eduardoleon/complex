@@ -1,0 +1,20 @@
+\begin{exercise}
+Analice la convergencia uniforme de la serie
+$$\sum_{n=1}^\infty \frac x {n (1 + nx^2)}$$
+con respecto al parámetro $x \in \R$.
+\end{exercise}
+
+\begin{solution}
+Observemos que $1 + nx^2 \ge 2 \sqrt n |x|$. Rearreglando términos, tenemos
+$$\frac {|x|} {1 + nx^2} \le \frac 1 {2 \sqrt n} < \frac 1 {\sqrt n}$$
+Entonces la serie de módulos admite la cota uniforme
+$$\sum_{n=1}^\infty \left| \frac x {n (1 + nx^2)} \right| < \sum_{n=1}^\infty \frac 1 {n \sqrt n}$$
+Esta cota uniforme es convergente, pues
+$$
+\sum_{n=2}^\infty \frac 1 {n \sqrt n}
+    < \int_1^\infty \frac 1 {x \sqrt x} \, dx
+    = -\frac 2 {\sqrt x} \Bigg \vert_1^\infty
+    = 2
+$$
+Por ende, la serie del enunciado es absoluta y uniformemente convergente para $x \in \R$.
+\end{solution}

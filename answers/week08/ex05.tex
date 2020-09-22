@@ -1,0 +1,19 @@
+\begin{exercise}
+Describa los ceros de la función $f(z) = \sin \dfrac {1 + z} {1 - z}$.
+\end{exercise}
+
+\begin{solution}
+Consideremos la variable auxiliar
+$$w = x + iy = \frac {1 + z} {1 - z}$$
+Usando una conocida identidad trigonométrica, tenemos
+$$\sin(x + iy) = \sin(x) \cos(iy) + \cos(x) \sin(iy) = \sin(x) \cosh(y) + i \cos(x) \sinh(y)$$
+Entonces $\sin(w) = 0$ si y sólo si las siguientes condiciones se cumplen:
+\begin{itemize}
+    \item $\sin(x) \cosh(y) = 0$ implica $\sin(x) = 0$, porque $\cosh(y)$ no se anula para ningún $y \in \R$.
+    \item $\cos(x) \sinh(y) = 0$ implica $\sinh(y) = 0$, porque $\sin(x) = 0$ implica $\cos(y) = \pm 1 \ne 0$.
+    \item $\sin(x) = \sinh(y) = 0$ implica $w = n\pi$ para algún $n \in \Z$.
+\end{itemize}
+Invirtiendo la transformación de Möbius que pone a $w$ como función de $z$, tenemos
+$$z = \frac {w - 1} {w + 1}$$
+Los ceros de $f(z)$ se obtienen sustituyendo $w = n\pi$ en esta expresión. Para valores muy grandes de $n \in \Z$, sean positivos o negativos, obtenemos ceros de $f(z)$ cada vez más cercanos a $1$.
+\end{solution}

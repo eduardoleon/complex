@@ -1,0 +1,73 @@
+\begin{exercise}
+Considere las siguientes funciones:
+\begin{enumerate}[label=(\alph*)]
+    \item $f(z) = \dfrac {\sin z} z$
+    \item $f(z) = \dfrac {\cos z} z$
+    \item $f(z) = \dfrac {\cos z - 1} z$
+    \item $f(z) = \exp \dfrac 1z$
+    \item $f(z) = \dfrac {z^2 + 1} {z (z - 1)}$
+    \item $f(z) = \dfrac 1 {1 - e^z}$
+\end{enumerate}
+Cada una de estas funciones tiene una singularidad en $z = 0$.
+\begin{itemize}
+    \item Si la singularidad es removible, encuentre la extensión analítica de $f(z)$ en $z = 0$.
+    \item Si la singularidad es un polo, halle la parte singular de $f(z)$ en $z = 0$.
+    \item Si la singularidad es esencial, describa el conjunto $f(D)$, donde $D \subset \C$ es un disco agujereado en el origen de radio arbitrariamente pequeño.
+\end{itemize}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item La primera función tiene una singularidad removible en $z = 0$, porque
+    $$\lim_{z \to 0} f(z) = \lim_{z \to 0} \frac {\sin z} z = \lim_{z \to 0} \frac {\cos z} 1 = 1$$
+    
+    La extensión de $f(z)$ que es analítica en $z = 0$ es
+    $$
+    g(z) =
+        \begin{cases}
+            f(z) & \text{si } z \ne 0 \\
+            1    & \text{si } z = 0
+        \end{cases}
+    $$
+    
+    Esto se verifica con la serie de potencias
+    $$\frac {\sin z} z = 1 - \frac {z^2} {3!} + \frac {z^4} {5!} - \frac {z^6} {7!} + \dots$$
+    
+    \item La segunda función tiene un polo de orden $1$ en $z = 0$, porque
+    $$\lim_{z \to 0} z \, f(z) = \lim_{z \to 0} \cos z = 1$$
+    
+    La parte singular de $f(z)$ en $z = 0$ es $1/z$. Esto se verifica con la serie de potencias
+    $$\frac {\cos z} z = \frac 1z - \frac z {2!} + \frac {z^3} {4!} - \frac {z^5} {6!} + \dots$$
+    
+    \item La tercera función tiene una singularidad removible en $z = 0$, porque
+    $$\lim_{z \to 0} f(z) = \lim_{z \to 0} \frac {\cos z - 1} z = \lim_{z \to 0} \frac {-\sin z} 1 = 0$$
+    
+    La extensión de $f(z)$ que es analítica en $z = 0$ es
+    $$
+    g(z) =
+        \begin{cases}
+            f(z) & \text{si } z \ne 0 \\
+            0    & \text{si } z = 0
+        \end{cases}
+    $$
+    
+    Esto se verifica removiendo la parte singular $1/z$ en la serie de potencias del ítem anterior.
+    
+    \item La cuarta función tiene una singularidad esencial en $z = 0$, porque la serie de potencias
+    $$f(z) = \exp \frac 1z = \dots + \frac {z^{-3}} {3!} + \frac {z^{-2}} {2!} + z^{-1} + 1$$
+    tiene infinitos términos no nulos de orden negativo.
+    
+    Llamemos $D$ al disco agujereado $0 < |z| < \varepsilon$. Aplicando la inversión $w = 1/z$, tenemos una vecindad inmensa $1/\varepsilon < |w| < \infty$ que contiene infinitas franjas $a < \Im(w) < b$, con $b - a > 2\pi$. Cualquiera de estas franjas es enviada por la función exponencial al plano agujereado $f(D) = \C^\star$.
+    
+    \item La quinta función se puede reexpresar de manera más conveniente (para nuestros fines) como
+    $$f(z) = \frac {z^2 + 1} {z (z - 1)} = \frac {z + 1} {z - 1} - \frac 1z$$
+    
+    El primer término es analítico en $z = 0$. Por ende, la parte singular de $f(z)$ en $z = 0$ es solamente el segundo término $-1/z$.
+    
+    \item La sexta función tiene un polo de orden $1$ en $z = 0$, porque
+    $$\lim_{z \to 0} z \, f(z) = \lim_{z \to 0} \frac z {1 - e^z} = \exp'(0)^{-1} = 1$$
+    
+    La parte singular de $f(z)$ en $z = 0$ es $1/z$.
+\end{enumerate}
+\end{solution}

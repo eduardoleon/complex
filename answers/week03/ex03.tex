@@ -1,0 +1,41 @@
+\begin{exercise}
+Pruebe que la suma de una serie absolutamente convergente no cambia si sus términos son reordenados.
+\end{exercise}
+
+\begin{solution}
+Consideremos inicialmente dos series
+$$S = \sum_n a_n, \qquad \qquad S' = \sum_n a_n'$$
+tales que la sucesión $a_n'$ es un reordenamiento de la sucesión $a_n$. Por definición, $S, S'$ son los límites de las sucesiones de sumas parciales
+$$s_n = a_1 + \dots + a_n, \qquad \qquad s_n' = a_1' + \dots + a_n'$$
+respectivamente, si estos límites existen.
+
+Supongamos inicialmente que existe un instante $k \in \N$ tal que $a_n = a_n'$ para todo $n \ge k$. Esto implica que $s_n = s_n'$ para todo $n \ge k$. Entonces, si una serie converge, la otra serie también converge a la misma suma. Por ende, reordenar un prefijo finito de una serie no altera su suma.
+
+Supongamos ahora que los términos de $S, S'$ son números reales no negativos. Para todo $n \in \N$, existe algún $m \in \N$ tal que todos los términos de $s_n$ también aparecen en $s_m'$. Esto implica que cualquier suma parcial de $S$ es eventualmente superada por las sumas parciales de $S'$. Por supuesto, lo mismo es cierto si revertimos los roles de $S, S'$. Entonces, si una serie converge, la otra serie también converge a la misma suma. Por ende, reordenar una serie de términos no negativos no altera su suma.
+
+Supongamos ahora que los términos de $A$ pertenecen a un espacio vectorial normado arbitrario y $A$ es absolutamente convergente. Esto es, la serie de normas
+$$T = \sum_n \Vert a_n \Vert$$
+es convergente. Esto es, la sucesión de sumas parciales
+$$t_n = \Vert a_1 \Vert + \dots + \Vert a_n \Vert$$
+es convergente. Sean $\varepsilon > 0$ un margen de error arbitrario y $k \in \N$ el momento desde el cual $T - t_n \le \varepsilon/4$ para todo $n \ge k$. Entonces,
+$$
+\Vert s_n - s_m \Vert
+    \le \Vert s_{m+1} \Vert + \dots + \Vert s_n \Vert
+    = t_n - t_m = (T - t_m) - (T - t_n)
+    \le \varepsilon/4 + \varepsilon/4
+    = \varepsilon/2
+$$
+para todo $n \ge m \ge k$. Es decir, $s_n$ es una sucesión de Cauchy. Además, la serie de normas
+$$T' = \sum_n \Vert a_n' \Vert$$
+se obtiene reordenando los términos de $T$. Entonces la sucesión de sumas parciales
+$$t_n' = \Vert a_1 \Vert + \dots + \Vert a_n' \Vert$$
+converge al mismo límite $T$. Por ende, $A'$ también es absolutamente convergente. Reordenando un prefijo de $A'$, podemos asumir que $a_i = a_i'$ para todo $i = 1, \dots, k$. Entonces $s_k = s_k'$. Por ende,
+$$
+\Vert s_m - s_n' \Vert
+    = \Vert (s_m - s_k) - (s_n' - s_k') \Vert
+    \le \Vert s_m - s_k \Vert + \Vert s_n' - s_k' \Vert
+    \le \varepsilon/2 + \varepsilon/2
+    = \varepsilon
+$$
+para todo $m, n \ge k$. O sea, $s_n, s_n'$ son sucesiones de Cauchy equivalentes. Entonces, si una serie converge, la otra también converge a la misma suma\footnote{Existen espacios vectoriales normados de dimensión infinita en los cuales no toda sucesión de Cauchy converge.}. Por ende, reordenar arbitrariamente los términos de una serie absolutamente convergente no altera su suma.
+\end{solution}

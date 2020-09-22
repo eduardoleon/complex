@@ -1,0 +1,25 @@
+\begin{exercise}
+Sean $f(z)$, $g(w)$ dos funciones analíticas. Pruebe que $g \circ f$ también es analítica.
+\end{exercise}
+
+\begin{solution}
+Tomemos cualquier punto $z_0 \in \dom(f)$ y pongamos $w_0 = f(z_0)$. Puesto que $f, g$ son analíticas, sus derivadas complejas en $z_0, w_0$ existen. Esto es, los límites
+$$
+f'(z_0) = \lim_{z \to z_0} \frac {f(z) - f(z_0)} {z - z_0}, \qquad \qquad
+g'(w_0) = \lim_{w \to w_0} \frac {g(w) - g(w_0)} {w - w_0}
+$$
+están bien definidos. Entonces el límite
+\begin{align*}
+(g \circ f)'(z_0)
+    & = \lim_{z \to z_0} \frac {g \circ f(z) - g \circ f(z_0)} {z - z_0} \\
+    & = \lim_{z \to z_0} \left[
+        \frac {g \circ f(z) - g \circ f(z_0)} {f(z) - f(z_0)} \cdot
+        \frac {f(z) - f(z_0)} {z - z_0} \right] \\
+    & = \lim_{z \to z_0} \frac {g \circ f(z) - g \circ f(z_0)} {f(z) - f(z_0)} \cdot
+        \lim_{z \to z_0} \frac {f(z) - f(z_0)} {z - z_0} \\
+    & = \lim_{w \to w_0} \frac {g(w) - g(w_0)} {w - w_0} \cdot
+        \lim_{z \to z_0} \frac {f(z) - f(z_0)} {z - z_0} \\
+    & = g'(w_0) \cdot f'(z_0)
+\end{align*}
+también está bien definido. Esto es, la derivada compleja de $g \circ f$ en $z_0$ existe. Como este razonamiento es válido para todo $z_0 \in U$, la composición $g \circ f$ es analítica en $U$.
+\end{solution}

@@ -1,0 +1,23 @@
+\begin{exercise}
+Utilice residuos para calcular la integral
+$$\int_{-\infty}^\infty \frac {dx} {(x^2 + 1) (x^2 + 4)}$$
+\end{exercise}
+
+\begin{solution}
+Sea $R > 0$ un número muy grande y sea $\gamma \subset \C$ el ciclo definido por los siguientes tramos:
+\begin{itemize}
+    \item $\gamma_1$, el segmento orientado desde $z = -R$ hasta $z = R$.
+    \item $\gamma_2$, el semicírculo en el semiplano $\Im(z) \ge 0$ desde $z = R$ hasta $z = -R$.
+\end{itemize}
+Sea $f(z)$ el integrando. Tenemos la cota en módulo
+$$
+\left| \int_{\gamma_2} f(z) \, dz \right|
+    \le \int_{\gamma_2} \left| f(z) \right| \, |dz|
+    \le \pi R \cdot \Vert f \circ \gamma_2 \Vert_\infty
+    = \frac {\pi R} {(R^2 - 1) (R^2 - 4)}
+$$
+Esta cota tienda a cero cuando $R \to \infty$. Por ende,
+$$S = \lim_{R \to \infty} \int_{\gamma_1} f(z) \, dz = \int_\gamma f(z) \, dz$$
+Los polos de $f(z)$ y sus respectivos residuos ya han sido calculados en el ejercicio 1.(c). Sólo necesitamos los polos encerrados por $\gamma$, que son $z = i$, $z = 2i$. Por ende, la integral pedida es
+$$S = 2\pi i \cdot [\Res(f, i) + \Res(f, 2i)] = 2\pi i \left[ -\frac i6 + \frac i {12} \right] = \frac \pi 6$$
+\end{solution}

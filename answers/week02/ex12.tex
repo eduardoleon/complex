@@ -1,0 +1,21 @@
+\begin{exercise}
+La función exponencial de $z = x + iy$ en base $e$ está definida por la identidad
+$$e^z = e^x \cdot (\cos y + i \sin y)$$
+
+Pruebe que la función exponencial es biyectiva desde la franja $B = \{ z \in \C \mid -\pi < \Im(z) \le \pi \}$ sobre el plano agujereado $\C - \{ 0 \}$. ¿Será inyectiva en las franjas horizontales de anchura menor que $2\pi$? Describa la imagen de la recta $y = mx$.
+\end{exercise}
+
+\begin{solution}
+Sean $z, w \in B$ tales que $e^z = e^w$. Puesto que el exponencial nunca toma el valor cero,
+$$
+\frac {e^z} {e^w}
+    = \frac {e^x} {e^u} \cdot \frac {\cos y + i \sin y} {\cos v + i \sin v}
+    = e^{x-u} \cdot (\cos (y-v) + i \sin (y-v))
+    = 1
+$$
+donde $z = x + iy$, $w = u + iv$. Entonces (a) $x, u$ son iguales, (b) $y - w$ es un múltiplo entero de $2\pi$. En la franja $B$, se cumple $-\pi < y, v \le \pi$. Entonces $-2\pi < y - v < 2\pi$. Por ende, $y, v$ también son iguales. De manera recíproca, si $c$ es un número complejo no nulo y $\angle c$ es su argumento principal\footnote{El argumento principal de un número real negativo es $\pi$.}, entonces $z = \log |c| + i \angle c$ pertenece a la franja $B$ y su exponencial es $e^z = c$. Por ende, $\exp : B \to \C - \{ 0 \}$ es una biyección.
+
+Sea $B' = \{ z \in \C \mid a \le \Im(b) \le b \}$ una franja de ancho $b-a < 2\pi$. Repitiendo el argumento usado en el párrafo anterior, si dos puntos de $B'$ tienen el mismo exponencial, entonces (a) tienen la misma parte real, (b) tienen partes imaginarias que difieren por un múltiplo entero de $2\pi$ y (c) este múltiplo de $2\pi$ no puede tener valor absoluto mayor que $b-a$. Entonces las partes imaginarias también son iguales. Por ende, los puntos tomados de $B'$ son iguales. Por ende, la función exponencial restricta a $B'$ es inyectiva.
+
+La imagen de la recta $y = mx$ es la curva $r = e^t$, $\theta = mt$ en coordenadas polares, o bien, eliminando el parámetro, $r^m = e^\theta$. Si $m = 0$, entonces la curva es el eje real positivo. Si $m \ne 0$, entonces la curva es una espiral logarítmica, porque la coordenada radial $r$ se expande o contrae por el factor constante $K = e^{2\pi/m}$ cada vez que la coordenada angular $\theta$ completa una vuelta. Esto implica que la espiral logarítmica es una copia $K$ veces más grande de sí misma.
+\end{solution}

@@ -1,0 +1,13 @@
+\begin{exercise}
+El ángulo entre dos círculos orientados en un punto de intersección está definido como el ángulo entre las tangentes a ambos círculos en este punto, equipadas con la misma orientación. Pruebe de manera analítica, sin recurrir a la inspección geométrica, que los ángulos en los dos puntos de intersección son opuestos.
+\end{exercise}
+
+\begin{solution}
+Sean $C_1, C_2$ dos círculos orientados. Mediante una transformación de Möbius $T$, enviemos estos dos círculos a rectas que pasan por el origen, digamos,
+$$\Im(z / \alpha) = 0, \qquad \qquad \Im(z / \beta) = 0$$
+donde $\alpha, \beta \in S^1$ son los respectivos vectores direccionales unitarios. El ángulo dirigido desde $T(C_1)$ hasta $T(C_2)$ en el origen es $\arg(\beta / \alpha)$. Puesto que $T^{-1}$ es una aplicación conforme, el ángulo dirigido desde $C_1$ hasta $C_2$ en el punto de intersección $T^{-1}(0)$ también es $\arg(\beta / \alpha)$.
+
+El otro punto de intersección entre estas dos rectas es $\infty$. Aplicaremos la inversión $S(z) = -1/z$ para mover $\infty$ a la parte finita del plano. Entonces $ST$ envía $C_1, C_2$ a las rectas
+$$\Im(\alpha z) = 0, \qquad \qquad \Im(\beta z) = 0$$
+cuyos vectores direccionales unitarios son $1 / \alpha$, $1 / \beta$. El ángulo dirigido desde $ST(C_1)$ hasta $ST(C_2)$ en el origen es $\arg(\alpha / \beta) = -\arg(\beta / \alpha)$. Puesto que $(ST)^{-1}$ es una aplicación conforme, el ángulo dirigido desde $C_1$ hasta $C_2$ en el punto de intersección $(ST)^{-1}(0) = T^{-1}(\infty)$ también es $-\arg(\beta / \alpha)$.
+\end{solution}

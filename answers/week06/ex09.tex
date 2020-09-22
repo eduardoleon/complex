@@ -1,0 +1,27 @@
+\begin{exercise}
+Calcule la integral de línea
+$$\int_\gamma \frac 1 {z^2 - 1} \, dz$$
+en los siguientes casos: (a) $\gamma$ es el círculo $|z - 1| = 1$, orientado positivamente, (b) $\gamma$ es el círculo $|z| = 2$, orientado positivamente.
+\end{exercise}
+
+\begin{solution}
+Separemos el integrando en fracciones parciales:
+$$\frac 1 {z^2 - 1} = \frac {1/2} {z-1} - \frac {1/2} {z+1}$$
+Por la linealidad de la integral, tenemos
+$$\int_\gamma \frac 1 {z^2 - 1} \, dz = \frac 12 \int_\gamma \frac 1 {z-1} \, dz - \frac 12 \int_\gamma \frac 1 {z+1} \, dz$$
+
+\begin{enumerate}[label=(\alph*)]
+    \item Observemos que $\gamma$ es contractible en el dominio de sustraendo. Entonces,
+    $$\int_\gamma \frac 1 {z^2 - 1} \, dz
+        = \frac 12 \int_\gamma \frac 1 {z-1} \, dz - \cancelto 0 {\frac 12 \int_\gamma \frac 1 {z+1} \, dz}
+        = i\pi
+    $$
+    
+    \item Sean $\gamma_1, \gamma_2$ los círculos $|z-1| = 1$ y $|z+1| = 1$, ambos orientados positivamente. Observemos que $\gamma$ es homotópica a $\gamma_1$ en el dominio del minuendo y es homotópica a $\gamma_2$ en el dominio del sustraendo. Reemplazando $\gamma$ con $\gamma_1, \gamma_2$ en las integrales correctas, tenemos
+    $$\int_\gamma \frac 1 {z^2 - 1} \, dz
+        = \frac 12 \int_{\gamma_1} \frac 1 {z-1} \, dz - \frac 12 \int_{\gamma_2} \frac 1 {z+1} \, dz
+        = i\pi - i\pi
+        = 0
+    $$
+\end{enumerate}
+\end{solution}

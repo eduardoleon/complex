@@ -1,0 +1,14 @@
+\begin{exercise}
+Sea $f(z)$ una función analítica e inyectiva en un disco abierto $U \subset \C$. Pruebe que
+$$f^{-1}(w_0) = \frac 1 {2\pi i} \int_\gamma \frac {z \, f'(z)} {f(z) - w_0} \, dz$$
+donde $w_0 \in f(U)$ es un punto arbitrario y $\gamma \subset $ es un pequeño círculo alrededor de $z_0 = f^{-1}(w_0)$.
+\end{exercise}
+
+\begin{solution}
+Como se dijo en el ejercicio 18 de la semana 9, una función analítica e inyectiva no puede tener puntos críticos. Entonces todo $w \in f(U)$ es un valor regular de $f(z)$. Por ende, la función inversa $f^{-1}(w)$ definida en $f(U)$ también es analítica. En particular, $f(z)$ es un homeomorfismo y preserva la orientación, así que $f \circ \gamma$ es un lazo antihorario alrededor de $w_0$. Por la fórmula integral de Cauchy,
+$$
+f^{-1}(w_0)
+    = \frac 1 {2\pi i} \int_{f \circ \gamma} \frac {f^{-1}(w)} {w - w_0} \, dw
+    = \frac 1 {2\pi i} \int_\gamma \frac {z \, f'(z)} {f(z) - w_0} \, dz
+$$
+\end{solution}

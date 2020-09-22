@@ -1,0 +1,16 @@
+\begin{exercise}
+El logaritmo complejo de $z \ne 0$, denotado $\log(z)$, se define como cualquier número complejo $w$ tal que $e^w = z$. Pruebe que $\log(z) = \Log|z| + i \angle z$, donde $\Log : (0, \infty) \to \R^+$ es la inversa de la función exponencial real. ¿Es la diferencia entre dos logaritmos complejos de $z$ un múltiplo entero de $2\pi i$? En este contexto, se define el logaritmo principal haciendo uso del argumento principal. ¿Es el logaritmo principal una función discontinua en la parte negativa del eje real.
+\end{exercise}
+
+\begin{solution}
+Supongamos que $u + iv$ es un logaritmo complejo de $z$. Entonces,
+$$z = e^{u + iv} = e^u \cdot (\cos v + i \sin v)$$
+Tomando el módulo y el argumento en ambos lados, tenemos
+$$|z| = e^u, \qquad \qquad \angle z = v$$
+Despejando $u, v$, tenemos el resultado buscado:
+$$\log(z) = u + iv = \Log|z| + i \angle z$$
+
+La parte real $u = \Log|z|$ está bien determinada, pero la parte compleja $v = \angle z$ es en realidad una clase de equivalencia de números reales módulo $2\pi$. Por ende, el logaritmo complejo $\log(z)$ también es una clase de equivalencia de números complejos módulo $2\pi i$.
+
+Para todo $x < 0$, tenemos $\angle x = \pi$. Sin embargo, para todo $\varepsilon > 0$, tenemos $\angle(x - i\varepsilon) < 0$. Por ende, el argumento principal es una función discontinua en la parte negativa del eje real. Puesto que el argumento principal es una componente del logaritmo principal, este último también es una función discontinua en la parte negativa del eje real.
+\end{solution}

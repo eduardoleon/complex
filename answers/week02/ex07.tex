@@ -1,0 +1,24 @@
+\begin{exercise}
+Pruebe que una función $u(z)$ es armónica si y sólo si $u(\bar z)$ es armónica.
+\end{exercise}
+
+\begin{solution}
+Sea $\Phi(f) = f \circ \varphi$, donde $\varphi : \C \to \C$ es la conjugación compleja. Se nos pide demostrar que $u$ es armónica si y sólo si $v = \Phi(u)$ es armónica. Puesto que $u = \Phi(v)$, es suficiente demostrar la implicación en una sola dirección.
+
+Supongamos que $u$ es armónica. Esto es, $u$ satisface
+$$\s ux + \s uy = 0$$
+Sea $x' + iy' = \varphi(x + iy)$. Por la regla de la cadena, tenemos
+$$
+\p {} {x'} = \p x {x'} \p {} x + \p y {x'} \p {} y = \p {} x, \qquad \qquad
+\p {} {y'} = \p x {y'} \p {} x + \p y {y'} \p {} y = -\p {} y
+$$
+Sustituyendo este resultado en $v(x' + iy') = u(x + iy)$, tenemos
+$$
+\s v {x'} + \s v {y'}
+    = \p {} {x'} \left[ \p v {x'} \right] + \p {} {y'} \left[ \p v {y'} \right]
+    = \p {} x \left[ \p ux \right] - \p {} y \left[ -\p uy \right]
+    = \s ux + \s uy
+    = 0
+$$
+Por ende, $v$ es una función armónica.
+\end{solution}

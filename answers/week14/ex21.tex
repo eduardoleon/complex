@@ -1,0 +1,22 @@
+\begin{exercise}
+Sean $f(z)$ una función analítica y $w$ una función de clase $C^2$ en $f(U)$. Pruebe que
+$$\triangle (w \circ f) = |f'|^2 \cdot \triangle w$$
+\end{exercise}
+
+\begin{solution}
+Pensemos en $U$ y $f(U)$ como abiertos de $\R^2$ y pensemos en $f$ como una función $(t,s) = f(x,y)$ cuyas componentes satisfacen las ecuaciones de Cauchy-Riemann. Entonces,
+$$(w \circ f)_{xx} = (\nabla w \cdot f_x)_x = (\nabla w)_x \cdot f_x + \nabla w \cdot f_{xx} = f_x^T \cdot Hw \cdot f_x + \nabla w \cdot f_{xx}$$
+Puesto que las componentes de $f$ son funciones armónicas, tenemos
+$$\nabla w \cdot f_{xx} + \nabla w \cdot f_{yy} = \nabla w \cdot (f_{xx} + f_{yy}) = 0$$
+Entonces el laplaciano original se reduce a
+$$\triangle (w \circ f) = f_x^T \cdot H_w \cdot f_x + f_y^T \cdot H_w \cdot f_x$$
+Puesto que $Hw$ es una matriz simétrica, existe una base ortonormal $u, v \in \R^2$ tal que
+$$u^T \cdot Hw \cdot v = v^T \cdot Hw \cdot u = 0$$
+La condición de Cauchy-Riemann es que $f_x, f_y$ son de la forma
+$$f_x = au - bv, \qquad \qquad \qquad f_y = bu + av$$
+Por construcción, $a^2 + b^2 = \det Jf = |f'|^2$. Entonces,
+$$f_x^T \cdot Hf \cdot f_x = a^2 (u^T \cdot Hw \cdot u) + b^2 (v^T \cdot Hw \cdot v)$$
+$$f_y^T \cdot Hf \cdot f_y = b^2 (u^T \cdot Hw \cdot u) + a^2 (v^T \cdot Hw \cdot v)$$
+Sumando término a término, tenemos
+$$\triangle (w \circ f) = |f'|^2 \cdot \operatorname{tr}(Hw) = |f'|^2 \cdot \triangle w$$
+\end{solution}

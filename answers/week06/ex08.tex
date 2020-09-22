@@ -1,0 +1,23 @@
+\begin{exercise}
+Sea $\gamma$ el círculo $|z| = r$ orientado positivamente. Calcule
+$$\int_\gamma x \, dz$$
+de dos maneras: (a) utilizando una parametrización, (b) utilizando el hecho de que, en $\gamma$,
+$$x = \frac 12 (z + \bar z) = \frac 12 \left( z + \frac {r^2} z \right)$$
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item El círculo dado es $\gamma(t) =re^{it}$, donde $t \in [-\pi, \pi]$. Entonces,
+    $$
+    \int_\gamma x \, dz
+        = \cancelto 0 {\int_\gamma x \, dx} + i \int_\gamma x \, dy
+        = ir^2 \int_{-\pi}^\pi \cos^2 t \, dt
+        = ir^2 \int_0^\pi (1 + \cos t) \, dt
+        = i\pi r^2
+    $$
+    
+    \item Usando la sugerencia y el resultado del ejercicio 4, tenemos
+    $$\int_\gamma x \, dz = \cancelto 0 {\frac 12 \int_\gamma z \, dz} + \frac {r^2} 2 \int_\gamma \frac 1z \, dz = \frac {r^2} 2 \cdot 2\pi i = i\pi r^2$$
+\end{enumerate}
+\end{solution}

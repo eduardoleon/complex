@@ -1,0 +1,14 @@
+\begin{exercise}
+Sea $f(z)$ una función analítica en una región $U \subset \C$ y sea $a \in U$ tal que $f'(a) \ne 0$.
+\end{exercise}
+
+\begin{solution}
+Sea $U_0$ la región $U$ agujereada en $a$ y sea $g : U_0 \to \C$ la función definida por
+$$g(z) = \frac {z - a} {f(z) - f(a)}$$
+Esta función tiene una singularidad removible en $a$, porque
+$$\lim_{z \to a} g(z) = \frac 1 {f'(a)}$$
+Extendamos $g$ analíticamente con $g(a) = 1 / f'(a)$. Entonces, por la fórmula integral de Cauchy,
+$$\int_C \frac {dz} {f(z) - f(a)} = \int_C \frac {g(z)} {z - a} \, dz = 2\pi i \cdot g(a) = \frac {2\pi i} {f'(a)}$$
+\end{solution}
+
+\newpage

@@ -1,0 +1,13 @@
+\begin{exercise}
+Sea $f(z)$ una función analítica en una curva cerrada $\gamma$. Determine si
+$$\int_\gamma \overline {f(z)} \, f'(z) \, dz$$
+es imaginario puro.
+\end{exercise}
+
+\begin{solution}
+Pongamos $f = u + iv$. Entonces el integrando es
+$$\bar f \, df = (u - iv) \, (du + i \, dv) = (u \, du + v \, dv) + i \, (u \, dv - v \, du)$$
+La parte real de esta forma es exacta, por ende su integral $\gamma$ es cero. Por ende,
+$$\int_\gamma \overline {f(z)} \, f'(z) \, dz$$
+es imaginario puro.
+\end{solution}

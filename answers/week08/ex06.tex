@@ -1,0 +1,25 @@
+\begin{exercise}
+Pruebe que las funciones $\exp$, $\sin$, $\cos$ tienen singularidades esenciales en el infinito.
+\end{exercise}
+
+\begin{solution}
+Sea $U \subset \C$ una vecindad agujereada de $z = \infty$ en la esfera de Riemann.
+
+\begin{enumerate}[label=(\alph*)]
+    \item La prueba para $\exp$ ya fue dada en la parte (d) de la pregunta 1.
+    
+    \item Escribamos $\sin = f \circ \exp$, donde $f : \C^\star \to \C$ está definida por
+    $$f(z) = \frac {z - z^{-1}} {2i}$$
+    
+    Tenemos $\sin(U) = f \circ \exp(U) = f(\C^\star)$. Para todo $a \in \C$, la ecuación cuadrática
+    $$f(z) = a \implies z^2 - 2iaz - 1 = 0$$
+    tiene por lo menos una solución distinta de cero. Entonces, $\sin(U) = f(\C^\star) = \C$.
+    
+    \item Escribamos $\cos = f \circ \exp$, donde $f : \C^\star \to \C$ está definida por
+    $$f(z) = \frac {z + z^{-1}} 2$$
+    
+    Tenemos $\cos(U) = f \circ \exp(U) = f(\C^\star)$. Para todo $a \in \C$, la ecuación cuadrática
+    $$f(z) = a \implies z^2 - 2az + 1 = 0$$
+    tiene por lo menos una solución distinta de cero. Entonces, $\cos(U) = f(\C^\star) = \C$.
+\end{enumerate}
+\end{solution}

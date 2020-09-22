@@ -1,0 +1,15 @@
+\begin{exercise}
+Encuentre la serie de Laurent de la función
+$$f(z) = \frac 1 {z+1} - \frac 1 {z-2}$$
+definida en el anillo $|z| > 2$.
+\end{exercise}
+
+\begin{solution}
+Consideremos la función auxiliar
+$$g(w) = f(1/w) = \frac w {1+w} - \frac w {1-2w}$$
+La serie de Taylor de esta función centrada en $w = 0$ está dada por
+$$g(w) = \sum_{n=0}^\infty \left[ (-1)^n - 2^n \right] w^{n+1}$$
+y converge absolutamente para todo $|w| < 1/2$. Por ende, la serie de Laurent
+$$f(z) = \sum_{n=0}^\infty \frac {(-1)^n - 2^n} {z^{n+1}}$$
+converge para todo $|z| > 2$.
+\end{solution}

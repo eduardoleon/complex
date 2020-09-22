@@ -1,0 +1,13 @@
+\begin{exercise}
+Determine si las siguientes proposiciones son equivalentes:
+\begin{enumerate}[label=(\alph*)]
+    \item $d, \rho$ son métricas equivalentes sobre $X$.
+    \item $d$ es continua con respecto a $\rho$ y viceversa.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+Toda función distancia es continua con respecto a sí misma. Puesto que la continuidad depende sólo de la topología y no de la métrica, toda función distancia es continua con respecto a cualquier métrica equivalente. Por ende, a) implica b).
+
+Por otro lado, si $d$ es continua con respecto a $\rho$, entonces las restricciones $d(x, \cdot)$ también son continuas con respecto a $\rho$. Esto implica que toda $d$-bola $B_d(x, \cdot)$ tiene una $\rho$-bola encajada $B_\rho(x, \cdot)$. Por supuesto, este argumento también funciona si revertimos los roles de $d, \rho$. Por ende, b) implica a).
+\end{solution}

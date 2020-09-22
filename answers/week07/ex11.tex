@@ -1,0 +1,157 @@
+\begin{exercise}
+Pruebe las siguientes afirmaciones:
+\begin{enumerate}[label=(\alph*)]
+    \item Sea $f(z)$ es una función continua en una región $U \subset \C$ tal que la integral de contorno
+    $$\int_{\partial R} f(z) \, dz = 0$$
+    se anula para todo rectángulo cerrado $R \subset U$. Entonces $f(z)$ es analítica en $U$.
+    
+    \item Sea $f(z)$ es una función analítica en una región $U \subset \C$. Entonces $f(z)$ tiene derivadas de todos los órdenes y todas ellas son funciones analíticas.
+    
+    \item Toda función entera y acotada es constante.
+    
+    \item Todo polinomio no constante tiene por lo menos una raíz.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item Puesto que la analiticidad es una propiedad local, supondremos sin pérdida de generalidad que $f(z)$ está definida en una región convexa $U$.
+    
+    Para facilitar la discusión, daremos las siguientes definiciones:
+    \begin{itemize}
+        \item Un tramo es un segmento orientado, que puede ser horizontal o vertical.
+        
+        \item Un zigzag es una curva formada concatenando tramos.
+        
+        \item Una ``letra u'' es un zigzag de tres tramos $\upsilon = \lambda \star \mu \star \rho$ tal que
+        \begin{itemize}
+            \item $\lambda, \rho$ tienen la misma longitud y direcciones opuestas.
+            \item $\lambda, \rho$ son perpendiculares a $\mu$.
+            \item $\mu$ puede ser degenerado, i.e., tener longitud cero.
+        \end{itemize}
+        
+        Si $\upsilon = \lambda \star \mu \star \rho$ es una ``letra u'', entonces
+        \begin{itemize}
+            \item $\upsilon'$ denotará el tramo paralelo a $\mu$ que conecta los extremos de $\upsilon$.
+            \item $\upsilon' \star \upsilon^{-1}$ es la frontera de un rectángulo contenido en $U$, porque $U$ es convexo.
+        \end{itemize}
+        
+        \item La complejidad de un zigzag $\gamma$ es el menor número de tramos $\sigma_1, \dots, \sigma_n$ con los cuales $\gamma$ puede ser reconstruido como $\gamma = \sigma_1 \star \dots \star \sigma_n$. Los caminos constantes tienen complejidad cero.
+    \end{itemize}
+    
+    Sea $\gamma$ un zigzag cerrado. Tenemos dos posibilidades:
+    \begin{itemize}
+        \item Si $\gamma = \alpha \star \upsilon \star \beta$, donde $\alpha, \beta$ son subzigzags arbitrarios y $\upsilon$ es una ``letra u'', entonces
+        $$\int_\upsilon f(z) \, dz = \int_{\upsilon'} f(z) \, dz$$
+        Por construcción, $\gamma' = \alpha \star \upsilon' \star \beta$ menos complejo que $\gamma$, pero satisface
+        $$\int_\gamma f(z) \, dz = \int_{\gamma'} f(z) \, dz$$
+        
+        \item Si $\gamma$ no contiene úes\footnote{Marcos Mundstock dixit: ``y, o, u, ae-ae''.}, entonces las partes real e imaginaria de $\gamma$ son funciones monótonas. Esto implica que $\gamma$ es un camino constante. De otro modo, $\gamma$ no regresaría al punto de partida.
+    \end{itemize}
+    
+    Por inducción en la complejidad de $\gamma$, tenemos
+    $$\int_\gamma f(z) \, dz = 0$$
+    Por ende, las integrales de línea de $f$ sobre zigzags son independientes de la trayectoria.
+    
+    Tomemos un punto arbitrario $z_0 \in U$. Definamos la función $F : U \to \C$ por
+    $$F(z_1) = \int_\gamma f(z) \, dz$$
+    donde $\gamma : [0,1] \to U$ es un zigzag con extremos en $\zeta(k) = z_k$ para $k = 0, 1$. Por construcción,
+    $$\p Fx = -i \p Fy = f(z)$$
+    Por ende, $f$ es localmente la derivada de una función analítica. La prueba se completa demostrando que la derivada de una función analítica es también analítica. Esto se hará en el siguiente ítem.
+    
+    \item Puesto que la analiticidad es una propiedad local, supondremos sin pérdida de generalidad que $f(z)$ está definida sobre una región simplemente conexa $U$.
+    
+    Definamos la $n$-ésima \textit{derivada formal} de una función analítica $f : U \to \C$ como
+    $$f^{(n)}(z) = \frac {n!} {2\pi i} \int_\gamma \frac {f(\zeta)} {(\zeta - z)^{n+1}} \, d\zeta$$
+    donde $\gamma \subset U$ es un lazo antihorario simple alrededor de $z_0 \in U$.
+    
+    Llamemos $U_0$ a la región $U$ agujereada en $z_0$. Haremos algunas verificaciones de rutina:
+    \begin{itemize}
+        \item El integrando en la definición de $f^{(n)}(z_0)$ es analítico en $U_0$. Entonces el valor de $f^{(n)}(z_0)$ sólo depende de la clase de homotopía de $\gamma$ en $U_0$. Esta clase está determinada por
+        \begin{itemize}
+            \item La hipótesis de que $U$ es simplemente conexo.
+            \item El requerimiento de que $\gamma$ sea un lazo antihorario simple alrededor de $z_0$.
+        \end{itemize}
+        
+        Por ende, $f^{(n)}$ es una función bien definida.
+        
+        \item Una vez fijada la curva $\gamma$, el punto $z_0$ tiene una vecindad $D \subset U$ encerrada por $\gamma$. Para $z \to z_0$, podemos asumir que $z \in D$. Además, la convergencia
+        $$\frac {f(\zeta)} {(\zeta - z)^{n+1}} \to \frac {f(\zeta)} {(\zeta - z_0)^{n+1}}$$
+        es uniforme en $\gamma$. Entonces, por el ejercicio 17 de la semana 6,
+        $$
+        \lim_{z \to z_0} f^{(n)}(z)
+            = \frac {n!} {2\pi i} \int_\gamma \lim_{z \to z_0} \frac {f(\zeta)} {(\zeta - z)^{n+1}} \, d\zeta
+            = \frac {n!} {2\pi i} \int_\gamma \frac {f(\zeta)} {(\zeta - z_0)^{n+1}} \, d\zeta
+            = f^{(n)}(z_0)
+        $$
+        
+        Por ende, $f^{(n)}$ es una función continua.
+    \end{itemize}
+    
+    Dado un número natural $n \in \N$, llamemos $P(n)$ a la siguiente proposición:
+    \begin{displayquote}
+    ``Toda función analítica $f$ es $n$ veces diferenciable y, para todo $k = 0, 1, 2, \dots, n$, la $k$-ésima derivada de $f$ es igual a $f^{(k)}.$''
+    \end{displayquote}
+    
+    Demostraremos $P(n)$ para todo $n \in \N$. Empecemos con el caso base $P(0)$. Por construcción,
+    $$F(z) = \dfrac {f(z) - f(z_0)} {z - z_0}$$
+    es una función analítica en $U_0$. Entonces la integral de contorno
+    $$
+    \int_\gamma F(z) \, dz
+        = \int_\gamma \frac {f(z)} {z - z_0} \, dz
+        - f(z_0) \cancelto {2\pi i} {\int_\gamma \frac {dz} {z - z_0}}
+    $$
+    sólo depende de la clase de homotopía de $\gamma$ en $U_0$.
+    
+    Por otro lado, la posibilidad de extender $F$ de manera continua a $z_0$, poniendo
+    $$F(z_0) = \lim_{z \to z_0} F(z) = f'(z_0)$$
+    implica que $F$ es acotada cerca de $z_0$. La cota local en módulo
+    $$\left| \int_\gamma F(z) \, dz \right| \le V(\gamma) \cdot \Vert F \Vert_\infty$$
+    implica que la integral puede hacerse arbitrariamente pequeña encogiendo $\gamma$. Por ende,
+    $$\int_\gamma F(z) \, dz = 0 \implies f(z_0) = \frac 1 {2\pi i} \int_\gamma \frac {f(z)} {z - z_0} \, dz$$
+    
+    Pasemos al caso inductivo. Calculando mecánicamente, se verifica la identidad
+    $$
+    \frac 1 {(\zeta - z)^{n+1}} - \frac 1 {(\zeta - z_0)^{n+1}}
+        = \frac 1 {(\zeta - z)^n (\zeta - z_0)}
+        - \frac 1 {(\zeta - z_0)^{n+1}}
+        + \frac {z - z_0} {(\zeta - z)^{n+1} (\zeta - z_0)}
+    $$
+    
+    Pongamos $g(\zeta) = f(\zeta) / (\zeta - z_0)$. Entonces, para todo $z \in U_0$ encerrado por $\gamma$, tenemos
+    $$f^{(n)}(z) - f^{(n)}(z_0) = ng^{(n-1)}(z) - ng^{(n-1)}(z_0) + g^{(n)}(z) \cdot (z - z_0)$$
+    
+    Dividiendo entre $z - z_0$ y tomando el límite cuando $z \to z_0$, tenemos
+    $$
+    \lim_{z \to z_0} \frac {f^{(n)}(z) - f^{(n)}(z_0)} {z - z_0}
+        = \lim_{z \to z_0} \frac {ng^{(n-1)}(z) - ng^{(n-1)}(z_0)} {z - z_0}
+        + \lim_{z \to z_0} g^{(n)}(z)
+    $$
+    
+    Asumiendo inductivamente $P(n)$, tenemos
+    $$\lim_{z \to z_0} \frac {f^{(n)}(z) - f^{(n)}(z_0)} {z - z_0} = (n+1) g^{(n)}(z_0) = f^{(n+1)}(z_0)$$
+    
+    Esto es, $P(n+1)$. Por ende, $P(n)$ para todo $n \in \N$. Obviamente esto implica que las derivadas $f^{(n)}$ (ya no necesitamos el adjetivo ``formales'') son todas analíticas.
+    
+    \item Sea $f : U \to \C$ una función analítica definida en una región simplemente conexa $U \subset \C$ y sea $\gamma \subset U$ un círculo alrededor de un punto distinguido $z \in U$. Por la fórmula integral de Cauchy,
+    $$|f^{(n)}(z)| \le \frac {n!} {2\pi} \int_\gamma |g_n(\zeta)| \, |d\zeta| \le \frac {n!} {2\pi} \cdot V(\gamma) \cdot \Vert g_n \circ \gamma \Vert_\infty = rn! \cdot \Vert g_n \circ \gamma \Vert_\infty$$
+    donde $g_n(\zeta) = f(\zeta) / (\zeta - z)^{n+1}$. En particular,
+    \begin{itemize}
+        \item Si $f$ es entera, entonces $z \in \C$, $r > 0$ pueden ser arbitrarios.
+        \item Si $f$ está acotada por $C > 0$, entonces $\Vert g_1 \circ \gamma \Vert_\infty < Cr^{-2}$.
+    \end{itemize}
+    
+    Si $f$ es entera y acotada, entonces $|f'(z)| < Cn! r^{-1}$ con $r > 0$ arbitrario. Esto implica que $f'(z) = 0$. Puesto que $z \in \C$ también es arbitrario, tenemos $f' = 0$, lo cual implica que $f$ es constante.
+    
+    \item Sea $P(z)$ un polinomio no constante y sin raíces. Entonces,
+    
+    \begin{itemize}
+        \item Puesto que $P(z)$ es no constante $|P(z)| \to \infty$ cuando $|z| \to \infty$.
+        \item Puesto que $P(z)$ no tiene raíces, la recíproca $1/P(z)$ es una función entera.
+        \item Puesto que $|P(z)| \to \infty$ cuando $|z| \to \infty$, la recíproca $1/P(z)$ es una función acotada.
+    \end{itemize}
+    
+    Entonces $1/P(z)$ es constante. Por ende, $P(z)$ era constante después de todo.
+\end{enumerate}
+\end{solution}

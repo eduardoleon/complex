@@ -1,0 +1,16 @@
+\begin{exercise}
+Sea $\sqrt z$ la rama principal de la raíz cuadrada. Calcule
+$$\int_\gamma \frac 1 {\sqrt z} \, dz$$
+en los siguientes casos: (a) $\gamma$ es la semicircunferencia superior de $1$ a $-1$, (b) $\gamma$ es la semicircunferencia inferior de $1$ a $-1$.
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item La semicircunferencia superior es $\gamma(t) = e^{2it}$, donde $t \in [0, \pi/2]$. Entonces,
+    $$\int_\gamma \frac 1 {\sqrt z} \, dz = 2i \int_0^{\pi/2} e^{it} \, dt = 2e^{it} \Big \vert_0^{\pi/2} = -2 + 2i$$
+    
+    \item La semicircunferencia inferior es $\gamma(t) = e^{-2it}$, donde $t \in [0, \pi/2]$. Entonces,
+    $$\int_\gamma \frac 1 {\sqrt z} \, dz = -2i \int_0^{\pi/2} e^{-it} \, dt = 2e^{-it} \Big \vert_0^{\pi/2} = -2 - 2i$$
+\end{enumerate}
+\end{solution}

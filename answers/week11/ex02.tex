@@ -1,0 +1,23 @@
+\begin{exercise}
+Utilice residuos para calcular la integral
+$$S = \int_0^{2\pi} \frac {\cos 2\theta} {2 + \cos \theta} \, d\theta$$
+\end{exercise}
+
+\begin{solution}
+Sea $\gamma \subset \C$ el círculo unitario, parametrizado como $z = e^{i\theta}$. Entonces,
+$$
+S
+    = \int_0^{2\pi} \frac {\cos 2\theta} {2 + \cos \theta} \, d\theta
+    = \int_\gamma \frac {z^2 + z^{-2}} {z^2 + 4z + 1} \cdot \frac {dz} i
+    = \int_\gamma f(z) \, \frac {dz} i
+$$
+Factoricemos el integrando como $f(z) = g(z) \, h(z)$, donde
+$$g(z) = \frac 1 {z^2 + 4z + 1}, \qquad \qquad h(z) = \frac {z^4 + 1} {z^2}$$
+El factor $g(z)$ tiene un polo simple en $a = -2 + \sqrt 3$ encerrado por $\gamma$. Entonces,
+$$\Res(f, a) = \Res(g, a) \cdot h(a) = \frac 1 {2a + 4} \cdot \frac {a^4 + 1} {a^2} = \frac 7 {\sqrt 3}$$
+El factor $h(z)$ tiene un polo doble en el origen, sin residuo. Entonces,
+$$\Res(f, 0) = g'(0) = -\frac {p'(0)} {p(0)^2} = -4$$
+donde $p(z) = z^2 + 4z + 1$ es el denominador de $g(z)$ y su derivada es $p'(z) = 2z + 4$. Finalmente,
+$$S = 2\pi \cdot [\Res(f, a) + \Res(f, 0)] = 2\pi \left[ \frac 7 {\sqrt 3} - 4 \right]$$
+es el valor de la integral pedida.
+\end{solution}

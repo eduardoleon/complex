@@ -1,0 +1,25 @@
+\begin{exercise}
+Calcule la transformación de Möbius que envía (a) el círculo $|z| = 2$ al círculo $|z+1| = 1$, (b) el punto $z = -2$ al origen, (c) el origen al punto $z = i$.
+\end{exercise}
+
+\begin{solution}
+Sea $T$ la transformación de Möbius buscada. Pongamos
+$$S(z) = 1 + T(-2z)$$
+Por construcción, $S$ fija el círculo unitario, así que es de la forma
+$$S(z) = \frac {\mu z + \nu} {\bar \nu z + \bar \mu}$$
+Usando las otras condiciones sobre $T$, tenemos
+$$S(1) = 1 + T(-2) = 1, \qquad \qquad S(0) = 1 + T(0) = 1 + i$$
+Sustituyendo estos resultados en la expresión original para $S$, tenemos
+$$\mu + \nu = \bar \mu + \bar \nu, \qquad \qquad \nu = \bar \mu (1 + i)$$
+Sustituyendo $\nu$ en términos de $\mu$, tenemos
+$$\cancel \mu + \bar \mu ( \bcancel 1 + i ) = \bcancel {\bar \mu} + \mu ( \cancel 1 - i )$$
+Entonces $\mu + \bar \mu = 0$. Es decir, $\mu$ es imaginario puro. Regresando a $T$, tenemos
+$$
+T(z)
+    = S(-z/2) - 1
+    = \frac {\mu z - 2 \nu} {\bar \nu z - 2 \bar \mu} - 1
+    = \frac {(\mu - \bar \nu) z - 2 (\nu - \bar \mu)} {\bar \nu z - 2 \bar \mu}
+$$
+Poniendo $\mu = i$, $\nu = \bar \mu (1 + i) = -i (1 + i) = 1 - i$, tenemos
+$$T(z) = \frac {-z - 2} {(1 + i)z + 2i} = \frac {iz + 2i} {(1 - i) z + 2}$$
+\end{solution}

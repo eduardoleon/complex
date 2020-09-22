@@ -1,0 +1,17 @@
+\begin{exercise}
+Sea $f(z) = (z - z_0)^m \, g(z)$, donde $g(z)$ es una función analítica que no se anula en $U \subset \C$. Sea $\gamma$ un ciclo homólogo a cero en $U$ que no pasa por $z_0 \in U$. Pruebe que
+$$\frac 1 {2\pi i} \int_\gamma \frac {f'(z)} {f(z)} \, dz = m \cdot n(\gamma, z_0)$$
+\end{exercise}
+
+\begin{solution}
+Expandiendo la derivada logarítmica, tenemos
+$$\frac {f'(z)} {f(z)} = \frac m {z - z_0} + \frac {g'(z)} {g(z)}$$
+Por hipótesis, $\gamma$ es homóloga a cero en $U = \dom(g'/g)$. Esto implica que
+$$\frac 1 {2\pi i} \int_\gamma \frac {g'(z)} {g(z)} \, dz = 0$$
+Por ende, la integral buscada se reduce a
+$$
+\frac 1 {2\pi i} \int_\gamma \frac {f'(z)} {f(z)} \, dz
+    = \frac 1 {2\pi i} \int_\gamma \frac m {z - z_0} \, dz
+    = m \cdot n(\gamma, z_0)
+$$
+\end{solution}

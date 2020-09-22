@@ -1,0 +1,17 @@
+\begin{exercise}
+Las funciones trigonométricas se definen como
+$$
+\cos(z) = \frac {e^{iz} + e^{-iz}} 2, \qquad \qquad
+\sin(z) = \frac {e^{iz} - e^{-iz}} {2i}
+$$
+¿Es alguna de ellas acotada?
+\end{exercise}
+
+\begin{solution}
+Ninguna de ellas es acotada. Observemos que
+$$
+\cos(it) = \frac {e^{-t} + e^t} 2 = \cosh(t), \qquad \qquad
+\sin(it) = \frac {e^{-t} - e^t} {2i} = i \sinh(t)
+$$
+Para valores reales grandes de $t$, tanto $\cosh(t)$ como $\sinh(t)$ tienden a infinito. Por ende, $\cos(z)$, $\sin(z)$ no son acotadas en el eje imaginario del plano complejo.
+\end{solution}

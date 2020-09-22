@@ -1,0 +1,22 @@
+\begin{exercise}
+Sea $\gamma \subset U$ un ciclo homólogo a cero en $U \subset \C$ tal que $n(\gamma, z) \in \{ 0, 1 \}$ para todo punto $z \in U$ por el cual $\gamma$ no pasa. Sean $f(z)$, $g(z)$ dos funciones analíticas en $U$ tales que $|f(z) - g(z)| < |f(z)|$ para todo $z \in \gamma$. Pruebe que $f(z)$, $g(z)$ tienen el mismo número de ceros encerrados por $\gamma$.
+\end{exercise}
+
+\begin{remark}
+Este resultado se conoce como \textit{teorema de Rouché}.
+\end{remark}
+
+\begin{solution}
+La hipótesis sobre $f(z)$, $g(z)$ implica que, para $z \in \gamma$, el cociente
+$$h(z) = \frac {f(z) - g(z)} {f(z)}$$
+toma valores en el disco unitario $|w| < 1$. Por ende, el cociente
+$$1 - h(z) = \frac {g(z)} {f(z)}$$
+toma valores en el disco unitario $|1 - w| < 1$. En particular, esto implica que $f(z)$, $g(z)$ no se anulan para ningún $z \in \gamma$. Por el principio del argumento (ejercicio anterior), tenemos
+$$
+0
+    = \int_{h \circ \gamma} \frac {dw} {w - 1}
+    = \int_\gamma \frac {g'(z)} {g(z)} \, dz - \int_\gamma \frac {f'(z)} {f(z)} \, dz
+    = 2\pi i \cdot (Z_g - Z_f)
+$$
+donde $Z_f, Z_g \in \N$ son los números de ceros de $f(z)$, $g(z)$ encerrados por $\gamma$, contados con multiplicidad, lo cual sólo es posible si $Z_f = Z_g$.
+\end{solution}

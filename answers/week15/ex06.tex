@@ -1,0 +1,16 @@
+\begin{exercise}
+Pruebe que, si cada $f_n$ es inyectiva, entonces $f$ es inyectiva o constante.
+\end{exercise}
+
+\begin{solution}
+Supongamos que $f$ no es idénticamente cero. Sea $\gamma \subset U$ un lazo simple homólogo a cero que no pasa por ningún cero de $f$. Por el ejercicio 17 de la semana 6, tenemos
+$$
+2\pi i \cdot \lim_{n \to \infty} Z(f_n, \gamma)
+    = \lim_{n \to \infty} \int_\gamma \frac {f_n'(z)} {f_n(z)} \, dz
+    = \int_\gamma \frac {f'(z)} {f(z)} \, dz
+    = 2\pi i \cdot Z(f, \gamma)
+$$
+Descartando un prefijo de la sucesión $f_n$, podemos suponer que $Z(f_n, \gamma) = Z(f, \gamma)$ para todo $n \in \N$. Esto implica que $\gamma$ no puede encierrar más de un cero de $f$. Pero, como $\gamma$ es arbitrario, $\gamma$ podría encerrar otros ceros de $f$, si los hubiera. Por ende, $f$ tiene a lo más un cero.
+
+Replicando el argumento anterior con la sucesión $f_n - w_0$, donde $w_0 \in \C$ es un número fijo, deducimos que, si $f$ no es idénticamente $w_0$, entonces $f - w_0$ tiene a lo más un cero. Por ende, si $f$ no es constante, entonces $f$ es inyectiva.
+\end{solution}

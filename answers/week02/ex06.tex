@@ -1,0 +1,27 @@
+\begin{exercise}
+Pruebe que una función $f(z)$ es analítica si y sólo si $\overline {f(\bar z)}$ es también analítica.
+\end{exercise}
+
+\begin{solution}
+Sea $\Phi(f) = \varphi \circ f \circ \varphi$, donde $\varphi : \C \to \C$ es la conjugación compleja. Se pide demostrar que $f$ es analítica si y sólo si $g = \Phi(f)$ es analítica. Puesto que $f = \Phi(g)$, es suficiente demostrar la implicación en una sola dirección.
+
+Supongamos que $f$ es analítica en un dominio $U \subset \C$. Esto es, para todo $z_0 \in U$, existe el límite
+$$f'(z_0) = \lim_{z \to z_0} \frac {f(z) - f(z_0)} {z - z_0}$$
+Tomemos un punto $w_0 \in \varphi(U)$ y tratemos de evaluar el límite
+$$
+g'(w_0)
+    = \lim_{w \to w_0} \frac {g(w) - g(w_0)} {w - w_0}
+    = \lim_{w \to w_0} \frac
+        {\varphi \circ f \circ \varphi(w) - \varphi \circ f \circ \varphi(w_0)}
+        {\varphi \circ \varphi(w) - \varphi \circ \varphi(w_0)}
+$$
+Por supuesto, $\varphi$ es continua y respeta las operaciones aritméticas del cuerpo $\C$. Entonces,
+$$
+g'(w_0)
+    = \varphi \left( \lim_{w \to w_0} \frac
+        {f \circ \varphi(w) - f \circ \varphi(w_0)}
+        {\varphi(w) -\varphi(w_0)} \right)
+    = \varphi \circ f' \circ \varphi(w_0)
+$$
+Puesto que la derivada $g'(w_0)$ existe para todo $w_0 \in U$, la función $g$ es analítica en $\varphi(U)$.
+\end{solution}

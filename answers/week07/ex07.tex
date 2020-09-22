@@ -1,0 +1,44 @@
+\begin{exercise}
+Sea $n > 0$ un entero positivo.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Verifique la identidad
+    $$\frac {z^n} {z - a} = z^{n-1} + a \cdot \frac {z^{n-1}} {z - a}$$
+    
+    \item Sea $\gamma$ una curva cerrada simple con orientación positiva tal que $a$ está en su interior. Utilice el ítem anterior para demostrar por inducción que
+    $$\frac 1 {2\pi i} \int_\gamma \frac {z^n} {z - a} \, dz = a^n$$
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item Es mejor ponerlo de la siguiente manera:
+    $$
+    \frac {z^{n+1}} {z - a}
+        = \frac {z^{n+1} - az^n} {z - a} + \frac {az^n} {z - a}
+        = z^n \cdot \cancelto 1 {\frac {z - a} {z - a}} + a \cdot \frac {z^n} {z - a}
+    $$
+    donde $n \in \N$. Por supuesto, los naturales comienzan en cero.
+    
+    \item El caso base $n = 0$ es conocido:
+    $$
+    \frac 1 {2\pi i} \int_\gamma \frac {z^0} {z - a} \, dz
+        = \frac 1 {2\pi i} \int_\gamma \frac {dz} {z - a}
+        = 1
+    $$
+    
+    Supongamos que la proposición es cierta para $n \in \N$ fijo. Entonces, para el siguiente,
+    $$
+    \frac 1 {2\pi i} \int_\gamma \frac {z^{n+1}} {z - a} \, dz
+        = \cancelto 0 {\frac 1 {2\pi i} \int_\gamma z^n \, dz}
+        + \frac a {2\pi i} \int_\gamma \frac {z^n} {z - a} \, dz
+        = a \cdot a^n
+        = a^{n+1}
+    $$
+    
+    La cancelación del primer sumando se debe al teorema de Cauchy-Goursat.
+\end{enumerate}
+\end{solution}
+
+\newpage

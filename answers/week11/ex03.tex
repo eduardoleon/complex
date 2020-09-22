@@ -1,0 +1,27 @@
+\begin{exercise}
+Utilice residuos para calcular la integral
+$$S = \int_0^{\pi/2} \frac {\cos 2\theta} {2 + \cos^2 \theta} \, d\theta$$
+\end{exercise}
+
+\begin{solution}
+Reescribamos el integrando como
+$$
+S
+    = \int_0^{\pi/2} \frac {\cos 2\theta} {2 + \cos^2 \theta} \, d\theta
+    = \int_0^{\pi/2} \frac {2 \cos 2\theta} {4 + 2 \cos^2 \theta} \, d\theta
+    = \int_0^\pi \frac {\cos 2\theta} {5 + \cos 2\theta} \, d\theta
+$$
+Sea $\gamma \subset \C$ el círculo unitario, parametrizado como $z = e^{2i\theta}$. Entonces,
+$$
+S
+    = \int_\gamma \frac {z + z^{-1}} {10 + z + z^{-1}} \cdot \frac {dz} {2iz}
+    = \int_\gamma \frac {z^2 + 1} {z^3 + 10z^2 + z} \cdot \frac {dz} {2i}
+    = \int_\gamma f(z) \, \frac {dz} {2i}
+$$
+El integrando tiene dos polos encerrados por $\gamma$: uno en el origen, cuyo residuo es
+$$\Res(f, 0) = \frac {z^2 + 1} {3z^2 + 20z + 1} \bigg \vert_{z = 0} = 1$$
+y el otro en $a = -5 + \sqrt {24}$, cuyo residuo es
+$$\Res(f, a) = \frac {z^2 + 1} {3z^2 + 20z + 1} \bigg \vert_{z = a} = -\frac 5 {2 \sqrt 6}$$
+Por ende, el valor de la integral pedida es
+$$S = \pi \cdot [\Res(f, a) + \Res(f, 0)] = \pi \left[ 1 - \frac 5 {2 \sqrt 6} \right]$$
+\end{solution}

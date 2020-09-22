@@ -1,0 +1,19 @@
+\begin{exercise}
+Calcule el valor principal de la siguiente integral
+$$S = \prv \int_{-\infty}^\infty \frac {dx} {x-1}$$
+\end{exercise}
+
+\begin{solution}
+Pensemos en esta integral como una integral sobre la recta real proyectiva $\widehat \R = \R \cup \{ \infty \}$, que es topológicamente un círculo en la esfera de Riemann $\widehat \C = \C \cup \{ \infty \}$. El integrando tiene dos polos simples: uno en $x = 1$ y el otro en $x = \infty$. Para ver este último polo, sustituyamos
+$$x = \varphi(u) = 1 + \frac 1u, \qquad \qquad \qquad dx = -\frac {du} {u^2}$$
+con lo cual el integrando ahora se escribe como
+$$\frac {dx} {x - 1} = -\frac {du} u$$
+y, por ende, tiene un polo simple en $u = 0$. Recordemos que el residuo es una propiedad geométrica de las $1$-formas, i.e., no depende de la elección de coordenadas. Por ende, el valor principal pedido es
+$$
+S
+    = i\pi \cdot [\Res(f, 1) + \Res(f, \infty)]
+    = i\pi \cdot [\Res(f, 1) + \Res(f \circ \varphi, 0)]
+    = i\pi \cdot [1 - 1]
+    = 0
+$$
+\end{solution}

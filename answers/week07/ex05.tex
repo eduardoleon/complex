@@ -1,0 +1,32 @@
+\begin{exercise}
+Calcule la integral de contorno
+$$\int_\gamma \frac {|dz|} {|z-a|^2}$$
+donde $\gamma$ es el círculo $|z| = \rho$, donde $|a| \ne \rho$. (\textit{Sugerencia:} $z \bar z = \rho^2$, $|dz| = -i\rho \, \dfrac {dz} z$.)
+\end{exercise}
+
+\begin{solution}
+Parametricemos $\gamma$ como $\gamma(t) = \rho e^{it}$, donde $t \in [0, 2\pi]$. Entonces $dz = iz \, dt$. Entonces,
+$$
+\frac {|dz|} {|z-a|^2}
+    = \frac {\rho \, dt} {|z-a|^2}
+    = \frac {i\rho \, dz} {-z |z-a|^2}
+    = \frac {i\rho \, dz} {(z - a) (\bar az - \rho^2)}
+$$
+Separando el integrando en fracciones parciales, tenemos
+$$\frac 1 {(z - a) (\bar az - \rho^2)} = \frac C {z - a} - \frac {\bar aC} {\bar az - \rho^2}$$
+$$1 = C (\bar az - \rho^2) - \bar aC (z - a) = C (|a|^2 - \rho^2)$$
+Si $|a| < \rho$, entonces $\gamma$ sólo da una vuelta alrededor de $z = a$. Por ende,
+$$
+\int_\gamma \frac {|dz|} {|z-a|^2}
+    = i\rho C \int_\gamma \frac {dz} {z-a}
+    = \frac {2\pi \rho} {-C}
+    = \frac {2\pi \rho} {|C|}
+$$
+Si $|a| > \rho$, entonces $\gamma$ sólo da una vuelta alrededor de $z = \rho^2 / \bar a$. Por ende,
+$$
+\int_\gamma \frac {|dz|} {|z-a|^2}
+    = -i\rho C \int_\gamma \frac {dz} {\bar az - \rho^2}
+    = \frac {2\pi \rho} {C}
+    = \frac {2\pi \rho} {|C|}
+$$
+\end{solution}

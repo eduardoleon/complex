@@ -1,0 +1,15 @@
+\begin{exercise}
+Pruebe que toda función analítica de módulo constante es constante.
+\end{exercise}
+
+\begin{solution}
+Sea $u + iv = f(x + iy)$ una función analítica, de módulo constante $u^2 + v^2 = r^2$, definida en un dominio conexo $U \subset \C$. Si $r = 0$, entonces necesariamente $f = 0$ es la función nula, que es constante. Por ello, en adelante asumiremos que $r > 0$.
+
+Diferenciando la premisa $u^2 + v^2 = r^2$ con respecto a $x, y$, tenemos
+$$u \p ux + v \p vx = 0, \qquad \qquad u \p uy + v \p vy = 0$$
+Sustituyendo las condiciones de Cauchy-Riemann en estas ecuaciones, tenemos
+$$u \p vy - v \p uy = 0, \qquad \qquad -u \p vx + v \p ux = 0$$
+Puesto $u, v$ no se anulan simultáneamente en $U$, la única solución de estas cuatro ecuaciones es
+$$\p ux = \p uy = \p vx = \p vy = 0$$
+Por ende, $u, v$ son constantes. Por ende, $f$ es constante.
+\end{solution}

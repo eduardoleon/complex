@@ -1,0 +1,55 @@
+\begin{exercise}
+Sea $c_n \in \C$ una sucesión acotada y considere las series
+$$f(z) = \sum_{n=1}^\infty c_n z^n, \qquad \qquad \qquad g(z) = \sum_{n=1}^\infty \frac {c_n z^n} {1 - z^n}$$
+Pruebe las siguientes afirmaciones:
+\begin{enumerate}[label=(\alph*)]
+    \item La serie $g(z)$ converge uniformemente en compactos para $|z| < 1$.
+    
+    \item Si la serie $f(1)$ es convergente, entonces $g(z)$ converge uniformemente en compactos para $|z| \ne 1$.
+    
+    \item Si la serie $f(1)$ es convergente, entonces
+    $$g(z) = \sum_{n=1}^\infty f(z^n), \qquad \qquad \qquad g(1/z) = -\sum_{n=0}^\infty f(z^n)$$
+    para todo $|z| < 1$.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item Sea $b_{mn} = 1$ si $m$ es múltiplo de $n$ y sea $b_{mn} = 0$ en caso contrario. Entonces,
+    $$
+    g(z)
+        = \sum_{n=1}^\infty \sum_{k=1}^\infty c_n z^{nk}
+        = \sum_{n=1}^\infty \sum_{m=1}^\infty b_{mn} c_n z^m
+        = \sum_{m=1}^\infty a_m z^m
+    $$
+    donde los coeficientes $a_m$ están dados por
+    $$a_m = \sum_{n=1}^m b_{mn} c_n$$
+    
+    En particular, si $C > 0$ es una cota en módulo para $c_n$, entonces
+    $$|a_m| \le \sum_{n=1}^m b_{mn} \, |c_n| \le Cm$$
+    así que, por el criterio de comparación,
+    $$|g(z)| \le \sum_{m=1}^\infty |a_m z^m| \le \sum_{m=1}^\infty Cm \, |z^m| = \frac {Cz} {(1 - |z|)^2}$$
+    deducimos que $g(z)$ converge uniformemente en compactos para $|z| < 1$.
+    
+    \item Pongamos $w = 1/z$. Entonces,
+    $$\frac {z^n} {1 - z^n} + \frac {w^n} {1 - w^n} = \frac {z^n} {1 - z^n} - \frac 1 {1 - z^n} = -1$$
+    
+    Asumiendo que $f(1)$ converge, tenemos
+    $$
+    g(z) + g(w)
+        = \sum_{n=1}^\infty \frac {c_n z^n} {1 - z^n}
+        + \sum_{n=1}^\infty \frac {c_n w^n} {1 - w^n}
+        = -\sum_{n=1}^\infty c_n
+        = -f(1)
+    $$
+    
+    Por ende, $g(z)$ converge uniformemente en compactos para todo $|z| \ne 1$.
+    
+    \item Independientemente de $f(1)$ converge, tenemos
+    $$g(z) = \sum_{k=1}^\infty \sum_{n=1}^\infty c_n z^{nk} = \sum_{k=1}^\infty f(z^k)$$
+    
+    Si $f(1)$ converge, entonces también tenemos
+    $$-g(1/z) = f(1) + g(z) = \sum_{k=0}^\infty f(z^k)$$
+\end{enumerate}
+\end{solution}

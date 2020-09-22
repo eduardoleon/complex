@@ -1,0 +1,22 @@
+\begin{exercise}
+Sea $f(z)$ una función analítica en una región $U \subset \C$. Pruebe que, si $|f(z)|$ alcanza un valor máximo en $U$, entonces, $f(z)$ es constante.
+\end{exercise}
+
+\begin{solution}
+Tomemos un punto arbitrario $z_0 \in U$ y un círculo $\gamma \subset U$ centrado en $z_0$, contractible en $U$. Por la fórmula integral de Cauchy, tenemos
+$$
+f(z_0)
+    = \frac 1 {2\pi i} \int_\gamma \frac {f(z)} {z - z_0} \, dz
+    = \frac 1 {2\pi} \int_0^{2\pi} f(z_0 + re^{i\theta}) \, d\theta
+$$
+donde $r > 0$ es el radio de $\gamma$. Por la desigualdad triangular para la integral, tenemos la cota
+$$|f(z_0)| \le \frac 1 {2\pi} \int_0^{2\pi} |f(z_0 + re^{i\theta})| \, d\theta$$
+Si el integrando fuese menor que $|f(z_0)|$ en algún punto $\theta \in [0, 2\pi]$, entonces, por continuidad, sería menor que $|f(z_0)|$ en un tramo de $[0, 2\pi]$ de longitud positiva. Para que la cota anterior se respete, $|f(z)|$ deberá ser mayor que $|f(z_0)|$ en algún otro tramo de $[0, 2\pi]$. Entonces $|f(z)|$ no puede alcanzar un valor máximo estricto en $U$. Por ende, las siguientes proposiciones son equivalentes:
+\begin{itemize}
+    \item $|f(z)|$ alcanza un valor máximo en $z = z_0$.
+    \item $|f(z)|$ es constante en la componente conexa de $z = z_0$, que es todo $U$.
+    \item $f(z)$ es constante, por el ejercicio 5 de la semana 2.
+\end{itemize}
+\end{solution}
+
+\newpage

@@ -1,0 +1,21 @@
+\begin{exercise}
+Sea $\mathscr C \subset \C$ el círculo $|z-2| = 1$. Refleje los siguientes conjuntos a través de $\mathscr C$: (a) el eje imaginario, (b) la recta $x = y$, (c) el círculo $|z| = 1$.
+\end{exercise}
+
+\begin{solution}
+El punto $\varphi(z)$ simétrico a $z$ con respecto a $\mathscr C$ satisface la ecuación
+$$\varphi(z) = 2 + \frac 1 {\bar z - 2} = \frac {2\bar z - 3} {\bar z - 2}$$
+Evaluaremos $\varphi$ en algunos puntos convenientes:
+$$
+\varphi(0) = \frac 32, \qquad \varphi(\infty) = 2, \qquad
+\varphi(2 - 2i) = 2 - \frac i2, \qquad \varphi(1) = 1, \qquad \varphi(-1) = \frac 53
+$$
+
+\begin{enumerate}[label=(\alph*)]
+    \item La imagen del eje imaginario está determinada por los puntos $\varphi(0)$, $\varphi(\infty)$ y la simetría con respecto al eje real. Esta imagen es el círculo $|4z - 7| = 1$.
+    
+    \item La imagen de la recta $x = y$ está determinada por los puntos $\varphi(0)$, $\varphi(\infty)$, $\varphi(2-2i)$. Esta imagen es el círculo $|4z - 7 - i| = \sqrt 2$.
+    
+    \item La imagen del círculo unitario está determinada por los puntos $\varphi(1)$, $\varphi(-1)$ y la simetría respecto al eje real. Esta imagen es el círculo $|3z - 4| = 1$.
+\end{enumerate}
+\end{solution}

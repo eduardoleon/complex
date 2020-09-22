@@ -1,0 +1,18 @@
+\begin{exercise}
+Determine cuáles de las siguientes afirmaciones son verdaderas:
+\begin{enumerate}[label=(\alph*)]
+    \item Toda función analítica es abierta.
+    \item Toda función analítica es cerrada.
+    \item La parte real de una función analítica es una función abierta y cerrada.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+Sea $\Omega \subset \C$ un abierto con infinitas componentes conexas, que pueden ser enumeradas de alguna manera, porque $\C$ es un espacio de Lindelöf. Definamos $f : \Omega \to \C$, $f(z) = 1/n$ para cada $z$ en la $n$-ésima componente. Por construcción,
+\begin{enumerate}[label=(\alph*)]
+    \item $f(z)$ no es abierta, porque $f(\Omega)$ es un conjunto discreto de puntos, que no es abierto en $\C$.
+    \item $f(z)$ no es cerrada, porque $f(\Omega)$ se acumula en $0 \notin f(\Omega)$.
+    \item Lo mismo se cumple para $\Re \circ f : \Omega \to \R$.
+\end{enumerate}
+Entonces las tres afirmaciones dadas son falsas.
+\end{solution}

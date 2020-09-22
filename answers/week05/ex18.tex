@@ -1,0 +1,29 @@
+\begin{exercise}
+Sean $z_1, z_2, z_3, z_4 \in \widehat \C$ puntos cocirculares.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Pruebe que $z_1, z_3, z_4$ y $z_2, z_3, z_4$ tienen la misma orientación si $(z_1 : z_2 : z_3 : z_4) > 0$.
+    \item ¿Qué se puede decir de las orientaciones anteriores cuando $(z_2 : z_1 : z_3 : z_4) > 0$.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+Sea $C$ el círculo que pasa por los puntos dados. Definiremos los homeomorfismos $T, S : C \to \widehat \R$ por $T(z_1) = (z_1 : z_2 : z_3 : z_4)$ y $S(z_2) = (z_2 : z_1 : z_3 : z_4)$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Las siguientes proposiciones son equivalentes:
+    \begin{itemize}
+        \item $z_1, z_3, z_4$ tienen la misma orientación que $z_2, z_3, z_4$ en el círculo $C$.
+        \item $z_1, z_2$ están en el mismo camino que conecta a $z_3, z_4$ en el círculo $C$.
+        \item $T(z_1)$, $T(z_2)$ están en el mismo camino que conecta a $T(z_3)$, $T(z_4)$ en el círculo $\widehat \R$.
+        \item $T(z_1)$ tiene el mismo signo que $T(z_2) = 1$, puesto que $T(z_3) = 0$, $T(z_4) = \infty$.
+    \end{itemize}
+    
+    \item Por construcción, $ST^{-1}$ es la restricción a $\widehat \R$ de una transformación de Möbius que fija $0, \infty$. Por lo tanto, $ST^{-1}$ es la multiplicación por un número real $k \ne 0$. Entonces las siguientes proposiciones son equivalentes:
+    \begin{itemize}
+        \item $k = S(z_2)$ es un número real positivo.
+        \item $1/k = T(z_1)$ es un número real positivo.
+        \item $z_1, z_3, z_4$ tienen la misma orientación que $z_2, z_3, z_4$ en el círculo $C$.
+    \end{itemize}
+\end{enumerate}
+\end{solution}

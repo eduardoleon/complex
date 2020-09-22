@@ -1,0 +1,30 @@
+\begin{exercise}
+Utilice el teorema de los residuos en el semiplano inferior $y \le 0$ para calcular
+$$S = \int_{-\infty}^\infty \frac {x^2} {x^4 + 1} \, dx$$
+\end{exercise}
+
+\begin{solution}
+Sea $R > 0$ un número muy grande y sea $\gamma \subset \C$ el ciclo definido por los siguientes tramos:
+\begin{itemize}
+    \item $\gamma_1$, el segmento orientado desde $z = -R$ hasta $z = R$.
+    \item $\gamma_2$, el semicírculo en el semiplano $\Im(z) \le 0$ desde $z = R$ hasta $z = -R$.
+\end{itemize}
+Sea $f(z)$ el integrando. Tenemos la cota en módulo
+$$
+\left| \int_{\gamma_2} f(z) \, dz \right|
+    \le \int_{\gamma_2} \left| f(z) \right| \, |dz|
+    \le \pi R \cdot \Vert f \circ \gamma_2 \Vert_\infty
+    = \pi R \cdot \frac {R^2} {R^4 - 1}
+$$
+Esta cota tienda a cero cuando $R \to \infty$. Por ende,
+$$S = \lim_{R \to \infty} \int_{\gamma_1} f(z) \, dz = \int_\gamma f(z) \, dz$$
+Los polos de $f(z)$ son las potencias impares de $\alpha = e^{\pi i/4}$. Sus residuos son
+$$\Res(f, z) = \frac {z^2} {4z^3} = \frac 1 {4z}$$
+La curva $\gamma$ encierra \textit{en sentido horario} a los polos $\alpha^5 = -\alpha$ y $\alpha^7 = \alpha^{-1}$. Por ende,
+$$
+S
+    = -2\pi i \cdot [\Res(f, -\alpha) + \Res(f, \alpha^{-1})]
+    = -2\pi i \cdot \frac {\alpha^2 - 1} {4\alpha}
+    = \frac \pi {\sqrt 2}
+$$
+\end{solution}

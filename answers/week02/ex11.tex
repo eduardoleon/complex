@@ -1,0 +1,38 @@
+\begin{exercise}
+Escriba las funciones racionales
+$$\frac {z^4} {z^3 - 1}, \qquad \qquad \frac {z^4} {z+i}$$
+como sumas de fracciones parciales.
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{itemize}
+    \item Sea $\omega \in \C$ una raíz cúbica primitiva de la unidad. Pongamos
+    $$
+    \frac {z^4} {z^3 - 1}
+        = z + \frac z {z^3 - 1}
+        = z + \frac A {z - 1} + \frac B {z - \omega} + \frac C {z - \omega^2}
+    $$
+    
+    Multiplicando la parte fraccional por $z^3 - 1$, tenemos
+    $$z = A (z - \omega) (z - \omega^2) + B (z - 1) (z - \omega^2) + C (z - 1) (z - \omega)$$
+    
+    Entonces,
+    \begin{itemize}
+        \item Para $z = 1$, tenemos $1 = A (1 - \omega)(1 - \omega^2) = A$.
+        \item Para $z = \omega$, tenemos $\omega = B (\omega - 1) (\omega - \omega^2) = B \omega^2$. Por ende, $B = \omega^{-1} = \omega^2$.
+        \item Para $z = \omega^2$, tenemos $\omega^2 = C (\omega^2 - 1) (\omega^2 - \omega) = C \omega^4$. Por ende, $C = \omega^{-2} = \omega$.
+    \end{itemize}
+    
+    Por ende, tenemos la expansión en fracciones parciales
+    $$\frac {z^4} {z^3 - 1} = z + \frac 1 {z - 1} + \frac {\omega^2} {z - \omega} + \frac \omega {z - \omega^2}$$
+    
+    \item Observemos que $i$ es una raíz cuarta de la unidad. Entonces,
+    $$
+    \frac {z^4} {z+i}
+        = \frac {z^4 - 1} {z + i} + \frac 1 {z + i}
+        = (z^2 - 1) (z - i) + \frac 1 {z + i}
+        = z^3 - iz^2 - z + i + \frac 1 {z + i}
+    $$
+\end{itemize}
+\end{solution}

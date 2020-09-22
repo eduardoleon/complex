@@ -1,0 +1,25 @@
+\begin{exercise}
+Pruebe que la función $\arctan(z) = \tan^{-1}(z)$, donde $\tan(z) = \sin(z) / \cos(z)$, tiene una rama analítica en el disco unitario. ¿Cómo son todas sus ramas analíticas?
+\end{exercise}
+
+\begin{solution}
+La definición compleja de la función tangente es
+$$
+i \tan \theta
+    = \frac {e^{i\theta} - e^{-i\theta}} {e^{i\theta} + e^{-i\theta}}
+    = \frac {e^{2i\theta} - 1} {e^{2i\theta} + 1}
+    = 1 - \frac 2 {1 + e^{2i\theta}}
+$$
+Nuestro objetivo es expersar $\theta$ como función de $\tan \theta$. Primero despejaremos $e^{i\theta}$:
+$$
+e^{2i\theta}
+    = \frac 2 {1 - i \tan \theta} - 1
+    = \frac {1 + i \tan \theta} {1 - i \tan \theta}
+$$
+Por conveniencia, daremos un nombre a la siguiente transfomación de Möbius:
+$$f(z) = \frac {1 + iz} {1 - iz}$$
+Tomando el logaritmo y poniendo $\theta = \arctan(z)$, tenemos
+$$\arctan(z) = \frac 1 {2i} \log \circ \, f(z)$$
+
+Recordemos que las transformaciones de Möbius son automorfismos de la esfera de Riemann. Entonces la restricción de $f$ a cualquier abierto $U \subset \C$ es un biholomorfismo $f : U \to f(U)$. En particular, el disco unitario $\D \subset \C$ es simplemente conexo, por ende su imagen $f(\D)$ también es simplemente conexa. Puesto que todo $z \in \D$ tiene módulo menor que $1$, ni el numerador ni el denominador de $f$ se anulan en $\D$. Por lo tanto, $f(\D)$ no contiene ni al origen ni al punto en el infinito. Por todas estas consideraciones, $f(\D)$ es un subconjunto de $\C$ que no contiene lazos que encierran al origen\footnote{De hecho, $f(\D)$ es el semiplano $\Re(z) > 0$.}. Por ende, existe una rama del logaritmo definida en $f(\D)$. Por ende, existe una rama del arco tangente definida en $\D$.
+\end{solution}

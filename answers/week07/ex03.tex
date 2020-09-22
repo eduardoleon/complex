@@ -1,0 +1,12 @@
+\begin{exercise}
+Calcule la integral de contorno
+$$\int_\gamma \frac {e^z} z \, dz + \int_\gamma \frac {e^z} {z^n} \, dz$$
+donde $\gamma$ es el círculo unitario $|z| = 1$ recorrido en sentido antihorario.
+\end{exercise}
+
+\begin{solution}
+Por la fórmula integral de Cauchy,
+$$\int_\gamma \frac {e^z} {z^{n+1}} \, dz = \frac {2\pi i} {n!} \cdot \cancelto 1 {f^{(n)}(0)}$$
+Entonces el resultado buscado es
+$$\int_\gamma \frac {e^z} z \, dz + \int_\gamma \frac {e^z} {z^n} \, dz = 2\pi i - \frac {2\pi i} {(n-1)!}$$
+\end{solution}

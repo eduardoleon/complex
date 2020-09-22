@@ -1,0 +1,26 @@
+\begin{exercise}
+Pruebe que las funciones armónicas satisfacen formalmente la ecuación
+$$\m u z {\bar z} = 0$$
+\end{exercise}
+
+\begin{solution}
+Pongamos $z = x + iy$, $\bar z = x - iy$. Por la regla de la cadena, tenemos
+$$
+\p {} x
+    = \p zx \p {} z + \p {\bar z} x \p {} {\bar z}
+    = \p {} z + \p {} {\bar z},
+\qquad
+\p {} y
+    = \p zy \p {} z + \p {\bar z} y \p {} {\bar z}
+    = i \p {} z - i \p {} {\bar z}
+$$
+Entonces la función $u(z)$ es armónica si
+$$
+\s ux + \s uy
+    = \left[ \p {} z + \p {} {\bar z} \right]^2(u) +
+        \left[ i \p {} z - i \p {} {\bar z} \right]^2(u)
+    = 4 \m u z {\bar z}
+    = 0
+$$
+Dividiendo entre $4$, tenemos el resultado solicitado.
+\end{solution}

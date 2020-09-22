@@ -1,0 +1,18 @@
+\begin{exercise}
+Sea $f(z)$ una función entera. Suponga que existen dos constantes positivas $M, r > 0$ y un entero positivo $n \in \Z^+$ tales que $|f(z)| \le M |z|^n$ para todo $|z| > r$. Demuestre que $f(z)$ es un polinomio de grado no mayor que $n$.
+\end{exercise}
+
+\begin{solution}
+Sea $\gamma \subset \C$ el círculo $|z| = R$, donde $R > r$. Definamos $g_k : \C^\star \to \C$ por
+$$g(z) = \frac {f(z)} {z^{n+k+1}}$$
+Entonces, por la fórmula integral de Cauchy, tenemos
+$$f^{(n+k)}(z) = \frac 1 {2\pi n!} \int_\gamma g_k(z) \, dz$$
+La longitud finita de $\gamma$ nos otorga la cota en módulo
+$$
+|f^{(n+k)}(z)|
+    \le \frac 1 {2\pi n!} \int_\gamma |g_k(z)| \, |dz|
+    = MRn! \cdot \Vert g_k \circ \gamma \Vert_\infty
+    < Mn!R^{-k}
+$$
+Para $k > 0$, esta cota se puede hacer arbitrariamente pequeña tomando $R$ arbitrariamente grande. Por lo tanto, $f^{(n+k)} = 0$ para todo $k > 0$. Por ende, $f(z)$ es un polinomio de grado a lo más $n$.
+\end{solution}

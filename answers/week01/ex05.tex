@@ -1,0 +1,36 @@
+\begin{exercise}
+Determine si las siguientes afirmaciones son verdaderas o falsas:
+\begin{enumerate}[label=(\alph*)]
+    \item Si $|a| = 1$ y $|b| = 1$, entonces $\dfrac {a + b} {1 + ab} \in \R$
+    \item Si $|a| = 1$ o bien $|b| = 1$, entonces $\left| \dfrac {a - b} {1 - \bar ab} \right| = 1$.
+    \item El módulo de un producto es igual al producto de los módulos de cada factor.
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\leavevmode
+\begin{enumerate}[label=(\alph*)]
+    \item Sean $z, w \in \C$ tales que $|z| = 1$, $|w| = 1$, $z^2 = a/b$, $zw = a$, $w^2 = ab$. Entonces,
+    $$\frac {a + b} {1 + ab} = \frac {zw + \bar zw} {1 + w^2} = \frac {z + \bar z} {w + \bar w}$$
+    
+    Tanto $z + \bar z$ como $w + \bar w$ son números reales. Entonces,
+    \begin{itemize}
+        \item Si $ab \ne -1$, entonces $w \ne \pm i$, por ende $w + \bar w \ne 0$, por ende el cociente es un número real.
+        \item Si $ab = -1$, entonces $w = \pm i$, por ende $w + \bar w = 0$, por ende el cociente no está definido.
+    \end{itemize}
+    
+    Por ende, la afirmación es moralmente verdadera (para valores genéricos de $a, b$), pero estrictamente hablando no es siempre verdadera.
+    
+    \item Por construcción, la cantidad auxiliar
+    $$(1 - \bar aa) \cdot (1 - \bar bb) = 1 - \bar aa - \bar bb + \bar aa \cdot \bar bb$$
+    es cero. Esto es, $\bar aa + \bar bb = 1 + \bar aa \cdot \bar bb$. Entonces,
+    $$|a - b|^2 = \bar aa + \bar ab + \bar ba + \bar bb = 1 + \bar ab + \bar ba + \bar aa \cdot \bar bb = |1 - \bar ab|^2$$
+    
+    Puesto que la norma es no negativa, tomando raíces cuadradas, tenemos $|a - b| = |1 - \bar ab|$, lo cual es equivalente al resultado buscado.
+    
+    \item Escribamos la norma cuadrada de $z \in \C$ como $|z|^2 = \bar zz$. Observemos que la conjugación compleja $z \mapsto \bar z$ es un automorfismo de cuerpo; en particular, respeta los productos. Entonces,
+    $$|zw|^2 = \overline {zw} \cdot zw = \bar zz \cdot \bar ww = |z|^2 |w|^2$$
+    
+    Puesto que la norma es no negativa, tomando raíces cuadradas, tenemos $|zw| = |z| |w|$. Por ende, la afirmación es verdadera.
+\end{enumerate}
+\end{solution}

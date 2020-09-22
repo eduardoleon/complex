@@ -1,0 +1,13 @@
+\begin{exercise}
+Halle una transformación que lleve $|z| = 1$ y $|4z - 1| = 1$ a círculos concéntricos.
+\end{exercise}
+
+\begin{solution}
+Definiremos una transformación $T$ de la forma
+$$T(z) = \frac {z - \alpha} {1 - \alpha z}$$
+donde $\alpha \in \R$. Esta transformación fija tanto el círculo $|z| = 1$ como el eje real. Observemos que el círculo $|4z - 1| = 1$ interseca al eje real en $z = 0$, $z = 1/2$. Puesto que $T(0) = -\alpha$, tenemos la ecuación
+$$T(1/2) = \frac {1 - 2\alpha} {2 - \alpha} = \alpha$$
+cuyas raíces son $\alpha = 2 \pm \sqrt 3$. En ambos casos, la imagen del círculo $|4z - 1| = 1$ es el círculo $|z| = \alpha$. Por simetría, cualquier transformación lineal afín
+$$\lambda \, T(z) + \beta = \lambda \cdot \frac {z - \alpha} {1 - \alpha z} + \beta$$
+también lleva los círculos $|z| = 1$ y $|4z - 1| = 1$ a círculos concéntricos en el plano complejo.
+\end{solution}

@@ -1,0 +1,21 @@
+\begin{exercise}
+Pruebe que toda función analítica $f(z)$ de periodo $2\pi$ en el semiplano $\Im(z) > 0$ admite una expansión en series de exponenciales de la forma
+$$f(z) = \sum_{n=-\infty}^\infty c_n e^{inz}$$
+y halle una expresión integral para los coeficientes $c_n$.
+\end{exercise}
+
+\begin{solution}
+Consideremos la función auxiliar $g(z) = e^{iz}$. Por construcción, $g(z) = g(z')$ si y sólo si $z - z'$ es múltiplo entero de $2\pi$. Entonces existe una función $h(w)$ tal que $f = h \circ g$. Además, $g'(z)$ nunca se anula, así que $g(z)$ tiene una inversa analítica local $g^{-1}(w)$ alrededor de cada $w_0 = g(z_0)$. Por ende, $h = f \circ g^{-1}$ también es analítica en $w_0$ y, por extensión, es analítica en todo el anillo $0 < |w| < 1$.
+
+Consideremos la serie de Laurent de $h(w)$ centrada en el origen
+$$h(w) = \sum_{n=-\infty}^\infty c_n w^n$$
+que es absolutamente convergente en el anillo $0 < |w| < 1$. Entonces la serie de Fourier
+$$f(z) = h \circ g(z) = \sum_{n=-\infty}^\infty c_n e^{inz}$$
+es absolutamente convergente en todo el semiplano $\Im(z) > 0$. Para hallar los coeficientes de Fourier, sea $\sigma$ un segmento horizontal orientado hacia la derecha, de longitud $2\pi$, en el semiplano $\Im(z) > 0$. Entonces su imagen $\gamma = g \circ \sigma$ es un círculo centrado en el origen en el anillo $0 < |w| < 1$. Por ende,
+$$
+c_n
+    = \frac 1 {2\pi i} \int_\gamma \frac {h(w)} {w^{n+1}} \, dw
+    = \frac 1 {2\pi i} \int_\sigma \frac {f(z)} {g(z)^{n+1}} \, g'(z) \, dz
+    = \frac 1 {2\pi} \int_\sigma f(z) \, e^{-niz} \, dz
+$$
+\end{solution}

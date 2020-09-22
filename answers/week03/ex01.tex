@@ -1,0 +1,9 @@
+\begin{exercise}
+Pruebe que toda sucesión de Cauchy es acotada.
+\end{exercise}
+
+\begin{solution}
+Sea $x_n$ una sucesión de Cauchy en un espacio métrico. Por definición, existe un instante $k \in \N$ tal que las distancias $d(x_m, x_n)$ están acotadas por $1$ para todo $m, n \ge k$. Pongamos $c_n = d(x_n, x_k)$. Por construcción, $c_n$ está acotado por $1$ para todo $n \ge k$. Entonces $c_n$ está acotado por $r = \max(1, c_1, \dots, c_k)$ para todo $n \in \N$.
+
+No estamos obligados a usar $x_k$ como referencia para el cálculo de las distancias. Si $a$ es cualquier otro punto del espacio, entonces $d(a, x_n)$ está acotado por $d(a, x_k) + r$ para todo $n \in \N$. En particular, si $x_n$ es una sucesión de Cauchy en un espacio vectorial normado, entonces la norma $\Vert x_n \Vert$ es la distancia al origen y está acotada por $\Vert x_k \Vert + r$ para todo $n \in \N$.
+\end{solution}

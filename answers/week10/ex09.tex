@@ -1,0 +1,73 @@
+\begin{exercise}
+Halle los ceros, polos y residuos de las siguientes funciones:
+\begin{enumerate}[label=(\alph*)]
+    \item $f(z) = \dfrac 1 {z^2 + 5z + 6}$
+    \item $f(z) = \dfrac 1 {(z^2 - 1)^2}$
+    \item $f(z) = \dfrac 1 {\sin^2(z)}$
+    \item $f(z) = \dfrac {z^2 + 1} z$
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+En todos los casos, $f(z)$ es un cociente de funciones enteras. Por ende,
+\begin{itemize}
+    \item Los ceros de $f(z)$ son los ceros de su propio numerador.
+    \item Los polos de $f(z)$ son los ceros de su propio denominador.
+    \item $f(z)$ no tiene singularidades esenciales en el plano complejo.
+\end{itemize}
+Ahora sí, analicemos las funciones dadas:
+\begin{enumerate}[label=(\alph*)]
+    \item Factorizando el numerador y el denominador, deducimos que
+    \begin{itemize}
+        \item $f(z)$ no tiene ceros en el plano complejo.
+        \item $f(z)$ tiene polos en $z = -2$ y $z = -3.$
+    \end{itemize}
+    
+    Para hallar los residuos de $f(z)$ en sus polos, reescribamos
+    $$f(z) = \frac 1 {z + 2} - \frac 1 {z + 3}$$
+    
+    Entonces $\Res(f, -2) = 1$ y $\Res(f, -3) = -1$.
+    
+    \item Factorizando el numerador y el denominador, deducimos que
+    \begin{itemize}
+        \item $f(z)$ no tiene ceros en el plano complejo.
+        \item $f(z)$ tiene polos en $z = \pm 1$.
+    \end{itemize}
+    
+    Para hallar los residuos de $f(z)$ en sus polos, reescribamos
+    $$
+    f(z)
+        = \left[ \frac {1/2} {z - 1} - \frac {1/2} {z + 1} \right]^2
+        = \frac {1/4} {(z - 1)^2} + \frac {1/4} {(z + 1)^2} - \frac {1/2} {z^2 - 1}
+    $$
+    
+    Por supuesto, el último término sigue siendo insatisfactorio. Expandámoslo:
+    $$f(z) = \frac {1/4} {(z - 1)^2} + \frac {1/4} {(z + 1)^2} - \frac {1/4} {z - 1} + \frac {1/4} {z + 1}$$
+    
+    Entonces $\Res(f, 1) = -1/4$ y $\Res(f, -1) = 1/4$.
+    
+    \item Observemos que
+    \begin{itemize}
+        \item $f(z)$ no tiene ceros en el plano complejo.
+        \item $f(z)$ tiene polos en $z = n\pi$ para cada $n \in \Z$.
+        \item $f(z + \pi) = f(z)$, así que todos los polos tienen el mismo residuo.
+        \item $f(z) = f(-z)$, así que el residuo en $z = 0$ es cero.
+    \end{itemize}
+    
+    Para justificar el último punto, tomemos un círculo pequeño $|z| = \varepsilon$. Puesto que $\gamma$ es invariante bajo la reflexión $z \mapsto -z$, tenemos
+    $$2\pi i \cdot \Res(f, 0) = \int_\gamma f(z) \, dz = -\int_\gamma f(-z) \, dz$$
+    
+    Por otro lado, $f(z)$ también es invariante bajo la reflexión $z \mapsto -z$, así que
+    $$2\pi i \cdot \Res(f, 0) = -\int_\gamma f(-z) \, dz = -\int_\gamma f(z) \, dz = -2\pi i \cdot \Res(f, 0)$$
+    
+    Por ende, $\Res(f, n\pi) = \Res(f, 0) = 0$ para todo $n \in \Z$.
+    
+    \item Factorizando el numerador y el denominador, deducimos que
+    \begin{itemize}
+        \item $f(z)$ tiene ceros simples en $z = \pm i$.
+        \item $f(z)$ tiene un polo simple en $z = 0$.
+    \end{itemize}
+    
+    Para hallar el residuo de $f(z)$ en su polo, reescribamos $f(z) = z + 1/z$. Entonces $\Res(f, 0) = 1$.
+\end{enumerate}
+\end{solution}

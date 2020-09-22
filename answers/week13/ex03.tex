@@ -1,0 +1,32 @@
+\begin{exercise}
+Desarrolle la función $f(z)$ definida por
+$$f(z) = \frac 1 {1 + z^2}$$
+en potencias de $(z - 1)$.
+\end{exercise}
+
+\begin{solution}
+Los polos de $f(z)$ son $\alpha^2, \alpha^6$, donde $\alpha = e^{i\pi/4}$. Poniendo $z = 1 + w \sqrt 2$, tenemos
+$$
+f(z)
+    = \frac {i/2} {w \sqrt 2 + 1 + i} + \frac {-i/2} {w \sqrt 2 + 1 - i}
+    = \frac 1 {2 \sqrt 2} \left[
+        \frac {\alpha^2}    {w + \alpha} +
+        \frac {\alpha^{-2}} {w + \alpha^{-1}} \right]
+$$
+Expandiendo la serie de potencias centrada en $w = 0$, tenemos
+$$
+f(z)
+    = \frac 1 {2 \sqrt 2} \left[
+        \frac \alpha        {1 + \alpha^{-1} w} +
+        \frac {\alpha^{-1}} {1 + \alpha      w} \right]
+    = \sum_{n=0}^\infty \frac {\alpha^{1-n} + \alpha^{n-1}} {\sqrt {2^{n+3}}} \, (1 - z)^n
+    = \sum_{n=0}^\infty \beta_n (z - 1)^n
+$$
+Entonces los coeficientes $\beta_n$ son
+$$
+\beta_{4k} = \frac {(-1)^k} {2^{2k+1}}, \qquad
+\beta_{4k+1} = \frac {(-1)^{k+1}} {2^{2k+1}}, \qquad
+\beta_{4k+2} = \frac {(-1)^k} {2^{2k+2}}, \qquad
+\beta_{4k+3} = 0
+$$
+\end{solution}
